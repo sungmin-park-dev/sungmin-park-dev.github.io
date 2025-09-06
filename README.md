@@ -1,13 +1,15 @@
-# Personal Guide for me
+# Personal Guide for building website using Chirpy
 
 [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp; 
 [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
 
-Welcome! This is your complete step-by-step guide to building and managing a personal website using Jekyll and the beautiful Chirpy theme. No prior web development experience required!
+This is a step-by-step guide to building and managing a personal website using Jekyll from Chirpy theme. 
+
 
 ## 🤔 What is Jekyll and Why Use It?
 
-**Jekyll** is a simple tool that transforms your plain text files into a beautiful website. Think of it as a magic converter:
+**Jekyll** is a simple tool that transforms your plain text files into a beautiful website. 
+Think of it as a magic converter:
 - You write content in simple **Markdown** (like writing a text document)
 - Jekyll converts it into a professional website
 - **GitHub Pages** hosts it for free
