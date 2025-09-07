@@ -16,10 +16,9 @@ description: "Introducing myself." # This description will show up in search res
 
 Hello! I'm **Sung-Min Park** (박성민).
 
-
+<!-- 
 # Background
-
-<!-- I'm currently pursuing an integrated MS-PhD program in Physics at KAIST (Korea Advanced Institute of Science and Technology). -->
+I'm currently pursuing an integrated MS-PhD program in Physics at KAIST (Korea Advanced Institute of Science and Technology). -->
 
 I'm currently on academic leave for military service as a Military Science and Technology Soldier.
 
