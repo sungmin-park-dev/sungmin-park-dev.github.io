@@ -24,7 +24,7 @@ description: >-
   sharing a journey of quantum study and project experiences
 url: "https://sungmin-park-dev.github.io"
 avatar: /assets/img/site/preview.png
-social_preview_image: /assets/img/site/preview.jpg
+social_preview_image: /assets/img/site/preview.png
 toc: true
 paginate: 10
 theme_mode: # Leave empty to follow system preference (light/dark mode)
