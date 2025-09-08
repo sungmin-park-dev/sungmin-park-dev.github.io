@@ -19,7 +19,7 @@ timezone: Asia/Seoul # Format: Area/City (e.g., Asia/Seoul, America/New_York)
 # ===========================================================================
 
 title: Study Lab
-tagline: Sung-Min Park(박성민) | Student
+tagline: 박성민 | Sung-Min Park
 description: >-
   sharing a journey of quantum study and project experiences
 url: "https://sungmin-park-dev.github.io"
