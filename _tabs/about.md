@@ -8,11 +8,18 @@ comments: false                   # Disable comments on About page
 math: true                        # Enable LaTeX math rendering with MathJax/KaTeX
 mermaid: true                     # Enable Mermaid diagrams and flowcharts
 image:                           # Social media preview image settings
-  path: /assets/img/about-preview.jpg
+  path: /assets/img/site/preview_cut.jpg
   alt: About Sung-Min Park
 description: "Introducing myself." # This description will show up in search results and social media previews
                                   # SEO meta description (recommended 150-160 characters)
 ---
+
+
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/img/site/avatar.png" alt="Sung-Min Park" 
+       style="width: 300px; height: 300px; border-radius: 50%; 
+              object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+</div>
 
 Hello! I'm **Sung-Min Park** (박성민).
 
