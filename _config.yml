@@ -18,8 +18,8 @@ timezone: Asia/Seoul # Format: Area/City (e.g., Asia/Seoul, America/New_York)
 # 2. Page Structure & Content (How Your Site Looks)
 # ===========================================================================
 
-title: Sung-Min Park
-tagline: 박성민 | Student
+title: Study Lab
+tagline: Sung-Min Park(박성민) | Student
 description: >-
   sharing a journey of quantum study and project experiences
 url: "https://sungmin-park-dev.github.io"
