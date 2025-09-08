@@ -23,8 +23,8 @@ tagline: 박성민 | Sung-Min Park
 description: >-
   sharing a journey of quantum study and project experiences
 url: "https://sungmin-park-dev.github.io"
-avatar: /assets/img/site/preview_cut.png
-social_preview_image: /assets/img/social-preview.jpg
+avatar: /assets/img/site/preview.png
+social_preview_image: /assets/img/site/preview.jpg
 toc: true
 paginate: 10
 theme_mode: # Leave empty to follow system preference (light/dark mode)
@@ -56,10 +56,10 @@ social:
 webmaster_verifications:
   google: # Add Google Search Console verification code later
   bing: # Add Bing Webmaster Tools verification code later
-  alexa: 
-  yandex: 
-  baidu: 
-  facebook: 
+  alexa:
+  yandex:
+  baidu:
+  facebook:
 
 # Web Analytics (configure when you want to see site statistics)
 analytics:
@@ -68,15 +68,15 @@ analytics:
   goatcounter:
     id: # Add GoatCounter site code later (privacy-friendly option)
   umami:
-    id: 
-    domain: 
+    id:
+    domain:
   matomo:
-    id: 
-    domain: 
+    id:
+    domain:
   cloudflare:
-    id: 
+    id:
   fathom:
-    id: 
+    id:
 
 # Page view counter
 pageviews:

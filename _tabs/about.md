@@ -8,26 +8,31 @@ comments: false                   # Disable comments on About page
 math: true                        # Enable LaTeX math rendering with MathJax/KaTeX
 mermaid: true                     # Enable Mermaid diagrams and flowcharts
 image:                           # Social media preview image settings
-  path: /assets/img/site/preview_cut.jpg
+  path: /assets/img/site/preview.png
   alt: About Sung-Min Park
 description: "Introducing myself." # This description will show up in search results and social media previews
                                   # SEO meta description (recommended 150-160 characters)
 ---
 
 
-<div style="text-align: center; margin: 2rem 0;">
+<div style="display: flex; align-items: flex-start; gap: 40px; margin-bottom: 20px;">
   <img src="/assets/img/site/avatar.png" alt="Sung-Min Park" 
-       style="width: 300px; height: 300px; border-radius: 50%; 
-              object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+       style="width: 300px; height: auto; 
+              border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <div>
+    Hello! I'm <strong>Sung-Min Park</strong> (박성민).<br>
+    I'm currently on academic leave for military service as a Military Science and Technology Soldier.
+  </div>
 </div>
 
-Hello! I'm **Sung-Min Park** (박성민).
+
+
 
 <!-- 
 # Background
 I'm currently pursuing an integrated MS-PhD program in Physics at KAIST (Korea Advanced Institute of Science and Technology). -->
 
-I'm currently on academic leave for military service as a Military Science and Technology Soldier.
+
 
 <!-- 
 My research interests lie at the fascinating intersection of **physics** and **machine learning**, where I explore how computational methods can unlock new insights into complex quantum systems. 
