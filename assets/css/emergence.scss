@@ -1,0 +1,129 @@
+---
+# Only the main Sass file needs front matter (the dashes are needed)
+---
+
+// ============================================
+// Emergence Design System - Main
+// ============================================
+// 이 파일은 모든 SCSS 모듈을 통합합니다.
+// Jekyll이 빌드할 때 emergence.css로 컴파일됩니다.
+
+// --------------------------------------------
+// Import Modules (순서 중요!)
+// --------------------------------------------
+
+// 1. Variables (모든 토큰 정의)
+@import "emergence/variables";
+
+// 2. Typography (타이포그래피)
+@import "emergence/typography";
+
+// 3. Components (재사용 컴포넌트)
+@import "emergence/components";
+
+// 4. Navigation (네비게이션)
+@import "emergence/navigation";
+
+// 5. Pages (페이지별 스타일)
+@import "emergence/pages";
+
+// --------------------------------------------
+// Base Reset
+// --------------------------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: #000000; /* 검은색 기본 배경 */
+}
+
+// --------------------------------------------
+// Chirpy Theme Override
+// --------------------------------------------
+// Chirpy 테마의 기본 요소를 완전히 숨김
+
+#core-wrapper,
+#panel-wrapper,
+#topbar-wrapper,
+#sidebar,
+.sidebar,
+#left-sidebar,
+.left-sidebar,
+.tail-wrapper,
+#tail-wrapper {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+body {
+  background: transparent;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// 메인 컨텐츠 전체 너비로 확장
+main,
+#main-wrapper,
+.main-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// --------------------------------------------
+// Page Load Animation
+// --------------------------------------------
+
+html,
+body {
+  opacity: 0;
+  animation: pageLoad 1s ease-out forwards;
+}
+
+@keyframes pageLoad {
+  to {
+    opacity: 1;
+  }
+}
+
+// --------------------------------------------
+// Utility Classes
+// --------------------------------------------
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.p-sm { padding: $spacing-sm; }
+.p-md { padding: $spacing-md; }
+.p-lg { padding: $spacing-lg; }
+.p-xl { padding: $spacing-xl; }

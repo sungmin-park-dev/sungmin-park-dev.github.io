@@ -1,0 +1,280 @@
+// ============================================
+// Emergence Design System - Components
+// ============================================
+
+@import 'variables';
+
+// --------------------------------------------
+// Background Image
+// --------------------------------------------
+
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-background;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  // OLED Black overlay - 완전한 블랙
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // OLED Black: 탁한 느낌 완전 제거
+    background: #000000;
+    opacity: 0.95; // 배경 이미지 거의 안 보임 (순수 블랙 효과)
+  }
+}
+
+// Background images per page
+.page-projects .page-bg {
+  background-image: url('/assets/img/site/hero-bg.jpg');
+}
+
+.page-notes .page-bg {
+  background-image: url('/assets/img/site/hero-bg.jpg');
+}
+
+.page-archive .page-bg {
+  background-image: url('/assets/img/site/hero-bg.jpg');
+}
+
+.page-about .page-bg {
+  background-image: url('/assets/img/site/hero-bg.jpg');
+}
+
+// --------------------------------------------
+// Glassmorphism Card (기본)
+// --------------------------------------------
+
+.glass-card {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border-glass;
+  padding: $spacing-lg;
+  transition: all $transition-normal;
+
+  &:hover {
+    transform: translateY(-8px);
+    background: $color-bg-glass-hover;
+    box-shadow: $shadow-card-hover;
+    border-color: $color-border-glass-hover;
+  }
+}
+
+// --------------------------------------------
+// Tag & Badge
+// --------------------------------------------
+
+.tag,
+.badge {
+  display: inline-block;
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: $color-tag-text;
+  background: $color-tag-bg;
+  border: 1px solid $color-tag-border;
+  border-radius: $radius-md;
+  padding: $spacing-xs * 0.5 $spacing-xs * 1.5;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: rgba(100, 200, 255, 0.15);
+    border-color: $color-border-blue-hover;
+  }
+}
+
+// --------------------------------------------
+// Button
+// --------------------------------------------
+
+.btn {
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: $fs-base;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  background: rgba(100, 200, 255, 0.15);
+  border: 1px solid $color-border-blue;
+  border-radius: $radius-sm;
+  padding: $spacing-xs * 1.5 $spacing-lg;
+  text-decoration: none;
+  transition: all $transition-fast;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background: rgba(100, 200, 255, 0.25);
+    border-color: $color-border-blue-hover;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  i {
+    margin-right: $spacing-xs;
+  }
+}
+
+.btn-primary {
+  background: rgba(100, 200, 255, 0.2);
+  border-color: $color-border-blue-hover;
+}
+
+.btn-large {
+  font-size: $fs-md;
+  padding: $spacing-sm $spacing-xl;
+  border-radius: $radius-md;
+}
+
+// --------------------------------------------
+// Bento Grid (홈페이지용)
+// --------------------------------------------
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: $spacing-md;
+  max-width: 900px;
+  width: 100%;
+  height: 400px;
+}
+
+.bento-card {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border-glass;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all $transition-normal;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-8px);
+    background: $color-bg-glass-hover;
+    box-shadow: $shadow-card-hover;
+    border-color: $color-border-glass-hover;
+
+    .bento-card-title {
+      font-weight: $fw-light;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+.bento-card-title {
+  font-family: $font-primary;
+  font-size: $fs-2xl;
+  font-weight: $fw-extra-light;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: $ls-wide;
+  transition: all $transition-normal;
+}
+
+// Bento Grid Layout
+.card-projects {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.card-notes {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.card-about {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.card-archive {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+// --------------------------------------------
+// Container
+// --------------------------------------------
+
+.custom-page-container {
+  min-height: 100vh;
+  padding: 6rem $spacing-xl $spacing-xl;
+  opacity: 0;
+  animation: fadeIn $transition-page-load;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+// --------------------------------------------
+// Responsive
+// --------------------------------------------
+
+@media (max-width: $breakpoint-tablet) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 400px;
+    gap: $spacing-sm;
+  }
+
+  .card-projects {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .card-notes {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .card-archive {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .card-about {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .bento-card-title {
+    font-size: $fs-xl;
+  }
+
+  .custom-page-container {
+    padding: 5rem $spacing-md $spacing-lg;
+  }
+
+  .glass-card {
+    padding: $spacing-md;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .bento-card-title {
+    font-size: $fs-lg;
+  }
+
+  .custom-page-container {
+    padding: 5rem $spacing-sm $spacing-md;
+  }
+}

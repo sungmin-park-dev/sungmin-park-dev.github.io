@@ -1,0 +1,103 @@
+// ============================================
+// Emergence Design System - Navigation
+// ============================================
+
+@import 'variables';
+
+// --------------------------------------------
+// Top Navigation
+// --------------------------------------------
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $spacing-md $spacing-xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // Glassmorphism style - 더 뿌연 효과
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: $z-nav;
+}
+
+.logo {
+  font-size: 1.5rem; // 네비게이션 링크보다 조금 크게
+  font-weight: $fw-thin; // 볼드 취소: regular → thin
+  color: $color-text-primary;
+  text-decoration: none;
+  font-family: $font-primary;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-primary-blue;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: $spacing-lg;
+}
+
+.nav-links a {
+  font-size: 1.25rem; // 증가: 1rem → 1.1rem → 1.25rem
+  font-weight: $fw-extra-light;
+  color: $color-text-secondary;
+  text-decoration: none;
+  font-family: $font-primary;
+  transition: color $transition-fast;
+  position: relative;
+
+  &:hover,
+  &.active {
+    color: $color-primary-blue;
+  }
+
+  // Underline effect on hover
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: $color-primary-blue;
+    transition: width $transition-fast;
+  }
+
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+  }
+}
+
+// --------------------------------------------
+// Responsive Navigation
+// --------------------------------------------
+
+@media (max-width: $breakpoint-tablet) {
+  .top-nav {
+    padding: $spacing-sm $spacing-md;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  .nav-links {
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: $fs-sm;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .logo {
+    font-size: $fs-md;
+  }
+}

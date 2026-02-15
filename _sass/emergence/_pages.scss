@@ -1,0 +1,560 @@
+// ============================================
+// Emergence Design System - Page Styles
+// ============================================
+
+@import 'variables';
+
+// --------------------------------------------
+// Projects Page
+// --------------------------------------------
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+}
+
+.project-card {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border-glass;
+  padding: $spacing-lg;
+  transition: all $transition-normal;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  &:hover {
+    transform: translateY(-8px);
+    background: $color-bg-glass-hover;
+    box-shadow: $shadow-card-hover;
+    border-color: $color-border-glass-hover;
+  }
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(100, 200, 255, 0.2), rgba(150, 100, 255, 0.2));
+  border-radius: $radius-md;
+  margin-bottom: $spacing-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $fs-3xl;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.project-title {
+  font-size: $fs-xl;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.project-description {
+  font-size: $fs-base;
+  font-weight: $fw-light;
+  color: $color-text-secondary;
+  line-height: $lh-normal;
+  flex-grow: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-top: $spacing-xs;
+}
+
+.project-tag {
+  @extend .tag;
+}
+
+.project-button {
+  @extend .btn;
+}
+
+// --------------------------------------------
+// Blog/Archive Page
+// --------------------------------------------
+
+.archive-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.year-section {
+  margin-bottom: $spacing-xl;
+}
+
+.year-header {
+  font-size: $fs-2xl;
+  font-weight: $fw-extra-light;
+  color: $color-primary-blue-light;
+  margin-bottom: $spacing-md;
+  letter-spacing: $ls-wide;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.post-item {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border-radius: $radius-lg;
+  border: 1px solid $color-border-glass;
+  padding: $spacing-md $spacing-lg;
+  transition: all $transition-normal;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    transform: translateX(8px);
+    background: $color-bg-glass-hover;
+    border-color: $color-border-glass-hover;
+    box-shadow: $shadow-card;
+  }
+}
+
+.post-date {
+  font-size: $fs-sm;
+  font-weight: $fw-light;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-xs;
+}
+
+.post-title {
+  font-size: $fs-lg;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.post-excerpt {
+  font-size: $fs-base;
+  font-weight: $fw-light;
+  color: $color-text-secondary;
+  line-height: $lh-normal;
+  margin-bottom: $spacing-xs;
+}
+
+.post-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+.post-category {
+  @extend .tag;
+}
+
+// --------------------------------------------
+// Notes Page
+// --------------------------------------------
+
+.notes-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+// 카테고리 필터
+.category-filter {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-xl;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  font-family: $font-primary;
+  font-size: $fs-sm;
+  font-weight: $fw-light;
+  color: $color-text-secondary;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid $color-border-glass;
+  border-radius: $radius-md;
+  padding: $spacing-xs $spacing-md;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: $color-border-blue;
+    color: $color-primary-blue;
+  }
+
+  &.active {
+    background: rgba(0, 255, 255, 0.15);
+    border-color: $color-border-blue-hover;
+    color: $color-primary-blue-light;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  }
+}
+
+// 노트 리스트
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.note-card {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border-radius: $radius-lg;
+  border: 1px solid $color-border-glass;
+  padding: $spacing-lg;
+  transition: all $transition-normal;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    transform: translateY(-4px);
+    background: $color-bg-glass-hover;
+    border-color: $color-border-glass-hover;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+
+    .note-icon {
+      transform: scale(1.1);
+      color: $color-primary-blue-light;
+    }
+  }
+}
+
+.note-header {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+  margin-bottom: $spacing-sm;
+}
+
+.note-icon {
+  font-size: $fs-2xl;
+  color: $color-primary-blue;
+  flex-shrink: 0;
+  transition: all $transition-fast;
+}
+
+.note-info {
+  flex-grow: 1;
+}
+
+.note-title {
+  font-size: $fs-lg;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+  line-height: $lh-snug;
+}
+
+.note-meta {
+  display: flex;
+  gap: $spacing-md;
+  font-size: $fs-xs;
+  color: $color-text-tertiary;
+
+  i {
+    margin-right: $spacing-xs * 0.5;
+  }
+}
+
+.note-date,
+.note-reading-time {
+  display: flex;
+  align-items: center;
+}
+
+.note-summary {
+  font-size: $fs-base;
+  font-weight: $fw-light;
+  color: $color-text-secondary;
+  line-height: $lh-normal;
+  margin-bottom: $spacing-sm;
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+.note-tag {
+  @extend .tag;
+}
+
+// Empty State 스타일 개선
+.empty-state {
+  text-align: center;
+  padding: $spacing-2xl $spacing-lg;
+
+  .empty-icon {
+    font-size: 4rem;
+    color: $color-primary-blue;
+    margin-bottom: $spacing-md;
+    opacity: 0.3;
+  }
+
+  h3 {
+    font-size: $fs-xl;
+    font-weight: $fw-light;
+    color: $color-text-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    font-size: $fs-base;
+    font-weight: $fw-light;
+    color: $color-text-tertiary;
+  }
+}
+
+// --------------------------------------------
+// About Page
+// --------------------------------------------
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border-glass;
+  padding: $spacing-xl;
+  margin-bottom: $spacing-xl;
+  display: flex;
+  gap: $spacing-xl;
+  align-items: flex-start;
+  overflow: hidden; // 의사 요소가 카드 밖으로 넘치지 않도록
+}
+
+.profile-image-container {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.profile-image {
+  width: 200px;
+  height: auto;
+  max-height: 280px;
+  border-radius: $radius-lg;
+  border: none;
+  box-shadow: none;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  position: relative;
+
+  // Shimmer 효과의 실제 원인: img 태그의 ::before 의사 요소
+  &::before,
+  &::after {
+    display: none !important;
+  }
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-name {
+  font-size: $fs-2xl;
+  font-weight: $fw-extra-light;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.profile-name-korean {
+  font-size: $fs-lg;
+  font-weight: $fw-light;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-md;
+}
+
+.profile-affiliation {
+  font-size: $fs-md;
+  font-weight: $fw-light;
+  color: $color-primary-blue-light;
+  line-height: $lh-normal;
+}
+
+.profile-status {
+  font-size: $fs-base;
+  font-weight: $fw-light;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: $spacing-sm;
+  font-style: italic;
+}
+
+.about-section {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border-glass;
+  padding: $spacing-xl - $spacing-xs;
+  margin-bottom: $spacing-lg;
+}
+
+.section-content {
+  font-size: $fs-md;
+  font-weight: $fw-light;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: $lh-relaxed;
+
+  p {
+    margin-bottom: $spacing-sm;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: $spacing-sm;
+
+    li {
+      padding-left: $spacing-md;
+      margin-bottom: $spacing-xs;
+      position: relative;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: $color-primary-blue;
+        font-size: $fs-lg;
+      }
+    }
+  }
+
+  strong {
+    color: $color-primary-blue-light;
+    font-weight: $fw-regular;
+  }
+}
+
+.cv-button {
+  @extend .btn;
+  @extend .btn-large;
+  margin-top: $spacing-sm;
+}
+
+// Social Links
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-lg;
+  margin: $spacing-lg 0;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: $radius-full;
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid $color-border-blue;
+  color: $color-primary-blue;
+  font-size: $fs-lg;
+  text-decoration: none;
+  transition: all $transition-normal;
+
+  &:hover {
+    background: rgba(0, 255, 255, 0.15);
+    border-color: $color-border-blue-hover;
+    color: $color-primary-blue-light;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: $shadow-glow-primary;
+  }
+
+  i {
+    transition: transform $transition-fast;
+  }
+
+  &:hover i {
+    transform: scale(1.2);
+  }
+}
+
+
+// --------------------------------------------
+// Responsive - Pages
+// --------------------------------------------
+
+@media (max-width: $breakpoint-desktop) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-thumbnail {
+    height: 150px;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+    padding: $spacing-lg;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-name {
+    font-size: $fs-xl;
+  }
+
+  .about-section {
+    padding: $spacing-lg;
+  }
+
+  .post-item {
+    padding: $spacing-sm * 1.5 $spacing-md;
+  }
+
+  .post-title {
+    font-size: $fs-md;
+  }
+
+  .year-header {
+    font-size: $fs-xl;
+  }
+
+  .note-card {
+    padding: $spacing-md;
+  }
+
+  .note-title {
+    font-size: $fs-md;
+  }
+
+  .note-icon {
+    font-size: $fs-xl;
+  }
+
+  .category-filter {
+    gap: $spacing-xs;
+  }
+
+  .filter-btn {
+    font-size: $fs-xs;
+    padding: $spacing-xs * 0.75 $spacing-sm;
+  }
+}

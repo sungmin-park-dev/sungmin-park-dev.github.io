@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<!-- Emergence Design System CSS -->
+<link rel="stylesheet" href="{{ '/assets/css/emergence.css' | relative_url }}">
+
+<!-- Background -->
+<div class="page-bg"></div>
+
+<!-- Top Navigation -->
+<nav class="top-nav">
+  <a href="/" class="logo">emergence</a>
+  <div class="nav-links">
+    <a href="/projects/" {% if page.url contains '/projects' %}class="active"{% endif %}>projects</a>
+    <a href="/notes/" {% if page.url contains '/notes' %}class="active"{% endif %}>notes</a>
+    <a href="/archive/" {% if page.url contains '/archive' %}class="active"{% endif %}>archive</a>
+    <a href="/about/" {% if page.url contains '/about' %}class="active"{% endif %}>about</a>
+  </div>
+</nav>
+
+<!-- Page Container -->
+<div class="custom-page-container page-{{ page.slug }}">
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  <div class="page-content">
+    {{ content }}
+  </div>
+</div>
