@@ -18,8 +18,8 @@ timezone: Asia/Seoul # Format: Area/City (e.g., Asia/Seoul, America/New_York)
 # 2. Page Structure & Content (How Your Site Looks)
 # ===========================================================================
 
-title: emergence #Study Lab
-tagline: 박성민 | Sung-Min Park
+title: "emergence · Sung-Min Park"
+tagline: "quantum many-body · tensor networks · physics-informed ML"
 description: >-
   sharing a journey of quantum study and project experiences
 url: "https://sungmin-park-dev.github.io"
@@ -132,6 +132,15 @@ collections:
   tabs:
     output: true
     sort_by: order
+  notes:
+    output: true
+    permalink: /notes/:path/
+  readings:
+    output: true
+    permalink: /readings/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
 
 # Default settings for different content types
 defaults:
@@ -153,6 +162,24 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: post
+      toc: true
+  - scope:
+      path: ""
+      type: readings
+    values:
+      layout: post
+      toc: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: post
+      toc: true
 
 # CSS compilation settings
 sass:

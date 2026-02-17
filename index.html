@@ -89,6 +89,16 @@ layout: minimal
     text-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.3);
   }
 
+  .hero-tagline {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 0.15em;
+  }
+
   /* 벤토 그리드 */
   .bento-grid {
     display: grid;
@@ -152,7 +162,7 @@ layout: minimal
     grid-row: 1 / 2;
   }
 
-  .card-archive {
+  .card-readings {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
   }
@@ -181,7 +191,7 @@ layout: minimal
       grid-row: 1 / 2;
     }
 
-    .card-archive {
+    .card-readings {
       grid-column: 1 / 2;
       grid-row: 2 / 3;
     }
@@ -219,6 +229,8 @@ layout: minimal
     </h1>
   </a>
 
+  <p class="hero-tagline">quantum many-body · tensor networks · physics-informed ML</p>
+
   <!-- 벤토 그리드 -->
   <div class="bento-grid">
     <a href="/projects/" class="bento-card card-projects">
@@ -233,8 +245,8 @@ layout: minimal
       <div class="bento-card-title">about</div>
     </a>
 
-    <a href="/archive/" class="bento-card card-archive">
-      <div class="bento-card-title">archive</div>
+    <a href="/readings/" class="bento-card card-readings">
+      <div class="bento-card-title">readings</div>
     </a>
   </div>
 </div>

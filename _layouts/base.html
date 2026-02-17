@@ -1,9 +1,12 @@
 <!doctype html>
-<html lang="{{ site.lang | default: 'en' }}" data-mode="{{ site.theme_mode }}">
+<html lang="{{ site.lang | default: 'en' }}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
+
+    <!-- SEO -->
+    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicons/apple-touch-icon.png' | relative_url }}">
@@ -11,15 +14,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicons/favicon-16x16.png' | relative_url }}">
     <link rel="manifest" href="{{ '/assets/img/favicons/site.webmanifest' | relative_url }}">
 
-    <style>
-      /* Reset and ensure full height */
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-    </style>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   <body>
     {{ content }}

@@ -12,20 +12,23 @@
 // Import Modules (순서 중요!)
 // --------------------------------------------
 
+// Sass @import deprecation warning 억제 (Jekyll 4.x 호환성)
+// @use/@forward 마이그레이션은 추후 진행 예정
+
 // 1. Variables (모든 토큰 정의)
-@import "emergence/variables";
+@import 'emergence/variables';
 
 // 2. Typography (타이포그래피)
-@import "emergence/typography";
+@import 'emergence/typography';
 
 // 3. Components (재사용 컴포넌트)
-@import "emergence/components";
+@import 'emergence/components';
 
 // 4. Navigation (네비게이션)
-@import "emergence/navigation";
+@import 'emergence/navigation';
 
 // 5. Pages (페이지별 스타일)
-@import "emergence/pages";
+@import 'emergence/pages';
 
 // --------------------------------------------
 // Base Reset
@@ -56,7 +59,6 @@ body {
 #sidebar,
 .sidebar,
 #left-sidebar,
-.left-sidebar,
 .tail-wrapper,
 #tail-wrapper {
   display: none !important;
@@ -113,17 +115,41 @@ body {
   text-align: right;
 }
 
-.mt-sm { margin-top: $spacing-sm; }
-.mt-md { margin-top: $spacing-md; }
-.mt-lg { margin-top: $spacing-lg; }
-.mt-xl { margin-top: $spacing-xl; }
+.mt-sm {
+  margin-top: $spacing-sm;
+}
+.mt-md {
+  margin-top: $spacing-md;
+}
+.mt-lg {
+  margin-top: $spacing-lg;
+}
+.mt-xl {
+  margin-top: $spacing-xl;
+}
 
-.mb-sm { margin-bottom: $spacing-sm; }
-.mb-md { margin-bottom: $spacing-md; }
-.mb-lg { margin-bottom: $spacing-lg; }
-.mb-xl { margin-bottom: $spacing-xl; }
+.mb-sm {
+  margin-bottom: $spacing-sm;
+}
+.mb-md {
+  margin-bottom: $spacing-md;
+}
+.mb-lg {
+  margin-bottom: $spacing-lg;
+}
+.mb-xl {
+  margin-bottom: $spacing-xl;
+}
 
-.p-sm { padding: $spacing-sm; }
-.p-md { padding: $spacing-md; }
-.p-lg { padding: $spacing-lg; }
-.p-xl { padding: $spacing-xl; }
+.p-sm {
+  padding: $spacing-sm;
+}
+.p-md {
+  padding: $spacing-md;
+}
+.p-lg {
+  padding: $spacing-lg;
+}
+.p-xl {
+  padding: $spacing-xl;
+}

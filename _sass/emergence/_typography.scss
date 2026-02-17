@@ -150,7 +150,9 @@ ul, ol {
   font-weight: $fw-thin;
   color: $color-text-primary;
   letter-spacing: $ls-tight;
+  margin-top: $spacing-lg; // 상단 여백 추가
   margin-bottom: $spacing-xl;
+  text-align: center; // 중앙 정렬
 
   .dot {
     color: $color-primary-blue;

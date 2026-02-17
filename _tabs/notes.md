@@ -18,7 +18,7 @@ slug: notes
 
   <!-- 노트 리스트 -->
   <div class="notes-list">
-    {% assign all_notes = site.posts | where_exp: "post", "post.categories contains 'notes'" %}
+    {% assign all_notes = site.notes %}
 
     {% if all_notes.size > 0 %}
       {% for post in all_notes %}
