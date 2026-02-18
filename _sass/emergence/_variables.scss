@@ -1,11 +1,11 @@
 // ============================================
 // Emergence Design System - Variables
 // ============================================
-// 이 파일에서 폰트, 색상, 간격 등을 한 곳에서 관리합니다.
-// 스타일 변경 시 이 파일만 수정하면 전체 사이트에 반영됩니다.
+// [Korean comment removed for encoding compatibility]
+// [Korean comment removed for encoding compatibility]
 
 // --------------------------------------------
-// 1. Typography (타이포그래피)
+// [Korean comment removed for encoding compatibility]
 // --------------------------------------------
 
 // Font Families
@@ -13,59 +13,59 @@ $font-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 
 $font-monospace: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
 
 // Font Weights
-$fw-thin: 100;           // 얇은 제목용 (emergence 타이틀 등)
-$fw-extra-light: 200;    // 네비게이션, 서브 제목
-$fw-light: 300;          // 본문, 카드 제목
-$fw-regular: 400;        // 강조 텍스트
-$fw-medium: 500;         // 버튼
-$fw-semibold: 600;       // 헤딩
+$fw-thin: 100;           // [Korean comment removed for encoding compatibility]
+$fw-extra-light: 200;    // [Korean comment removed for encoding compatibility]
+$fw-light: 300;          // [Korean comment removed for encoding compatibility]
+$fw-regular: 400;        // [Korean comment removed for encoding compatibility]
+$fw-medium: 500;         // [Korean comment removed for encoding compatibility]
+$fw-semibold: 600;       // [Korean comment removed for encoding compatibility]
 
 // Font Sizes (Base: 16px)
-$fs-xs: 0.75rem;         // 12px - 태그, 캡션
-$fs-sm: 0.85rem;         // 13.6px - 작은 텍스트
-$fs-base: 1rem;          // 16px - 네비게이션, 기본 텍스트 (변경: 0.9rem → 1rem)
-$fs-md: 1rem;            // 16px - 본문
-$fs-lg: 1.2rem;          // 19.2px - 작은 제목
-$fs-xl: 1.5rem;          // 24px - 카드 제목
-$fs-2xl: 2rem;           // 32px - 섹션 제목
-$fs-3xl: 3rem;           // 48px - 페이지 제목 (모바일)
-$fs-hero: 8vw;           // 페이지 메인 타이틀 (반응형)
-$fs-home-hero: 12vw;     // 홈페이지 타이틀 (반응형)
+$fs-xs: 0.75rem;         // [Korean comment removed for encoding compatibility]
+$fs-sm: 0.85rem;         // [Korean comment removed for encoding compatibility]
+$fs-base: 1rem;          // [Korean comment removed for encoding compatibility]
+$fs-md: 1rem;            // [Korean comment removed for encoding compatibility]
+$fs-lg: 1.2rem;          // [Korean comment removed for encoding compatibility]
+$fs-xl: 1.5rem;          // [Korean comment removed for encoding compatibility]
+$fs-2xl: 2rem;           // [Korean comment removed for encoding compatibility]
+$fs-3xl: 3rem;           // [Korean comment removed for encoding compatibility]
+$fs-hero: 8vw;           // [Korean comment removed for encoding compatibility]
+$fs-home-hero: 12vw;     // [Korean comment removed for encoding compatibility]
 
 // Letter Spacing
-$ls-tight: -0.01em;      // 큰 제목용
-$ls-normal: 0;           // 기본
-$ls-wide: 0.02em;        // 강조용
+$ls-tight: -0.01em;      // [Korean comment removed for encoding compatibility]
+$ls-normal: 0;           // [Korean comment removed for encoding compatibility]
+$ls-wide: 0.02em;        // [Korean comment removed for encoding compatibility]
 
 // Line Heights
-$lh-tight: 1;            // 타이틀
-$lh-snug: 1.4;           // 서브 타이틀
-$lh-normal: 1.6;         // 본문
-$lh-relaxed: 1.8;        // 긴 문단
+$lh-tight: 1;            // [Korean comment removed for encoding compatibility]
+$lh-snug: 1.4;           // [Korean comment removed for encoding compatibility]
+$lh-normal: 1.6;         // [Korean comment removed for encoding compatibility]
+$lh-relaxed: 1.8;        // [Korean comment removed for encoding compatibility]
 
 // --------------------------------------------
-// 2. Colors (색상)
+// [Korean comment removed for encoding compatibility]
 // --------------------------------------------
 
-// Primary Colors - Glowing Cyan (발광하는 별)
-$color-primary-blue: rgba(0, 255, 255, 0.85);        // Cyan (변경: 100,200,255 → 0,255,255)
+// [Korean comment removed for encoding compatibility]
+$color-primary-blue: rgba(0, 255, 255, 0.85);        // [Korean comment removed for encoding compatibility]
 $color-primary-blue-light: rgba(0, 255, 255, 1);     // Full Cyan
 $color-primary-blue-dark: rgba(0, 220, 220, 0.7);    // Darker Cyan
 
 // Text Colors
 $color-text-primary: rgba(255, 255, 255, 0.98);
-$color-text-secondary: rgba(255, 255, 255, 0.85); // 변경: 0.7 → 0.85 (가시성 개선)
+$color-text-secondary: rgba(255, 255, 255, 0.85); // [Korean comment removed for encoding compatibility]
 $color-text-tertiary: rgba(255, 255, 255, 0.5);
 
 // Background Colors
-$color-bg-overlay: rgba(0, 0, 0, 0.5);        // 배경 어두운 레이어
-$color-bg-glass: rgba(255, 255, 255, 0.03);   // Glassmorphism 기본 (Deep Space: 투명도 낮춤)
-$color-bg-glass-hover: rgba(255, 255, 255, 0.08); // Glassmorphism 호버
-$color-bg-nav: rgba(0, 0, 0, 0.3);            // 상단 네비게이션
+$color-bg-overlay: rgba(0, 0, 0, 0.5);        // [Korean comment removed for encoding compatibility]
+$color-bg-glass: rgba(255, 255, 255, 0.03);   // [Korean comment removed for encoding compatibility]
+$color-bg-glass-hover: rgba(255, 255, 255, 0.08); // [Korean comment removed for encoding compatibility]
+$color-bg-nav: rgba(0, 0, 0, 0.3);            // [Korean comment removed for encoding compatibility]
 
-// Border Colors - OLED Black에서 더 밝게
-$color-border-glass: rgba(255, 255, 255, 0.15);    // 밝고 가는 테두리
-$color-border-glass-hover: rgba(255, 255, 255, 0.3); // 호버 시 더 선명
+// [Korean comment removed for encoding compatibility]
+$color-border-glass: rgba(255, 255, 255, 0.15);    // [Korean comment removed for encoding compatibility]
+$color-border-glass-hover: rgba(255, 255, 255, 0.3); // [Korean comment removed for encoding compatibility]
 $color-border-blue: rgba(0, 255, 255, 0.3);
 $color-border-blue-hover: rgba(0, 255, 255, 0.6);
 
@@ -75,10 +75,10 @@ $color-tag-border: rgba(0, 255, 255, 0.3);
 $color-tag-text: rgba(0, 255, 255, 0.95);
 
 // --------------------------------------------
-// 3. Effects (효과)
+// [Korean comment removed for encoding compatibility]
 // --------------------------------------------
 
-// Shadows - Glowing effect (발광 효과 강화)
+// [Korean comment removed for encoding compatibility]
 $shadow-glow-primary: 0 0 40px rgba(0, 255, 255, 0.8);
 $shadow-glow-secondary: 0 0 80px rgba(0, 255, 255, 0.4);
 $shadow-text: 0 0 40px rgba(255, 255, 255, 0.1);
@@ -97,7 +97,7 @@ $radius-xl: 20px;
 $radius-full: 50%;
 
 // --------------------------------------------
-// 4. Spacing (간격)
+// [Korean comment removed for encoding compatibility]
 // --------------------------------------------
 
 $spacing-xs: 0.5rem;     // 8px
@@ -108,7 +108,7 @@ $spacing-xl: 3rem;       // 48px
 $spacing-2xl: 4rem;      // 64px
 
 // --------------------------------------------
-// 5. Transitions (애니메이션)
+// [Korean comment removed for encoding compatibility]
 // --------------------------------------------
 
 $transition-fast: 0.3s ease;
@@ -117,7 +117,7 @@ $transition-slow: 1s ease-in;
 $transition-page-load: 1s ease-out forwards;
 
 // --------------------------------------------
-// 6. Breakpoints (반응형)
+// [Korean comment removed for encoding compatibility]
 // --------------------------------------------
 
 $breakpoint-mobile: 480px;
@@ -126,7 +126,7 @@ $breakpoint-desktop: 800px;
 $breakpoint-wide: 1280px;
 
 // --------------------------------------------
-// 7. Z-Index Layers (레이어 순서)
+// [Korean comment removed for encoding compatibility]
 // --------------------------------------------
 
 $z-background: -1;

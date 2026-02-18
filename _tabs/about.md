@@ -5,13 +5,14 @@ icon: fas fa-info-circle
 order: 4
 permalink: /about/
 slug: about
+description: "Background, research interests, and contact"
 ---
 
 <div class="about-content">
   <!-- Profile Card -->
   <div class="profile-card">
     <div class="profile-image-container">
-      <img src="/assets/img/site/avatar.png" alt="Sung-Min Park" class="profile-image">
+      <img src="/assets/img/common/avatar.png" alt="Sung-Min Park" class="profile-image">
     </div>
     <div class="profile-info">
       <h2 class="profile-name">Sung-Min Park</h2>

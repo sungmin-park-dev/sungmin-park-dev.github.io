@@ -121,7 +121,7 @@ ul, ol {
 // Special Typography Classes
 // --------------------------------------------
 
-// Hero Title (홈페이지 메인 타이틀)
+// [Korean comment removed for encoding compatibility]
 .hero-title {
   font-family: $font-primary;
   font-size: $fs-home-hero;
@@ -143,21 +143,40 @@ ul, ol {
   }
 }
 
-// Page Title (서브 페이지 타이틀)
+// [Korean comment removed for encoding compatibility]
 .page-title {
   font-family: $font-primary;
   font-size: $fs-hero;
   font-weight: $fw-thin;
   color: $color-text-primary;
   letter-spacing: $ls-tight;
-  margin-top: $spacing-lg; // 상단 여백 추가
-  margin-bottom: $spacing-xl;
-  text-align: center; // 중앙 정렬
+  margin-top: $spacing-lg;
+  margin-bottom: 0;        // subtitle이 있을 때 ::after로 간격 조절
+  text-align: center;
 
   .dot {
     color: $color-primary-blue;
     text-shadow: $shadow-glow-primary;
   }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: rgba(0, 255, 255, 0.4);
+    margin: $spacing-md auto $spacing-md;
+  }
+}
+
+.page-subtitle {
+  font-size: $fs-base;
+  font-weight: $fw-extra-light;
+  color: $color-text-tertiary;
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+  margin-bottom: $spacing-xl;
 }
 
 // Section Title

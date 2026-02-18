@@ -5,15 +5,29 @@ icon: fas fa-book
 order: 2
 permalink: /notes/
 slug: notes
+description: "Study notes across physics, AI, and computational methods"
 ---
 
 <div class="notes-container">
-  <!-- 카테고리 필터 (향후 확장 가능) -->
-  <div class="category-filter">
-    <button class="filter-btn active" data-category="all">All</button>
-    <button class="filter-btn" data-category="physics">Physics</button>
-    <button class="filter-btn" data-category="machine-learning">Machine Learning</button>
-    <button class="filter-btn" data-category="quantum">Quantum Computing</button>
+  {% include tag-nebula.html id="notes-tag-cloud" title="tags" %}
+  <!-- 카테고리 필터 + 정렬 -->
+  <div class="notes-controls">
+    <div class="category-filter">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="physics"><i class="fas fa-atom"></i> Physics</button>
+      <button class="filter-btn" data-category="ai-physics"><i class="fas fa-brain"></i> AI × Physics</button>
+      <button class="filter-btn" data-category="machine-learning"><i class="fas fa-network-wired"></i> Machine Learning</button>
+      <button class="filter-btn" data-category="computation"><i class="fas fa-microchip"></i> Computation</button>
+    </div>
+    <div class="notes-sort">
+      <label for="notes-sort-select">Sort by:</label>
+      <select id="notes-sort-select" class="sort-select">
+        <option value="default">Default</option>
+        <option value="date-desc">Newest First</option>
+        <option value="date-asc">Oldest First</option>
+        <option value="title">Title (A-Z)</option>
+      </select>
+    </div>
   </div>
 
   <!-- 노트 리스트 -->
@@ -22,52 +36,34 @@ slug: notes
 
     {% if all_notes.size > 0 %}
       {% for post in all_notes %}
-        <a href="{{ post.url }}" class="note-card" data-categories="{{ post.tags | join: ' ' }}">
-          <div class="note-header">
-            <!-- 카테고리 아이콘 -->
-            <div class="note-icon">
-              {% if post.tags contains 'physics' %}
-                <i class="fas fa-atom"></i>
-              {% elsif post.tags contains 'machine-learning' %}
-                <i class="fas fa-brain"></i>
-              {% elsif post.tags contains 'quantum' %}
-                <i class="fas fa-microchip"></i>
-              {% else %}
-                <i class="fas fa-book-open"></i>
-              {% endif %}
-            </div>
-
-            <div class="note-info">
-              <!-- 제목 -->
-              <h3 class="note-title">{{ post.title }}</h3>
-
-              <!-- 날짜 및 메타 정보 -->
-              <div class="note-meta">
-                <span class="note-date">
-                  <i class="far fa-calendar"></i>
-                  {{ post.date | date: "%b %d, %Y" }}
-                </span>
-                {% if post.reading_time %}
-                  <span class="note-reading-time">
-                    <i class="far fa-clock"></i>
-                    {{ post.reading_time }} min read
-                  </span>
-                {% endif %}
-              </div>
-            </div>
+        <a href="{{ post.url }}" class="note-card"
+           data-category="{{ post.subcategory }}"
+           data-date="{{ post.date | date: '%Y-%m-%d' }}"
+           data-title="{{ post.title }}">
+          <div class="note-category-label">
+            {% if post.subcategory == 'physics' %}
+              <i class="fas fa-atom"></i> Physics
+            {% elsif post.subcategory == 'ai-physics' %}
+              <i class="fas fa-brain"></i> AI × Physics
+            {% elsif post.subcategory == 'machine-learning' %}
+              <i class="fas fa-network-wired"></i> Machine Learning
+            {% elsif post.subcategory == 'computation' %}
+              <i class="fas fa-microchip"></i> Computation
+            {% else %}
+              <i class="fas fa-book-open"></i> Notes
+            {% endif %}
           </div>
-
-          <!-- 요약 -->
-          {% if post.excerpt %}
-            <p class="note-summary">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-          {% endif %}
-
-          <!-- 태그 -->
+          <div class="note-row-top">
+            <h3 class="note-title">{{ post.title }}</h3>
+            <span class="note-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          </div>
           {% if post.tags.size > 0 %}
-            <div class="note-tags">
-              {% for tag in post.tags %}
-                <span class="note-tag">{{ tag }}</span>
-              {% endfor %}
+            <div class="note-row-bottom">
+              <div class="note-tags">
+                {% for tag in post.tags limit:4 %}
+                  <span class="note-tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
             </div>
           {% endif %}
         </a>
@@ -78,37 +74,76 @@ slug: notes
           <i class="fas fa-pen-fancy"></i>
         </div>
         <h3>No notes yet</h3>
-        <p>Physics, Machine Learning, and Quantum Computing notes will appear here.</p>
+        <p>Physics, AI × Physics, Machine Learning, and Computation notes will appear here.</p>
       </div>
     {% endif %}
   </div>
 </div>
 
+<script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
 <script>
-// 카테고리 필터 기능 (향후 확장용)
-document.addEventListener('DOMContentLoaded', function() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const noteCards = document.querySelectorAll('.note-card');
+// Initialize tag filter
+const tagFilter = new TagFilter('.note-card', '#notes-tag-cloud');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const category = this.getAttribute('data-category');
+const notesList = document.querySelector('.notes-list');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const sortSelect = document.getElementById('notes-sort-select');
 
-      // 활성 버튼 스타일 변경
-      filterBtns.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
+// Category order for default sort
+const categoryOrder = { 'physics': 1, 'ai-physics': 2, 'machine-learning': 3, 'computation': 4 };
 
-      // 카드 필터링
-      noteCards.forEach(card => {
-        const categories = card.getAttribute('data-categories');
+// Get all note cards
+function getNoteCards() {
+  return Array.from(document.querySelectorAll('.note-card'));
+}
 
-        if (category === 'all' || categories.includes(category)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+// Apply current sort to visible cards
+function applySort(sortBy) {
+  const cards = getNoteCards();
+
+  cards.sort((a, b) => {
+    switch (sortBy) {
+      case 'date-desc':
+        return b.dataset.date.localeCompare(a.dataset.date);
+      case 'date-asc':
+        return a.dataset.date.localeCompare(b.dataset.date);
+      case 'title':
+        return a.dataset.title.localeCompare(b.dataset.title);
+      case 'default':
+      default: {
+        const catA = categoryOrder[a.dataset.category] || 99;
+        const catB = categoryOrder[b.dataset.category] || 99;
+        if (catA !== catB) return catA - catB;
+        const dateDiff = b.dataset.date.localeCompare(a.dataset.date);
+        if (dateDiff !== 0) return dateDiff;
+        return a.dataset.title.localeCompare(b.dataset.title);
+      }
+    }
+  });
+
+  cards.forEach(card => notesList.appendChild(card));
+}
+
+// Category filter
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    const category = this.getAttribute('data-category');
+
+    filterBtns.forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+
+    getNoteCards().forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      card.style.display = (category === 'all' || cardCategory === category) ? 'block' : 'none';
     });
   });
 });
+
+// Sort
+sortSelect.addEventListener('change', () => {
+  applySort(sortSelect.value);
+});
+
+// Apply default sort on load
+applySort('default');
 </script>

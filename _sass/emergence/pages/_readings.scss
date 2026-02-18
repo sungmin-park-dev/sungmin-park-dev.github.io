@@ -1,0 +1,227 @@
+// ============================================
+// Readings/Archive Page
+// ============================================
+
+.archive-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+// --------------------------------------------
+// Readings Card Grid
+// --------------------------------------------
+
+.readings-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.readings-container .category-filter {
+  display: flex;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+  margin-bottom: $spacing-xl;
+}
+
+.readings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-md;
+}
+
+.reading-card {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border-glass;
+  padding: $spacing-lg;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  aspect-ratio: 4 / 5;
+  transition: all $transition-normal;
+
+  &:hover {
+    transform: translateY(-4px);
+    background: $color-bg-glass-hover;
+    box-shadow: $shadow-card-hover;
+    border-color: $color-border-glass-hover;
+  }
+}
+
+.reading-category-label {
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: $color-primary-blue;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  i {
+    margin-right: $spacing-xs * 0.5;
+  }
+}
+
+.reading-title {
+  font-size: $fs-lg;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  line-height: $lh-snug;
+  flex-grow: 1;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.reading-date {
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: $color-text-tertiary;
+}
+
+.reading-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs * 0.5;
+  margin-top: auto;
+}
+
+.reading-tag {
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: $color-tag-text;
+  background: $color-tag-bg;
+  border: 1px solid $color-tag-border;
+  border-radius: $radius-sm;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+.readings-grid .empty-state {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: $breakpoint-desktop) {
+  .readings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .readings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reading-card {
+    aspect-ratio: auto;
+  }
+}
+
+.readings-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xl;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .readings-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: $spacing-sm;
+
+    .notes-sort {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.year-section {
+  margin-bottom: $spacing-xl;
+}
+
+.year-header {
+  font-size: $fs-2xl;
+  font-weight: $fw-extra-light;
+  color: $color-primary-blue-light;
+  margin-bottom: $spacing-md;
+  letter-spacing: $ls-wide;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.post-item {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border-radius: $radius-lg;
+  border: 1px solid $color-border-glass;
+  padding: $spacing-md $spacing-lg;
+  transition: all $transition-normal;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    transform: translateX(8px);
+    background: $color-bg-glass-hover;
+    border-color: $color-border-glass-hover;
+    box-shadow: $shadow-card;
+  }
+}
+
+.post-date {
+  font-size: $fs-sm;
+  font-weight: $fw-light;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-xs;
+}
+
+.post-title {
+  font-size: $fs-lg;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.post-excerpt {
+  font-size: $fs-base;
+  font-weight: $fw-light;
+  color: $color-text-secondary;
+  line-height: $lh-normal;
+  margin-bottom: $spacing-xs;
+}
+
+.post-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+.post-category {
+  @extend .tag;
+}
+
+// --------------------------------------------
+// Responsive
+// --------------------------------------------
+
+@media (max-width: $breakpoint-tablet) {
+  .post-item {
+    padding: $spacing-sm * 1.5 $spacing-md;
+  }
+
+  .post-title {
+    font-size: $fs-md;
+  }
+
+  .year-header {
+    font-size: $fs-xl;
+  }
+}

@@ -4,7 +4,14 @@
       "Bash(git checkout:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(bundle list:*)",
+      "Bash(bundle install:*)",
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(find:*)",
+      "Bash(ruby -v:*)",
+      "Bash(rbenv install:*)",
+      "Bash(rbenv local:*)"
     ]
   }
 }

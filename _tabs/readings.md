@@ -5,38 +5,78 @@ icon: fas fa-book-open
 order: 3
 permalink: /readings/
 slug: readings
+description: "Paper reviews, tech explorations, and perspectives"
 ---
 
-<div class="archive-container">
-  {% assign readings_by_year = site.readings | group_by_exp: "item", "item.date | date: '%Y'" %}
+<div class="readings-container">
+  {% include tag-nebula.html id="readings-tag-cloud" title="tags" %}
+  <!-- 카테고리 필터 -->
+  <div class="category-filter">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="papers"><i class="fas fa-file-alt"></i> Papers</button>
+    <button class="filter-btn" data-category="tech"><i class="fas fa-wrench"></i> Tech</button>
+    <button class="filter-btn" data-category="perspectives"><i class="fas fa-lightbulb"></i> Perspectives</button>
+  </div>
 
-  {% if readings_by_year.size > 0 %}
-    {% for year_group in readings_by_year %}
-      <div class="year-section">
-        <h2 class="year-header">{{ year_group.name }}</h2>
-        <div class="post-list">
-          {% for item in year_group.items %}
-            <a href="{{ item.url }}" class="post-item">
-              <div class="post-date">{{ item.date | date: "%B %d, %Y" }}</div>
-              <h3 class="post-title">{{ item.title }}</h3>
-              {% if item.excerpt %}
-                <p class="post-excerpt">{{ item.excerpt | strip_html | truncatewords: 30 }}</p>
-              {% endif %}
-              {% if item.categories.size > 0 %}
-                <div class="post-categories">
-                  {% for category in item.categories %}
-                    <span class="post-category">{{ category }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </a>
-          {% endfor %}
+  <!-- 카드 그리드 -->
+  <div class="readings-grid">
+    {% assign all_readings = site.readings %}
+    {% if all_readings.size > 0 %}
+      {% for item in all_readings %}
+        <a href="{{ item.url }}" class="reading-card" data-category="{{ item.subcategory }}">
+          <div class="reading-category-label">
+            {% if item.subcategory == 'papers' %}
+              <i class="fas fa-file-alt"></i> Papers
+            {% elsif item.subcategory == 'tech' %}
+              <i class="fas fa-wrench"></i> Tech
+            {% elsif item.subcategory == 'perspectives' %}
+              <i class="fas fa-lightbulb"></i> Perspectives
+            {% else %}
+              <i class="fas fa-book-open"></i> Reading
+            {% endif %}
+          </div>
+          <h3 class="reading-title">{{ item.title }}</h3>
+          <span class="reading-date">{{ item.date | date: "%b %d, %Y" }}</span>
+          {% if item.tags.size > 0 %}
+            <div class="reading-tags">
+              {% for tag in item.tags limit:3 %}
+                <span class="reading-tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </a>
+      {% endfor %}
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-icon">
+          <i class="fas fa-book-open"></i>
         </div>
+        <h3>No readings yet</h3>
+        <p>Paper reviews, tech explorations, and perspectives will appear here.</p>
       </div>
-    {% endfor %}
-  {% else %}
-    <div class="empty-state">
-      <p>No readings yet. Stay tuned for upcoming content.</p>
-    </div>
-  {% endif %}
+    {% endif %}
+  </div>
 </div>
+
+<script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
+<script>
+const tagFilter = new TagFilter('.reading-card', '#readings-tag-cloud');
+
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.reading-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const category = this.getAttribute('data-category');
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        card.style.display = (category === 'all' || cardCategory === category) ? 'flex' : 'none';
+      });
+    });
+  });
+});
+</script>

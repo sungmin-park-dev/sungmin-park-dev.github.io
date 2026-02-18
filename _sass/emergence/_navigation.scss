@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // Glassmorphism style - 더 뿌연 효과
+  // [Korean comment removed for encoding compatibility]
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -25,8 +25,8 @@
 }
 
 .logo {
-  font-size: 1.5rem; // 네비게이션 링크보다 조금 크게
-  font-weight: $fw-thin; // 볼드 취소: regular → thin
+  font-size: 1.5rem; // [Korean comment removed for encoding compatibility]
+  font-weight: $fw-thin; // [Korean comment removed for encoding compatibility]
   color: $color-text-primary;
   text-decoration: none;
   font-family: $font-primary;
@@ -43,7 +43,7 @@
 }
 
 .nav-links a {
-  font-size: 1.25rem; // 증가: 1rem → 1.1rem → 1.25rem
+  font-size: 1.25rem; // [Korean comment removed for encoding compatibility]
   font-weight: $fw-extra-light;
   color: $color-text-secondary;
   text-decoration: none;

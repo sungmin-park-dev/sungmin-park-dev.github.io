@@ -1,0 +1,109 @@
+// ============================================
+// Base Styles
+// ============================================
+// Global resets, base styles, and utility classes
+
+// --------------------------------------------
+// Base Reset
+// --------------------------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: #000000; /* 검은색 기본 배경 */
+}
+
+body {
+  background: transparent;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// [Korean comment removed for encoding compatibility]
+main,
+#main-wrapper,
+.main-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// --------------------------------------------
+// Page Load Animation
+// --------------------------------------------
+
+html,
+body {
+  opacity: 0;
+  animation: pageLoad 1s ease-out forwards;
+}
+
+@keyframes pageLoad {
+  to {
+    opacity: 1;
+  }
+}
+
+// --------------------------------------------
+// Utility Classes
+// --------------------------------------------
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-sm {
+  margin-top: $spacing-sm;
+}
+.mt-md {
+  margin-top: $spacing-md;
+}
+.mt-lg {
+  margin-top: $spacing-lg;
+}
+.mt-xl {
+  margin-top: $spacing-xl;
+}
+
+.mb-sm {
+  margin-bottom: $spacing-sm;
+}
+.mb-md {
+  margin-bottom: $spacing-md;
+}
+.mb-lg {
+  margin-bottom: $spacing-lg;
+}
+.mb-xl {
+  margin-bottom: $spacing-xl;
+}
+
+.p-sm {
+  padding: $spacing-sm;
+}
+.p-md {
+  padding: $spacing-md;
+}
+.p-lg {
+  padding: $spacing-lg;
+}
+.p-xl {
+  padding: $spacing-xl;
+}

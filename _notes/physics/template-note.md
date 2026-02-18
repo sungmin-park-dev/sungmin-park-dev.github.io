@@ -2,11 +2,11 @@
 title: "Note Title"
 date: 2025-01-01 00:00:00 +0900
 description: "Brief description for preview and SEO"
-subcategory: physics          # physics | machine-learning | quantum-computing
+subcategory: physics          # physics | ai-physics | machine-learning | computation
 tags: [tensor-networks, MPS, DMRG]
 math: true                    # MathJax 사용 여부
 toc: true
-published: false              # Set to true when ready to publish
+published: true               # Set to false to hide from list
 # image:                      # 선택: 소셜 미디어 미리보기
 #   path: /assets/img/notes/thumbnail.png
 #   alt: "description"

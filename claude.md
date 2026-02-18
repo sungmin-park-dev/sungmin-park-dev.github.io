@@ -1,111 +1,127 @@
-# emergence - 디자인 철학
+# emergence - Claude Code 컨텍스트
 
-## 브랜드 아이덴티티
+## 프로젝트 개요
 
-**emergence** (창발성)는 다체계 물리학의 핵심 개념입니다. 단순한 요소들의 상호작용에서 예측할 수 없었던 복잡하고 아름다운 현상이 나타나는 것 - 이것이 emergence입니다.
+Jekyll 기반 포트폴리오 사이트. 커스텀 디자인 시스템(emergence)으로 UI 전체를 구현.
+GitHub Pages 호스팅: `sungmin-park-dev.github.io`
 
-이 포트폴리오는 물리학과 AI의 경계에서 연구하는 연구자의 여정을 담습니다. 양자 다체계, 텐서 네트워크, 그리고 머신러닝이 만나는 지점에서 새로운 통찰이 창발하는 순간을 기록합니다.
-
----
-
-## 디자인 컨셉
-
-### 우주의 깊이 (OLED Black)
-- **배경**: 순수한 검정 (#000000)
-- **의미**: 우주의 심연, 무한한 가능성의 공간
-- **효과**: OLED 디스플레이에서 완벽한 블랙으로 표현되어 컨텐츠가 우주에 떠있는 듯한 몰입감
-
-### 발광하는 별 (Cyan Glow)
-- **강조색**: 청록색 발광 (rgba(0, 255, 255))
-- **의미**: 어둠 속에서 빛나는 아이디어, 창발적 통찰의 순간
-- **효과**: 호버 시 은은한 glow 효과로 상호작용의 피드백
-
-### 유리질감 (Glassmorphism)
-- **투명도**: 흐릿한 유리 효과 (backdrop-filter: blur)
-- **의미**: 다층적 구조, 겹쳐진 정보의 레이어
-- **효과**: 깊이감과 공간감, 미래지향적 UI
-
-### 극도의 경량화 (Ultra-Light Typography)
-- **폰트 두께**: 100-200 (Thin ~ Extra Light)
-- **의미**: 최소한의 시각적 노이즈, 본질에 집중
-- **효과**: 애플 디자인 언어의 우아함과 절제
+디자인 철학은 `DESIGN.md` 참조.
 
 ---
 
-## 디자인 원칙
+## 레이아웃 시스템
 
-### 1. 창발성의 시각화
-단순한 요소(카드, 타이포, 컬러)가 조화롭게 배치되어 전체가 부분의 합보다 큰 경험을 만듭니다.
+| 파일 | 용도 | 비고 |
+|------|------|------|
+| `_layouts/base.html` | HTML shell (head, body만) | FontAwesome CDN 포함 |
+| `_layouts/minimal.html` | 홈페이지 전용 | `base` 상속 |
+| `_layouts/custom-page.html` | 탭 페이지 공통 틀 | nav + container, `base` 상속 |
+| `_layouts/post.html` | 개별 콘텐츠 페이지 | TOC 사이드바 + 본문, `base` 상속 |
 
-### 2. 점(.)의 철학
-"emergence." - 오직 타이틀에만 존재하는 점은 **완결성**을 상징합니다. 연구는 진행형이지만, 각 순간은 완결된 통찰입니다.
-
-### 3. OLED Black의 순수성
-탁한 색감을 완전히 배제하고 순수 블랙(#000000)만 사용합니다. OLED 디스플레이에서 픽셀이 꺼지며 무한한 대비를 만듭니다.
-
-### 4. 상호작용의 보상
-모든 호버 효과는 의미 있는 변화를 줍니다:
-- Transform: 살아있는 느낌
-- Glow: 주목의 표시
-- Color shift: 상태의 명확한 전환
+탭 페이지(`_tabs/*.md`)는 `layout: custom-page`를 사용하며,
+HTML/Liquid 템플릿을 파일 안에 직접 포함함 (별도 레이아웃 파일 없음).
 
 ---
 
-## 페이지 구조
+## Chirpy 테마 디커플링 (완료)
 
-### 홈 (Bento Grid)
-- 최소한의 선택지로 명확한 네비게이션
-- 2x3 그리드가 만드는 시각적 안정감
-- 호버 시 부상하는 카드가 선택의 순간을 강조
+Chirpy gem을 완전히 제거하고 순수 Jekyll + 개별 플러그인으로 전환 완료.
 
-### Projects
-- 연구 프로젝트의 포트폴리오
-- 카드 그리드 레이아웃으로 시각적 스캔 용이
-
-### Notes
-- Physics, ML, Quantum Computing 노트
-- 카테고리 필터로 지식 탐색
-- 아이콘으로 주제를 즉각 인식
-
-### Archive
-- 시간순 블로그 아카이브
-- 연도별 섹션으로 시간의 흐름 표현
-
-### About
-- 연구자 프로필
-- 소셜 링크로 연결성 강조
+- `Gemfile`: `jekyll-theme-chirpy` 제거, `jekyll` + 개별 플러그인 사용
+  - `jekyll-archives`, `jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-feed`, `jekyll-paginate`
+  - Ruby 3.3.6 + Jekyll 4.3 사용
+- `_config.yml`: `theme:` 라인 제거, `plugins:` 섹션 추가, Chirpy 전용 설정 제거
+- `_sass/emergence/_chirpy-override.scss`: 삭제 완료
+- `_plugins/posts-lastmod-hook.rb`: 로컬 파일로 독립 동작
+- **중요**: SCSS 파일은 UTF-8 인코딩 (`sass.encoding: utf-8` 설정, `LANG=en_US.UTF-8` 환경변수)
 
 ---
 
-## 기술적 선택
+## SCSS 구조
 
-### SCSS 모듈화
 ```
+assets/css/emergence.scss        ← 빌드 진입점 (@import만, 스타일 코드 없음)
+                                    Jekyll이 이 파일을 emergence.css로 컴파일
 _sass/emergence/
-  ├── _variables.scss      # 디자인 토큰
-  ├── _typography.scss     # 폰트 시스템
-  ├── _components.scss     # 재사용 컴포넌트
-  ├── _navigation.scss     # 네비게이션
-  └── _pages.scss          # 페이지별 스타일
+  ├── _variables.scss            ← 디자인 토큰 (색상, 폰트, 간격 등)
+  ├── _base.scss                 ← 리셋 및 유틸리티
+  ├── _typography.scss           ← 타이포그래피
+  ├── _components.scss           ← 재사용 컴포넌트 (카드, 버튼, 태그 등)
+  ├── _navigation.scss           ← 상단 네비게이션
+  └── pages/                     ← 페이지별 스타일
+      ├── _home.scss
+      ├── _projects.scss
+      ├── _notes.scss
+      ├── _readings.scss
+      ├── _about.scss
+      └── _post.scss
 ```
 
-모든 디자인 결정은 변수로 중앙화되어 일관성과 유지보수성을 보장합니다.
-
-### Jekyll + Chirpy 테마
-- 정적 사이트 생성으로 빠른 로딩
-- Markdown 기반 컨텐츠 관리
-- GitHub Pages 호스팅
-
----
-
-## 영감
-
-- **물리학**: 양자 얽힘, 위상 물질, 창발적 현상
-- **디자인**: Apple의 미니멀리즘, Notion의 클린함, Stripe의 우아함
-- **우주**: 제임스 웹 우주망원경의 심우주 이미지
-- **철학**: "Less is more" (Mies van der Rohe)
+**규칙:**
+- 새 스타일은 항상 `_sass/emergence/` 쪽 파셜 파일에 추가
+- `assets/css/emergence.scss`에는 `@import` 외 코드 추가 금지
+- 새 파셜 추가 시 `emergence.scss`에 `@import` 한 줄 추가 필요
+- 페이지별 스타일은 `pages/` 하위에 별도 파일로 분리
 
 ---
 
-이 디자인은 **emergence**의 본질을 담습니다.
-단순함 속에서 깊이를, 어둠 속에서 빛을, 정적 속에서 움직임을 발견하는 여정입니다.
+## 콘텐츠 컬렉션
+
+`_config.yml`에 등록된 Jekyll 컬렉션. 파일만 추가하면 해당 탭에 자동 반영됨.
+
+| 컬렉션 | 폴더 | 탭 | permalink |
+|--------|------|-----|-----------|
+| `site.projects` | `_projects/` | `/projects/` | `/projects/:path/` |
+| `site.notes` | `_notes/` | `/notes/` | `/notes/:path/` |
+| `site.readings` | `_readings/` | `/readings/` | `/readings/:path/` |
+
+**하위 폴더 구조:**
+```
+_projects/
+  ├── commutator-entropy/index.md
+  ├── spin-wave-theory/index.md
+  └── future-project/index.md
+
+_notes/
+  ├── physics/
+  ├── machine-learning/
+  └── quantum-computing/
+
+_readings/
+  ├── papers/
+  └── tech/
+```
+
+**새 컬렉션 추가 시** `_config.yml`의 `collections:` 및 `defaults:` 섹션에 등록 필수.
+
+---
+
+## 탭 페이지 구조
+
+`_tabs/*.md` 파일은 front matter + HTML/Liquid를 직접 포함.
+탭별로 완전히 다른 레이아웃을 사용하므로 별도 레이아웃 파일로 분리하지 않음.
+
+| 파일 | 데이터 소스 | 주요 CSS 클래스 |
+|------|------------|----------------|
+| `_tabs/projects.md` | `site.projects` | `.projects-grid`, `.project-card` |
+| `_tabs/notes.md` | `site.notes` | `.notes-container`, `.note-card` |
+| `_tabs/readings.md` | `site.readings` | `.archive-container`, `.year-section` |
+| `_tabs/about.md` | 정적 HTML | `.about-content`, `.profile-card` |
+
+---
+
+## 빌드 및 배포
+
+- **로컬:** `bundle exec jekyll s -l` (livereload)
+- **배포:** `main` 브랜치 push → GitHub Actions 자동 빌드/배포
+- **HTML 검증:** `bundle exec htmlproofer _site --disable-external`
+- **주의:** HTML Proofer가 빌드 실패의 주요 원인. 빈 `href`, 잘못된 링크 주의.
+
+---
+
+## 자주 발생하는 이슈
+
+- **카테고리/태그에 한글 포함 시** HTML Proofer 오류 가능 → 영문 사용 권장
+- **빈 `<a href="">` 태그** → HTML validation 실패
+- **새 collection 추가 후 `site.xxx` 미인식** → `_config.yml` 등록 확인
+- **SCSS 변수 미인식** → `@import 'emergence/variables'` 순서 확인 (항상 최상단)

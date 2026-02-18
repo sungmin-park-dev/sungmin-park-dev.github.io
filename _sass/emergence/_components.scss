@@ -19,7 +19,7 @@
   background-position: center;
   background-attachment: fixed;
 
-  // OLED Black overlay - 완전한 블랙
+  // [Korean comment removed for encoding compatibility]
   &::after {
     content: '';
     position: absolute;
@@ -27,31 +27,31 @@
     left: 0;
     width: 100%;
     height: 100%;
-    // OLED Black: 탁한 느낌 완전 제거
+    // [Korean comment removed for encoding compatibility]
     background: #000000;
-    opacity: 0.95; // 배경 이미지 거의 안 보임 (순수 블랙 효과)
+    opacity: 0.95; // [Korean comment removed for encoding compatibility]
   }
 }
 
 // Background images per page
 .page-projects .page-bg {
-  background-image: url('/assets/img/site/hero-bg.jpg');
+  background-image: url('/assets/img/common/hero-bg.jpg');
 }
 
 .page-notes .page-bg {
-  background-image: url('/assets/img/site/hero-bg.jpg');
+  background-image: url('/assets/img/common/hero-bg.jpg');
 }
 
 .page-readings .page-bg {
-  background-image: url('/assets/img/site/hero-bg.jpg');
+  background-image: url('/assets/img/common/hero-bg.jpg');
 }
 
 .page-about .page-bg {
-  background-image: url('/assets/img/site/hero-bg.jpg');
+  background-image: url('/assets/img/common/hero-bg.jpg');
 }
 
 // --------------------------------------------
-// Glassmorphism Card (기본)
+// [Korean comment removed for encoding compatibility]
 // --------------------------------------------
 
 .glass-card {
@@ -139,76 +139,7 @@
 }
 
 // --------------------------------------------
-// Bento Grid (홈페이지용)
-// --------------------------------------------
-
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: $spacing-md;
-  max-width: 900px;
-  width: 100%;
-  height: 400px;
-}
-
-.bento-card {
-  background: $color-bg-glass;
-  backdrop-filter: $blur-glass;
-  border-radius: $radius-xl;
-  border: 1px solid $color-border-glass;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all $transition-normal;
-  cursor: pointer;
-
-  &:hover {
-    transform: translateY(-8px);
-    background: $color-bg-glass-hover;
-    box-shadow: $shadow-card-hover;
-    border-color: $color-border-glass-hover;
-
-    .bento-card-title {
-      font-weight: $fw-light;
-      letter-spacing: 0.05em;
-    }
-  }
-}
-
-.bento-card-title {
-  font-family: $font-primary;
-  font-size: $fs-2xl;
-  font-weight: $fw-extra-light;
-  color: rgba(255, 255, 255, 0.95);
-  letter-spacing: $ls-wide;
-  transition: all $transition-normal;
-}
-
-// Bento Grid Layout
-.card-projects {
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
-}
-
-.card-notes {
-  grid-column: 2 / 3;
-  grid-row: 1 / 3;
-}
-
-.card-about {
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
-}
-
-.card-readings {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-}
-
-// --------------------------------------------
-// Container
+// [Korean comment removed for encoding compatibility]
 // --------------------------------------------
 
 .custom-page-container {
@@ -229,37 +160,6 @@
 // --------------------------------------------
 
 @media (max-width: $breakpoint-tablet) {
-  .bento-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    height: 400px;
-    gap: $spacing-sm;
-  }
-
-  .card-projects {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-
-  .card-notes {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-  }
-
-  .card-readings {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
-
-  .card-about {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-  }
-
-  .bento-card-title {
-    font-size: $fs-xl;
-  }
-
   .custom-page-container {
     padding: 5rem $spacing-md $spacing-lg;
   }
@@ -270,11 +170,125 @@
 }
 
 @media (max-width: $breakpoint-mobile) {
-  .bento-card-title {
-    font-size: $fs-lg;
-  }
-
   .custom-page-container {
     padding: 5rem $spacing-sm $spacing-md;
+  }
+}
+
+// --------------------------------------------
+// Tag Nebula (Reusable Tag Cloud)
+// --------------------------------------------
+
+.tag-nebula {
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.tag-nebula-box {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  border: 1px solid $color-border-glass;
+  border-radius: $radius-sm;
+  padding: $spacing-xs $spacing-md;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+
+  &:hover .tag-nebula-label {
+    color: $color-primary-blue-light;
+  }
+
+  &.expanded {
+    width: 100%;
+    border-radius: $radius-lg;
+    border-color: $color-border-glass;
+    padding: $spacing-lg;
+    cursor: pointer;
+  }
+}
+
+.tag-nebula-label {
+  font-size: $fs-sm;
+  font-weight: $fw-light;
+  font-family: $font-primary;
+  color: $color-text-secondary;
+  letter-spacing: 0.05em;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  text-align: center;
+  opacity: 1;
+
+  .tag-nebula-box.expanded & {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+  }
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;       // 태그 많으면 자동으로 다음 줄
+  justify-content: center;
+  gap: $spacing-sm;
+  align-items: center;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  &.expanded {
+    max-height: 600px;   // 여러 줄도 수용
+    opacity: 1;
+  }
+}
+
+.tag-btn {
+  --tag-intensity: 1;
+  background: transparent;
+  border: 1px solid $color-border-glass;
+  border-radius: $radius-sm;
+  padding: $spacing-xs $spacing-sm;
+  font-size: $fs-sm;
+  font-weight: $fw-light;
+  font-family: $font-primary;
+  color: rgba(255, 255, 255, calc(0.4 + var(--tag-intensity) * 0.4));
+  cursor: pointer;
+  transition: all $transition-normal;
+  white-space: nowrap;
+  border-color: rgba(255, 255, 255, calc(0.1 + var(--tag-intensity) * 0.2));
+
+  &:hover {
+    background: $color-bg-glass-hover;
+    border-color: $color-border-blue;
+    color: $color-primary-blue-light;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  }
+
+  &.active {
+    background: rgba(0, 255, 255, 0.15);
+    border-color: $color-primary-blue;
+    color: $color-primary-blue-light;
+    box-shadow: 0 0 16px rgba(0, 255, 255, 0.4);
+  }
+}
+
+.tag-count {
+  opacity: 0.6;
+  font-size: 0.9em;
+}
+
+// Responsive
+@media (max-width: $breakpoint-tablet) {
+  .tag-cloud {
+    padding: $spacing-md;
+    gap: $spacing-xs;
+  }
+
+  .tag-btn {
+    font-size: $fs-xs;
   }
 }

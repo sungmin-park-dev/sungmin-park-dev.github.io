@@ -10,7 +10,6 @@
 # 1. Site Basic Engine (Jekyll Core Settings)
 # ===========================================================================
 
-theme: jekyll-theme-chirpy
 lang: en # Options: 'en' (English), 'ko' or 'ko-KR' (Korean) etc.
 timezone: Asia/Seoul # Format: Area/City (e.g., Asia/Seoul, America/New_York)
 
@@ -23,12 +22,11 @@ tagline: "quantum many-body · tensor networks · physics-informed ML"
 description: >-
   sharing a journey of quantum study and project experiences
 url: "https://sungmin-park-dev.github.io"
-avatar: /assets/img/site/preview.png
-logo: /assets/img/site/preview.png
-social_preview_image: /assets/img/site/preview.png
+avatar: /assets/img/common/preview.png
+logo: /assets/img/common/preview.png
+social_preview_image: /assets/img/common/preview.png
 toc: true
 paginate: 10
-theme_mode: # Leave empty to follow system preference (light/dark mode)
 baseurl: ""
 
 # ===========================================================================
@@ -92,28 +90,22 @@ cdn:
 
 # Comments system
 comments:
-  provider: utterances # GitHub issues 기반 댓글 시스템
+  provider: utterances
   utterances:
     repo: sungmin-park-dev/sungmin-park-dev.github.io
-    issue_term: pathname # 각 페이지 경로별로 GitHub issue 생성
-
-# Progressive Web App settings
-pwa:
-  enabled: true # Makes your site installable as a mobile/desktop app
-  cache:
-    enabled: true # Enables offline browsing
-    deny_paths:
-      # - "/example"
+    issue_term: pathname
 
 # =========================
 # 6. Advanced Technical Settings (Don't modify unless you know what you're doing)
 # =========================
 
-# Self-hosted static assets
-assets:
-  self_host:
-    enabled: # boolean, keep empty means false
-    env: # [development | production]
+# Jekyll plugins
+plugins:
+  - jekyll-archives
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
 
 # Markdown processing settings
 kramdown:
@@ -184,6 +176,7 @@ defaults:
 # CSS compilation settings
 sass:
   style: compressed
+  encoding: utf-8
 
 # HTML compression settings
 compress_html:
@@ -206,6 +199,9 @@ exclude:
   - purgecss.js
   - "*.config.js"
   - "package*.json"
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
 
 # Archive page settings
 jekyll-archives:
