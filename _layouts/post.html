@@ -66,22 +66,16 @@ layout: base
   <article class="post-content">
     <!-- Breadcrumb -->
     {% assign url_parts = page.url | split: '/' | where_exp: "part", "part != ''" %}
-    {% assign breadcrumb_parts = '' | split: '' %}
-
-    {% for part in url_parts %}
-      {% unless forloop.last %}
-        {% assign breadcrumb_parts = breadcrumb_parts | push: part %}
-      {% endunless %}
-    {% endfor %}
+    {% assign collection_root = url_parts[0] %}
 
     <nav class="breadcrumb">
       <a href="/" class="breadcrumb-item">Home</a>
-      {% assign path = '' %}
-      {% for part in breadcrumb_parts %}
-        {% assign path = path | append: '/' | append: part %}
+      <span class="breadcrumb-separator">›</span>
+      <a href="/{{ collection_root }}/" class="breadcrumb-item">{{ collection_root | capitalize }}</a>
+      {% if url_parts.size > 2 %}
         <span class="breadcrumb-separator">›</span>
-        <a href="{{ path }}/" class="breadcrumb-item">{{ part | capitalize | replace: '-', ' ' }}</a>
-      {% endfor %}
+        <span class="breadcrumb-item">{{ url_parts[1] | replace: '-', ' ' | capitalize }}</span>
+      {% endif %}
     </nav>
 
     <!-- Post Header -->
