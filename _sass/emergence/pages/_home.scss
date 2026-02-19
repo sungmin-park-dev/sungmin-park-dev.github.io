@@ -15,6 +15,7 @@
 .bento-card {
   background: $color-bg-glass;
   backdrop-filter: $blur-glass;
+  -webkit-backdrop-filter: $blur-glass;
   border-radius: $radius-xl;
   border: 1px solid $color-border-glass;
   display: flex;
@@ -25,15 +26,10 @@
   cursor: pointer;
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     background: $color-bg-glass-hover;
     box-shadow: $shadow-card-hover;
     border-color: $color-border-glass-hover;
-
-    .bento-card-title {
-      font-weight: $fw-light;
-      letter-spacing: 0.05em;
-    }
   }
 }
 

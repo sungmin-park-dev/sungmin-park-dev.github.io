@@ -47,18 +47,20 @@
   padding: $spacing-xs $spacing-md;
   cursor: pointer;
   transition: all $transition-fast;
+  box-shadow: $shadow-card;
 
   &:hover {
     background: var(--color-accent-bg-light);
     border-color: $color-border-blue;
     color: $color-primary-blue;
+    box-shadow: $shadow-card-hover;
   }
 
   &.active {
     background: var(--color-accent-bg-medium);
     border-color: $color-border-blue-hover;
     color: $color-primary-blue-light;
-    box-shadow: 0 0 20px var(--color-accent-glow);
+    box-shadow: 0 0 20px var(--color-accent-glow), $shadow-card-hover;
   }
 
   i {

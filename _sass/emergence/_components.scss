@@ -43,10 +43,17 @@
 .glass-card {
   background: $color-bg-glass;
   backdrop-filter: $blur-glass;
+  -webkit-backdrop-filter: $blur-glass;
   border-radius: $radius-xl;
   border: 1px solid $color-border-glass;
+  box-shadow: $shadow-card;
   padding: $spacing-lg;
   transition: all $transition-normal;
+
+  // 라이트 모드: 테두리 1px 유지 (border-color로만 구분)
+  [data-theme="light"] & {
+    border-width: 1px;
+  }
 
   &:hover {
     transform: translateY(-8px);
@@ -173,7 +180,9 @@
 .tag-nebula-box {
   background: $color-bg-glass;
   backdrop-filter: $blur-glass;
+  -webkit-backdrop-filter: $blur-glass;
   border: 1px solid $color-border-glass;
+  box-shadow: $shadow-card;
   border-radius: $radius-sm;
   padding: $spacing-xs $spacing-md;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -181,6 +190,10 @@
   width: fit-content;
   margin: 0 auto;
   cursor: pointer;
+
+  [data-theme="light"] & {
+    border-width: 1px;
+  }
 
   &:hover .tag-nebula-label {
     color: $color-primary-blue-light;
@@ -234,7 +247,7 @@
 
 .tag-btn {
   --tag-intensity: 1;
-  background: transparent;
+  background: var(--color-filter-bg);
   border: 1px solid var(--color-tag-btn-border);
   border-radius: $radius-sm;
   padding: $spacing-xs $spacing-sm;

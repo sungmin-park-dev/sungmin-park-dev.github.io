@@ -24,6 +24,8 @@
 
 .sort-select {
   background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  -webkit-backdrop-filter: $blur-glass;
   border: 1px solid $color-border-glass;
   border-radius: $radius-sm;
   padding: $spacing-xs $spacing-sm;
@@ -33,10 +35,12 @@
   font-family: $font-primary;
   cursor: pointer;
   transition: all $transition-normal;
+  box-shadow: $shadow-card;
 
   &:hover {
     border-color: $color-border-glass-hover;
     background: $color-bg-glass-hover;
+    box-shadow: $shadow-card-hover;
   }
 
   &:focus {
@@ -60,8 +64,8 @@
 
 .project-card {
   background: $color-bg-glass;
-  backdrop-filter: $blur-glass;
-  -webkit-backdrop-filter: $blur-glass;
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border-radius: $radius-xl;
   border: 1px solid $color-border-glass;
   box-shadow: $shadow-card;
@@ -72,7 +76,8 @@
   flex-direction: column;
   gap: $spacing-sm;
 
-  &:hover {
+  // active 카드만 hover 반응
+  &:not(.locked):hover {
     transform: translateY(-4px);
     background: $color-bg-glass-hover;
     box-shadow: $shadow-card-hover;
@@ -142,15 +147,29 @@
 
 .project-button {
   @extend .btn;
+  // active 카드: 버튼을 accent 색상으로 선명하게 강조
+  background: var(--color-btn-primary-bg);
+  border-color: var(--color-border-accent);
+  color: var(--color-accent-light);
+  font-weight: $fw-regular;
+  letter-spacing: 0.04em;
+
+  &:hover {
+    background: var(--color-accent-bg-medium);
+    border-color: var(--color-border-accent-hover);
+    box-shadow: 0 0 16px var(--color-accent-glow), $shadow-card;
+    color: var(--color-accent-light);
+  }
 }
 
 .project-card.locked {
   cursor: default;
-  opacity: 0.6;
+  border-color: var(--color-border-glass);
+  box-shadow: $shadow-card;
 
   &:hover {
     transform: none;
-    box-shadow: none;
+    box-shadow: $shadow-card;
     background: $color-bg-glass;
     border-color: $color-border-glass;
   }
@@ -159,8 +178,18 @@
 .locked-btn {
   @extend .btn;
   cursor: default;
-  opacity: 0.5;
   pointer-events: none;
+  // 버튼 영역에만 blur + 반투명 처리 — "잠긴 영역" 시각화
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: var(--color-bg-glass) !important;
+  border-color: var(--color-border-glass) !important;
+  color: $color-text-tertiary !important;
+  letter-spacing: 0.08em;
+  font-size: $fs-sm;
+  opacity: 0.7;
 }
 
 // Project status badges — semantic colors, theme-invariant
@@ -178,27 +207,27 @@
   border: 1px solid;
 
   &.status-completed {
-    color: rgba(0, 255, 150, 0.9);
-    background: rgba(0, 255, 150, 0.1);
-    border-color: rgba(0, 255, 150, 0.3);
+    color: var(--color-status-completed);
+    background: var(--color-status-completed-bg);
+    border-color: var(--color-status-completed-bd);
 
-    .status-icon { color: rgba(0, 255, 150, 0.9); }
+    .status-icon { color: var(--color-status-completed); }
   }
 
   &.status-in-progress {
-    color: rgba(255, 200, 0, 0.9);
-    background: rgba(255, 200, 0, 0.1);
-    border-color: rgba(255, 200, 0, 0.3);
+    color: var(--color-status-progress);
+    background: var(--color-status-progress-bg);
+    border-color: var(--color-status-progress-bd);
 
-    .status-icon { color: rgba(255, 200, 0, 0.9); }
+    .status-icon { color: var(--color-status-progress); }
   }
 
   &.status-planned {
-    color: rgba(150, 150, 150, 0.9);
-    background: rgba(150, 150, 150, 0.1);
-    border-color: rgba(150, 150, 150, 0.3);
+    color: var(--color-status-planned);
+    background: var(--color-status-planned-bg);
+    border-color: var(--color-status-planned-bd);
 
-    .status-icon { color: rgba(150, 150, 150, 0.9); }
+    .status-icon { color: var(--color-status-planned); }
   }
 }
 

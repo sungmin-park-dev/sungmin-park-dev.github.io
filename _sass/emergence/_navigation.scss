@@ -18,8 +18,10 @@
   justify-content: space-between;
   align-items: center;
   background: var(--color-bg-nav);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(28px) saturate(1.4);
+  -webkit-backdrop-filter: blur(28px) saturate(1.4);
   border-bottom: 1px solid var(--color-nav-border);
+  box-shadow: var(--color-bg-nav-shadow);
   z-index: $z-nav;
 
   // nav-links를 viewport 기준 정확한 중앙에 고정
@@ -100,21 +102,25 @@
   font-size: $fs-sm;
   transition: all $transition-fast;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-toggle);
 
   &:hover {
     background: var(--color-bg-glass-hover);
     border-color: var(--color-border-accent-hover);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-toggle-hover);
   }
 }
 
-// Floating toggle (homepage)
-.theme-toggle-floating {
-  position: fixed;
-  top: $spacing-md;
-  right: $spacing-md;
-  z-index: $z-nav;
+// Homepage nav: 투명 배경, 테두리 없음 (토글만 표시)
+.top-nav-home {
+  background: transparent;
+  border-bottom: none;
+  backdrop-filter: none;
+  pointer-events: none; // nav 영역 클릭 차단
+
+  .theme-toggle {
+    pointer-events: auto; // 토글 버튼만 클릭 허용
+  }
 }
 
 // --------------------------------------------

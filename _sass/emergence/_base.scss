@@ -91,13 +91,10 @@ body {
   margin-top: $spacing-xl;
 }
 
-// 메인 홈페이지 전용 — 배경 이미지 위에 고정
+// 메인 홈페이지 전용 — 배경 이미지 위, 일반 flow (카드 아래에 자연스럽게 위치)
 .site-footer-home {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin-top: 0;
-  padding: $spacing-sm $spacing-lg;
-  z-index: 10;
+  position: relative;
+  margin-top: $spacing-lg;
+  padding: $spacing-sm $spacing-lg $spacing-md;
+  z-index: 1;
 }

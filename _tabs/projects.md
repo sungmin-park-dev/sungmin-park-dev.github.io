@@ -24,7 +24,10 @@ description: "Research implementations and development projects"
 </div>
 
 <div class="projects-grid">
-  {% assign sorted_projects = site.projects | sort: "order" %}
+  {% assign completed_projects = site.projects | where: "status", "completed" | sort: "order" %}
+  {% assign inprogress_projects = site.projects | where: "status", "in-progress" | sort: "order" %}
+  {% assign planned_projects = site.projects | where: "status", "planned" | sort: "order" %}
+  {% assign sorted_projects = completed_projects | concat: inprogress_projects | concat: planned_projects %}
   {% for project in sorted_projects %}
     {% unless project.published == false %}
     {% assign project_link = project.url %}
