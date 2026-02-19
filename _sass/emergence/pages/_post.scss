@@ -4,7 +4,7 @@
 
 .post-container {
   min-height: 100vh;
-  padding: 6rem 3rem $spacing-xl 3rem; // [Korean comment removed for encoding compatibility]
+  padding: 6rem 3rem $spacing-xl 3rem;
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
@@ -19,12 +19,12 @@
   position: sticky;
   top: 6rem;
   height: fit-content;
-  max-height: calc(100vh - 8rem); // [Korean comment removed for encoding compatibility]
-  overflow-y: auto; // [Korean comment removed for encoding compatibility]
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: $spacing-md; // [Korean comment removed for encoding compatibility]
-  padding: $spacing-md 0; // [Korean comment removed for encoding compatibility]
+  gap: $spacing-md;
+  padding: $spacing-md 0;
 }
 
 .sidebar-section {
@@ -33,14 +33,14 @@
   border-radius: $radius-lg;
   border: 1px solid $color-border-glass;
   padding: $spacing-md;
-  flex-shrink: 0; // [Korean comment removed for encoding compatibility]
+  flex-shrink: 0;
 
   &.toc-section {
     margin-top: 0;
   }
 
   &.tags-section {
-    margin-top: 0; // [Korean comment removed for encoding compatibility]
+    margin-top: 0;
     margin-bottom: 0;
   }
 }
@@ -81,12 +81,12 @@
 
   &:hover {
     color: $color-primary-blue-light;
-    background: rgba(0, 255, 255, 0.05);
+    background: var(--color-accent-bg-subtle);
   }
 
   &.active {
     color: $color-primary-blue;
-    background: rgba(0, 255, 255, 0.1);
+    background: var(--color-accent-bg-light);
     border-left: 2px solid $color-primary-blue;
     padding-left: calc($spacing-xs - 2px);
   }
@@ -102,16 +102,16 @@
 .sidebar-tag {
   font-size: $fs-xs;
   font-weight: $fw-light;
-  color: rgba(0, 255, 255, 0.8);
-  background: rgba(0, 255, 255, 0.1);
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: $color-tag-text;
+  background: $color-tag-bg;
+  border: 1px solid $color-tag-border;
   border-radius: $radius-sm;
   padding: $spacing-xs * 0.4 $spacing-xs * 0.8;
   transition: all $transition-fast;
 
   &:hover {
-    background: rgba(0, 255, 255, 0.15);
-    border-color: rgba(0, 255, 255, 0.5);
+    background: var(--color-accent-bg-medium);
+    border-color: $color-border-blue-hover;
   }
 }
 
@@ -134,12 +134,12 @@
 
   &:hover {
     color: $color-primary-blue-light;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 10px var(--color-accent-glow);
   }
 }
 
 .breadcrumb-separator {
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-separator);
   margin: 0 $spacing-xs * 0.5;
 }
 
@@ -210,46 +210,39 @@
   h2 {
     font-size: $fs-2xl;
     padding-bottom: $spacing-sm;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--color-border-glass);
   }
 
-  h3 {
-    font-size: $fs-xl;
-  }
+  h3 { font-size: $fs-xl; }
+  h4 { font-size: $fs-lg; }
 
-  h4 {
-    font-size: $fs-lg;
-  }
-
-  p {
-    margin-bottom: $spacing-md;
-  }
+  p { margin-bottom: $spacing-md; }
 
   a {
     color: $color-primary-blue-light;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+    border-bottom: 1px solid var(--color-border-accent);
     transition: all $transition-fast;
 
     &:hover {
       color: $color-primary-blue;
       border-bottom-color: $color-primary-blue;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      text-shadow: 0 0 10px var(--color-accent-glow);
     }
   }
 
   code {
     font-family: 'Monaco', 'Menlo', monospace;
     font-size: $fs-sm;
-    background: rgba(100, 200, 255, 0.1);
-    border: 1px solid rgba(100, 200, 255, 0.2);
+    background: var(--color-code-bg);
+    border: 1px solid var(--color-code-border);
     border-radius: $radius-sm;
     padding: 0.2em 0.4em;
-    color: rgba(100, 200, 255, 0.9);
+    color: var(--color-code-text);
   }
 
   pre {
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--color-pre-bg);
     border: 1px solid $color-border-glass;
     border-radius: $radius-md;
     padding: $spacing-md;
@@ -268,9 +261,7 @@
     margin: $spacing-md 0;
     padding-left: $spacing-lg;
 
-    li {
-      margin-bottom: $spacing-xs;
-    }
+    li { margin-bottom: $spacing-xs; }
   }
 
   blockquote {
@@ -293,7 +284,7 @@
     }
 
     th {
-      background: rgba(0, 255, 255, 0.1);
+      background: var(--color-table-header-bg);
       font-weight: $fw-regular;
       color: $color-primary-blue-light;
     }
@@ -363,7 +354,7 @@
 
 .related-card-date {
   font-size: $fs-xs;
-  color: rgba(255, 255, 255, 0.5);
+  color: $color-text-tertiary;
 }
 
 // Post Navigation
@@ -433,28 +424,17 @@
 @media (max-width: $breakpoint-desktop) {
   .post-container {
     grid-template-columns: 1fr;
-    padding: 5rem 1.5rem $spacing-lg 1.5rem; // [Korean comment removed for encoding compatibility]
+    padding: 5rem 1.5rem $spacing-lg 1.5rem;
   }
 
   .left-sidebar {
     position: relative;
     top: 0;
-    height: auto; // [Korean comment removed for encoding compatibility]
+    height: auto;
     max-height: none;
     margin-bottom: $spacing-lg;
-    padding: 0; // [Korean comment removed for encoding compatibility]
-    gap: $spacing-md; // [Korean comment removed for encoding compatibility]
-  }
-
-  .sidebar-section {
-    &.toc-section {
-      margin-top: 0;
-    }
-
-    &.tags-section {
-      margin-top: 0; // [Korean comment removed for encoding compatibility]
-      margin-bottom: 0;
-    }
+    padding: 0;
+    gap: $spacing-md;
   }
 
   .related-grid {
@@ -470,13 +450,8 @@
   .post-body {
     font-size: $fs-base;
 
-    h2 {
-      font-size: $fs-xl;
-    }
-
-    h3 {
-      font-size: $fs-lg;
-    }
+    h2 { font-size: $fs-xl; }
+    h3 { font-size: $fs-lg; }
   }
 
   .post-navigation {

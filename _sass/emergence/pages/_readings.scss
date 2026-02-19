@@ -1,26 +1,38 @@
 // ============================================
-// Readings/Archive Page
+// Readings Page
 // ============================================
-
-.archive-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-// --------------------------------------------
-// Readings Card Grid
-// --------------------------------------------
 
 .readings-container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
+.readings-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xl;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
 .readings-container .category-filter {
   display: flex;
   gap: $spacing-sm;
   flex-wrap: wrap;
-  margin-bottom: $spacing-xl;
+}
+
+.readings-sort {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  flex-shrink: 0;
+
+  label {
+    font-size: $fs-sm;
+    font-weight: $fw-light;
+    color: $color-text-secondary;
+  }
 }
 
 .readings-grid {
@@ -32,8 +44,10 @@
 .reading-card {
   background: $color-bg-glass;
   backdrop-filter: $blur-glass;
+  -webkit-backdrop-filter: $blur-glass;
   border-radius: $radius-xl;
   border: 1px solid $color-border-glass;
+  box-shadow: $shadow-card;
   padding: $spacing-lg;
   text-decoration: none;
   display: flex;
@@ -103,9 +117,21 @@
   grid-column: 1 / -1;
 }
 
+// --------------------------------------------
+// Responsive
+// --------------------------------------------
+
 @media (max-width: $breakpoint-desktop) {
   .readings-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .readings-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: $spacing-sm;
   }
 }
 
@@ -116,125 +142,5 @@
 
   .reading-card {
     aspect-ratio: auto;
-  }
-}
-
-.readings-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: $spacing-xl;
-  gap: $spacing-md;
-  flex-wrap: wrap;
-}
-
-.readings-sort {
-  display: flex;
-  align-items: center;
-  gap: $spacing-sm;
-  flex-shrink: 0;
-
-  label {
-    font-size: $fs-sm;
-    font-weight: $fw-light;
-    color: $color-text-secondary;
-  }
-}
-
-@media (max-width: $breakpoint-tablet) {
-  .readings-controls {
-    flex-direction: column;
-    align-items: stretch;
-    gap: $spacing-sm;
-
-    .notes-sort {
-      justify-content: flex-end;
-    }
-  }
-}
-
-.year-section {
-  margin-bottom: $spacing-xl;
-}
-
-.year-header {
-  font-size: $fs-2xl;
-  font-weight: $fw-extra-light;
-  color: $color-primary-blue-light;
-  margin-bottom: $spacing-md;
-  letter-spacing: $ls-wide;
-}
-
-.post-list {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-sm;
-}
-
-.post-item {
-  background: $color-bg-glass;
-  backdrop-filter: $blur-glass;
-  border-radius: $radius-lg;
-  border: 1px solid $color-border-glass;
-  padding: $spacing-md $spacing-lg;
-  transition: all $transition-normal;
-  text-decoration: none;
-  display: block;
-
-  &:hover {
-    transform: translateX(8px);
-    background: $color-bg-glass-hover;
-    border-color: $color-border-glass-hover;
-    box-shadow: $shadow-card;
-  }
-}
-
-.post-date {
-  font-size: $fs-sm;
-  font-weight: $fw-light;
-  color: $color-text-tertiary;
-  margin-bottom: $spacing-xs;
-}
-
-.post-title {
-  font-size: $fs-lg;
-  font-weight: $fw-light;
-  color: $color-text-primary;
-  margin-bottom: $spacing-xs;
-}
-
-.post-excerpt {
-  font-size: $fs-base;
-  font-weight: $fw-light;
-  color: $color-text-secondary;
-  line-height: $lh-normal;
-  margin-bottom: $spacing-xs;
-}
-
-.post-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $spacing-xs;
-}
-
-.post-category {
-  @extend .tag;
-}
-
-// --------------------------------------------
-// Responsive
-// --------------------------------------------
-
-@media (max-width: $breakpoint-tablet) {
-  .post-item {
-    padding: $spacing-sm * 1.5 $spacing-md;
-  }
-
-  .post-title {
-    font-size: $fs-md;
-  }
-
-  .year-header {
-    font-size: $fs-xl;
   }
 }

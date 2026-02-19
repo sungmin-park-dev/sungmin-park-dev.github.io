@@ -11,7 +11,11 @@
       "Bash(find:*)",
       "Bash(ruby -v:*)",
       "Bash(rbenv install:*)",
-      "Bash(rbenv local:*)"
+      "Bash(rbenv local:*)",
+      "Bash(bundle --version:*)",
+      "Bash(ruby --version:*)",
+      "Bash(identify:*)",
+      "Bash(sips:*)"
     ]
   }
 }

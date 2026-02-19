@@ -17,7 +17,7 @@
   display: flex;
   gap: $spacing-xl;
   align-items: flex-start;
-  overflow: hidden; // [Korean comment removed for encoding compatibility]
+  overflow: hidden;
 }
 
 .profile-image-container {
@@ -37,7 +37,6 @@
   display: block;
   position: relative;
 
-  // [Korean comment removed for encoding compatibility]
   &::before,
   &::after {
     display: none !important;
@@ -72,7 +71,7 @@
 .profile-status {
   font-size: $fs-base;
   font-weight: $fw-light;
-  color: rgba(255, 255, 255, 0.6);
+  color: $color-text-tertiary;
   margin-top: $spacing-sm;
   font-style: italic;
 }
@@ -94,7 +93,7 @@
 .section-content {
   font-size: $fs-md;
   font-weight: $fw-light;
-  color: rgba(255, 255, 255, 0.8);
+  color: $color-text-secondary;
   line-height: $lh-relaxed;
 
   p {
@@ -148,7 +147,7 @@
   width: 50px;
   height: 50px;
   border-radius: $radius-full;
-  background: rgba(0, 255, 255, 0.05);
+  background: var(--color-social-bg);
   border: 1px solid $color-border-blue;
   color: $color-primary-blue;
   font-size: $fs-lg;
@@ -156,7 +155,7 @@
   transition: all $transition-normal;
 
   &:hover {
-    background: rgba(0, 255, 255, 0.15);
+    background: var(--color-social-bg-hover);
     border-color: $color-border-blue-hover;
     color: $color-primary-blue-light;
     transform: translateY(-4px) scale(1.1);

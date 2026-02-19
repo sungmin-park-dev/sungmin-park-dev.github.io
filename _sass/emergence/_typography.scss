@@ -100,7 +100,6 @@ ul, ol {
   list-style: none;
 }
 
-// Custom bullet lists
 .content-list {
   li {
     padding-left: $spacing-md;
@@ -121,7 +120,6 @@ ul, ol {
 // Special Typography Classes
 // --------------------------------------------
 
-// [Korean comment removed for encoding compatibility]
 .hero-title {
   font-family: $font-primary;
   font-size: $fs-home-hero;
@@ -143,7 +141,6 @@ ul, ol {
   }
 }
 
-// [Korean comment removed for encoding compatibility]
 .page-title {
   font-family: $font-primary;
   font-size: $fs-hero;
@@ -151,7 +148,7 @@ ul, ol {
   color: $color-text-primary;
   letter-spacing: $ls-tight;
   margin-top: $spacing-lg;
-  margin-bottom: 0;        // subtitle이 있을 때 ::after로 간격 조절
+  margin-bottom: 0;
   text-align: center;
 
   .dot {
@@ -164,7 +161,7 @@ ul, ol {
     display: block;
     width: 60px;
     height: 1px;
-    background: rgba(0, 255, 255, 0.4);
+    background: var(--color-accent-glow-strong);
     margin: $spacing-md auto $spacing-md;
   }
 }
@@ -179,7 +176,6 @@ ul, ol {
   margin-bottom: $spacing-xl;
 }
 
-// Section Title
 .section-title {
   font-size: $fs-2xl;
   font-weight: $fw-extra-light;
@@ -188,7 +184,6 @@ ul, ol {
   margin-bottom: $spacing-md;
 }
 
-// Card Title
 .card-title {
   font-size: $fs-xl;
   font-weight: $fw-light;
@@ -196,14 +191,12 @@ ul, ol {
   letter-spacing: 0.01em;
 }
 
-// Small Text
 .text-small {
   font-size: $fs-sm;
   font-weight: $fw-light;
   color: $color-text-secondary;
 }
 
-// Caption
 .text-caption {
   font-size: $fs-xs;
   font-weight: $fw-light;

@@ -2,9 +2,6 @@
 layout: base
 ---
 
-<!-- Emergence Design System CSS -->
-<link rel="stylesheet" href="{{ '/assets/css/emergence.css' | relative_url }}">
-
 <!-- MathJax (only if page.math is true) -->
 {% if page.math %}
 <script>
@@ -35,6 +32,12 @@ layout: base
     <a href="/readings/" {% if page.url contains '/readings' %}class="active"{% endif %}>readings</a>
     <a href="/about/" {% if page.url contains '/about' %}class="active"{% endif %}>about</a>
   </div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+    <i class="fas fa-sun" id="theme-icon"></i>
+  </button>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- Post Container -->
@@ -199,31 +202,31 @@ layout: base
 <!-- TOC JavaScript -->
 {% if page.toc %}
 <script>
-  // Generate TOC from markdown headings
   document.addEventListener('DOMContentLoaded', function() {
-    const postBody = document.querySelector('.post-body');
-    const tocContent = document.getElementById('toc-content');
+    var postBody = document.querySelector('.post-body');
+    var tocContent = document.getElementById('toc-content');
 
     if (!postBody || !tocContent) return;
 
-    const headings = postBody.querySelectorAll('h2, h3');
+    var headings = postBody.querySelectorAll('h2, h3');
     if (headings.length === 0) {
-      document.querySelector('.left-sidebar').style.display = 'none';
+      var sidebar = document.querySelector('.left-sidebar');
+      if (sidebar) sidebar.style.display = 'none';
       return;
     }
 
-    const toc = document.createElement('ul');
+    var toc = document.createElement('ul');
     toc.className = 'toc-list';
 
-    headings.forEach((heading, index) => {
-      const id = heading.id || `heading-${index}`;
+    headings.forEach(function(heading, index) {
+      var id = heading.id || ('heading-' + index);
       heading.id = id;
 
-      const li = document.createElement('li');
-      li.className = `toc-item toc-${heading.tagName.toLowerCase()}`;
+      var li = document.createElement('li');
+      li.className = 'toc-item toc-' + heading.tagName.toLowerCase();
 
-      const a = document.createElement('a');
-      a.href = `#${id}`;
+      var a = document.createElement('a');
+      a.href = '#' + id;
       a.textContent = heading.textContent;
       a.className = 'toc-link';
 
@@ -233,19 +236,16 @@ layout: base
 
     tocContent.appendChild(toc);
 
-    // Active TOC on scroll
     window.addEventListener('scroll', function() {
-      let current = '';
-      headings.forEach(heading => {
-        const rect = heading.getBoundingClientRect();
-        if (rect.top <= 150) {
-          current = heading.id;
-        }
+      var current = '';
+      headings.forEach(function(heading) {
+        var rect = heading.getBoundingClientRect();
+        if (rect.top <= 150) current = heading.id;
       });
 
-      document.querySelectorAll('.toc-link').forEach(link => {
+      document.querySelectorAll('.toc-link').forEach(function(link) {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
+        if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
         }
       });

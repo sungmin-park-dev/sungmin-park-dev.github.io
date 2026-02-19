@@ -5,7 +5,7 @@
 @import 'variables';
 
 // --------------------------------------------
-// Background Image
+// Background Image (unified via CSS var)
 // --------------------------------------------
 
 .page-bg {
@@ -15,11 +15,14 @@
   width: 100%;
   height: 100%;
   z-index: $z-background;
+  // --bg-image: none이면 단색/그라디언트, url이면 이미지+오버레이
+  background: var(--bg-color-page);
+  background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 
-  // [Korean comment removed for encoding compatibility]
+  // 이미지가 있을 때만 오버레이 표시 (none이면 숨김)
   &::after {
     content: '';
     position: absolute;
@@ -27,31 +30,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    // [Korean comment removed for encoding compatibility]
-    background: #000000;
-    opacity: 0.95; // [Korean comment removed for encoding compatibility]
+    background: var(--bg-overlay-page);
+    opacity: var(--bg-overlay-page-opacity);
+    display: var(--bg-overlay-display, block);
   }
 }
 
-// Background images per page
-.page-projects .page-bg {
-  background-image: url('/assets/img/common/hero-bg.jpg');
-}
-
-.page-notes .page-bg {
-  background-image: url('/assets/img/common/hero-bg.jpg');
-}
-
-.page-readings .page-bg {
-  background-image: url('/assets/img/common/hero-bg.jpg');
-}
-
-.page-about .page-bg {
-  background-image: url('/assets/img/common/hero-bg.jpg');
-}
-
 // --------------------------------------------
-// [Korean comment removed for encoding compatibility]
+// Glass Card
 // --------------------------------------------
 
 .glass-card {
@@ -87,7 +73,7 @@
   transition: all $transition-fast;
 
   &:hover {
-    background: rgba(100, 200, 255, 0.15);
+    background: var(--color-accent-bg-light);
     border-color: $color-border-blue-hover;
   }
 }
@@ -102,7 +88,7 @@
   font-size: $fs-base;
   font-weight: $fw-light;
   color: $color-text-primary;
-  background: rgba(100, 200, 255, 0.15);
+  background: var(--color-btn-bg);
   border: 1px solid $color-border-blue;
   border-radius: $radius-sm;
   padding: $spacing-xs * 1.5 $spacing-lg;
@@ -112,10 +98,10 @@
   text-align: center;
 
   &:hover {
-    background: rgba(100, 200, 255, 0.25);
+    background: var(--color-btn-bg-hover);
     border-color: $color-border-blue-hover;
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: $shadow-card;
   }
 
   &:active {
@@ -128,7 +114,7 @@
 }
 
 .btn-primary {
-  background: rgba(100, 200, 255, 0.2);
+  background: var(--color-btn-primary-bg);
   border-color: $color-border-blue-hover;
 }
 
@@ -139,7 +125,7 @@
 }
 
 // --------------------------------------------
-// [Korean comment removed for encoding compatibility]
+// Page Container
 // --------------------------------------------
 
 .custom-page-container {
@@ -230,7 +216,7 @@
 
 .tag-cloud {
   display: flex;
-  flex-wrap: wrap;       // 태그 많으면 자동으로 다음 줄
+  flex-wrap: wrap;
   justify-content: center;
   gap: $spacing-sm;
   align-items: center;
@@ -241,7 +227,7 @@
   overflow: hidden;
 
   &.expanded {
-    max-height: 600px;   // 여러 줄도 수용
+    max-height: 600px;
     opacity: 1;
   }
 }
@@ -249,30 +235,29 @@
 .tag-btn {
   --tag-intensity: 1;
   background: transparent;
-  border: 1px solid $color-border-glass;
+  border: 1px solid var(--color-tag-btn-border);
   border-radius: $radius-sm;
   padding: $spacing-xs $spacing-sm;
   font-size: $fs-sm;
   font-weight: $fw-light;
   font-family: $font-primary;
-  color: rgba(255, 255, 255, calc(0.4 + var(--tag-intensity) * 0.4));
+  color: var(--color-tag-btn-text);
   cursor: pointer;
   transition: all $transition-normal;
   white-space: nowrap;
-  border-color: rgba(255, 255, 255, calc(0.1 + var(--tag-intensity) * 0.2));
 
   &:hover {
     background: $color-bg-glass-hover;
     border-color: $color-border-blue;
     color: $color-primary-blue-light;
-    box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 12px var(--color-accent-glow);
   }
 
   &.active {
-    background: rgba(0, 255, 255, 0.15);
+    background: var(--color-accent-bg-medium);
     border-color: $color-primary-blue;
     color: $color-primary-blue-light;
-    box-shadow: 0 0 16px rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 16px var(--color-accent-glow-strong);
   }
 }
 

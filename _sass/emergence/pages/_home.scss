@@ -41,7 +41,7 @@
   font-family: $font-primary;
   font-size: $fs-2xl;
   font-weight: $fw-extra-light;
-  color: rgba(255, 255, 255, 0.95);
+  color: $color-text-primary;
   letter-spacing: $ls-wide;
   transition: all $transition-normal;
 }

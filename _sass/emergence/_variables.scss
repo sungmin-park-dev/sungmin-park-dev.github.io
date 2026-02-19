@@ -1,11 +1,9 @@
 // ============================================
 // Emergence Design System - Variables
 // ============================================
-// [Korean comment removed for encoding compatibility]
-// [Korean comment removed for encoding compatibility]
 
 // --------------------------------------------
-// [Korean comment removed for encoding compatibility]
+// Typography
 // --------------------------------------------
 
 // Font Families
@@ -13,83 +11,43 @@ $font-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 
 $font-monospace: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
 
 // Font Weights
-$fw-thin: 100;           // [Korean comment removed for encoding compatibility]
-$fw-extra-light: 200;    // [Korean comment removed for encoding compatibility]
-$fw-light: 300;          // [Korean comment removed for encoding compatibility]
-$fw-regular: 400;        // [Korean comment removed for encoding compatibility]
-$fw-medium: 500;         // [Korean comment removed for encoding compatibility]
-$fw-semibold: 600;       // [Korean comment removed for encoding compatibility]
+$fw-thin: 100;
+$fw-extra-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
 
 // Font Sizes (Base: 16px)
-$fs-xs: 0.75rem;         // [Korean comment removed for encoding compatibility]
-$fs-sm: 0.85rem;         // [Korean comment removed for encoding compatibility]
-$fs-base: 1rem;          // [Korean comment removed for encoding compatibility]
-$fs-md: 1rem;            // [Korean comment removed for encoding compatibility]
-$fs-lg: 1.2rem;          // [Korean comment removed for encoding compatibility]
-$fs-xl: 1.5rem;          // [Korean comment removed for encoding compatibility]
-$fs-2xl: 2rem;           // [Korean comment removed for encoding compatibility]
-$fs-3xl: 3rem;           // [Korean comment removed for encoding compatibility]
-$fs-hero: 8vw;           // [Korean comment removed for encoding compatibility]
-$fs-home-hero: 12vw;     // [Korean comment removed for encoding compatibility]
+$fs-xs: 0.75rem;
+$fs-sm: 0.85rem;
+$fs-base: 1rem;
+$fs-md: 1rem;
+$fs-lg: 1.2rem;
+$fs-xl: 1.5rem;
+$fs-2xl: 2rem;
+$fs-3xl: 3rem;
+$fs-hero: 8vw;
+$fs-home-hero: 12vw;
 
 // Letter Spacing
-$ls-tight: -0.01em;      // [Korean comment removed for encoding compatibility]
-$ls-normal: 0;           // [Korean comment removed for encoding compatibility]
-$ls-wide: 0.02em;        // [Korean comment removed for encoding compatibility]
+$ls-tight: -0.01em;
+$ls-normal: 0;
+$ls-wide: 0.02em;
 
 // Line Heights
-$lh-tight: 1;            // [Korean comment removed for encoding compatibility]
-$lh-snug: 1.4;           // [Korean comment removed for encoding compatibility]
-$lh-normal: 1.6;         // [Korean comment removed for encoding compatibility]
-$lh-relaxed: 1.8;        // [Korean comment removed for encoding compatibility]
+$lh-tight: 1;
+$lh-snug: 1.4;
+$lh-normal: 1.6;
+$lh-relaxed: 1.8;
 
 // --------------------------------------------
-// [Korean comment removed for encoding compatibility]
+// Visual (non-color)
 // --------------------------------------------
 
-// [Korean comment removed for encoding compatibility]
-$color-primary-blue: rgba(0, 255, 255, 0.85);        // [Korean comment removed for encoding compatibility]
-$color-primary-blue-light: rgba(0, 255, 255, 1);     // Full Cyan
-$color-primary-blue-dark: rgba(0, 220, 220, 0.7);    // Darker Cyan
-
-// Text Colors
-$color-text-primary: rgba(255, 255, 255, 0.98);
-$color-text-secondary: rgba(255, 255, 255, 0.85); // [Korean comment removed for encoding compatibility]
-$color-text-tertiary: rgba(255, 255, 255, 0.5);
-
-// Background Colors
-$color-bg-overlay: rgba(0, 0, 0, 0.5);        // [Korean comment removed for encoding compatibility]
-$color-bg-glass: rgba(255, 255, 255, 0.03);   // [Korean comment removed for encoding compatibility]
-$color-bg-glass-hover: rgba(255, 255, 255, 0.08); // [Korean comment removed for encoding compatibility]
-$color-bg-nav: rgba(0, 0, 0, 0.3);            // [Korean comment removed for encoding compatibility]
-
-// [Korean comment removed for encoding compatibility]
-$color-border-glass: rgba(255, 255, 255, 0.15);    // [Korean comment removed for encoding compatibility]
-$color-border-glass-hover: rgba(255, 255, 255, 0.3); // [Korean comment removed for encoding compatibility]
-$color-border-blue: rgba(0, 255, 255, 0.3);
-$color-border-blue-hover: rgba(0, 255, 255, 0.6);
-
-// Tag & Badge Colors
-$color-tag-bg: rgba(0, 255, 255, 0.08);
-$color-tag-border: rgba(0, 255, 255, 0.3);
-$color-tag-text: rgba(0, 255, 255, 0.95);
-
-// --------------------------------------------
-// [Korean comment removed for encoding compatibility]
-// --------------------------------------------
-
-// [Korean comment removed for encoding compatibility]
-$shadow-glow-primary: 0 0 40px rgba(0, 255, 255, 0.8);
-$shadow-glow-secondary: 0 0 80px rgba(0, 255, 255, 0.4);
-$shadow-text: 0 0 40px rgba(255, 255, 255, 0.1);
-$shadow-card: 0 8px 24px rgba(0, 0, 0, 0.2);
-$shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.3);
-
-// Blur
 $blur-glass: blur(10px);
 $blur-nav: blur(15px);
 
-// Border Radius
 $radius-sm: 8px;
 $radius-md: 12px;
 $radius-lg: 16px;
@@ -97,18 +55,18 @@ $radius-xl: 20px;
 $radius-full: 50%;
 
 // --------------------------------------------
-// [Korean comment removed for encoding compatibility]
+// Spacing
 // --------------------------------------------
 
-$spacing-xs: 0.5rem;     // 8px
-$spacing-sm: 1rem;       // 16px
-$spacing-md: 1.5rem;     // 24px
-$spacing-lg: 2rem;       // 32px
-$spacing-xl: 3rem;       // 48px
-$spacing-2xl: 4rem;      // 64px
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-2xl: 4rem;
 
 // --------------------------------------------
-// [Korean comment removed for encoding compatibility]
+// Transitions
 // --------------------------------------------
 
 $transition-fast: 0.3s ease;
@@ -117,7 +75,7 @@ $transition-slow: 1s ease-in;
 $transition-page-load: 1s ease-out forwards;
 
 // --------------------------------------------
-// [Korean comment removed for encoding compatibility]
+// Breakpoints
 // --------------------------------------------
 
 $breakpoint-mobile: 480px;
@@ -126,7 +84,7 @@ $breakpoint-desktop: 800px;
 $breakpoint-wide: 1280px;
 
 // --------------------------------------------
-// [Korean comment removed for encoding compatibility]
+// Z-Index
 // --------------------------------------------
 
 $z-background: -1;
@@ -136,3 +94,186 @@ $z-sticky: 100;
 $z-nav: 100;
 $z-modal: 1000;
 $z-tooltip: 2000;
+
+// ============================================
+// CSS Custom Properties (Theme Switching)
+// ============================================
+
+:root {
+  // Accent (Cyan - dark default)
+  --color-accent:              rgba(0, 255, 255, 0.85);
+  --color-accent-light:        rgba(0, 255, 255, 1);
+  --color-accent-dark:         rgba(0, 220, 220, 0.7);
+
+  // Text
+  --color-text-primary:        rgba(255, 255, 255, 0.98);
+  --color-text-secondary:      rgba(255, 255, 255, 0.85);
+  --color-text-tertiary:       rgba(255, 255, 255, 0.5);
+
+  // Backgrounds — 그라디언트 배경으로 backdrop-filter blur 효과 극대화
+  --color-bg-body:             linear-gradient(135deg, #000510 0%, #05080f 50%, #000820 100%);
+  --color-bg-glass:            rgba(255, 255, 255, 0.07);  // 카드
+  --color-bg-glass-hover:      rgba(255, 255, 255, 0.13);  // 카드 hover
+  --color-bg-nav:              rgba(10, 15, 30, 0.85);     // nav
+  --color-bg-overlay:          rgba(0, 5, 20, 0.55);
+
+  // Borders — 선명한 cyan 테두리로 대비 확보
+  --color-border-glass:        rgba(255, 255, 255, 0.15);
+  --color-border-glass-hover:  rgba(0, 255, 255, 0.50);
+  --color-border-accent:       rgba(0, 255, 255, 0.45);
+  --color-border-accent-hover: rgba(0, 255, 255, 0.80);
+
+  // Tags
+  --color-tag-bg:              rgba(0, 255, 255, 0.08);
+  --color-tag-border:          rgba(0, 255, 255, 0.35);
+  --color-tag-text:            rgba(0, 255, 255, 0.95);
+
+  // Shadows
+  --shadow-card:               0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-card-hover:         0 20px 40px rgba(0, 0, 0, 0.3);
+  --shadow-glow-primary:       0 0 40px rgba(0, 255, 255, 0.8);
+  --shadow-glow-secondary:     0 0 80px rgba(0, 255, 255, 0.4);
+  --shadow-text:               0 0 40px rgba(255, 255, 255, 0.1);
+
+  // Background image & overlay
+  // 서브페이지: 단색 배경 (이미지 없음, 오버레이 비활성)
+  --bg-image:                  none;
+  --bg-color-page:             linear-gradient(135deg, #000510 0%, #05080f 50%, #000820 100%);
+  --bg-overlay-display:        none;
+  --bg-overlay:                rgba(0, 5, 20, 0.62);
+  --bg-overlay-page:           rgba(0, 5, 20, 0.75);
+  --bg-overlay-page-opacity:   0.75;
+
+  // Component-specific
+  --color-btn-bg:              rgba(100, 200, 255, 0.15);
+  --color-btn-bg-hover:        rgba(100, 200, 255, 0.25);
+  --color-btn-primary-bg:      rgba(100, 200, 255, 0.2);
+  --color-code-bg:             rgba(100, 200, 255, 0.1);
+  --color-code-border:         rgba(100, 200, 255, 0.2);
+  --color-code-text:           rgba(100, 200, 255, 0.9);
+  --color-pre-bg:              rgba(0, 0, 0, 0.5);
+  --color-project-gradient-1:  rgba(100, 200, 255, 0.2);
+  --color-project-gradient-2:  rgba(150, 100, 255, 0.2);
+  --color-project-gradient-h1: rgba(100, 200, 255, 0.3);
+  --color-project-gradient-h2: rgba(150, 100, 255, 0.3);
+  --color-project-icon:        rgba(255, 255, 255, 0.3);
+  --color-filter-bg:           rgba(0, 255, 255, 0.07);   // 카테고리/솔팅 버튼
+  --color-accent-bg-subtle:    rgba(0, 255, 255, 0.05);
+  --color-accent-bg-light:     rgba(0, 255, 255, 0.1);
+  --color-accent-bg-medium:    rgba(0, 255, 255, 0.15);
+  --color-accent-glow:         rgba(0, 255, 255, 0.3);
+  --color-accent-glow-strong:  rgba(0, 255, 255, 0.4);
+  --color-nav-border:          rgba(255, 255, 255, 0.15);
+  --color-footer-border:       rgba(255, 255, 255, 0.05);
+  --color-social-bg:           rgba(0, 255, 255, 0.05);
+  --color-social-bg-hover:     rgba(0, 255, 255, 0.15);
+  --color-separator:           rgba(255, 255, 255, 0.3);
+  --color-table-header-bg:     rgba(0, 255, 255, 0.1);
+  --color-select-option-bg:    #111111;
+  --color-tag-btn-text:        rgba(255, 255, 255, 0.8);
+  --color-tag-btn-border:      rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="light"] {
+  // Accent (Steel Blue — 충분한 대비 확보)
+  --color-accent:              rgba(30, 100, 200, 1);
+  --color-accent-light:        rgba(50, 120, 220, 1);
+  --color-accent-dark:         rgba(20, 75, 160, 1);
+
+  // Text (짙은 네이비로 가시성 극대화)
+  --color-text-primary:        rgba(10, 20, 40, 0.95);
+  --color-text-secondary:      rgba(10, 20, 40, 0.70);
+  --color-text-tertiary:       rgba(10, 20, 40, 0.42);
+
+  // Backgrounds — 단색 배경 위 glassmorphism
+  // 배경에 그라디언트를 줘서 backdrop-filter blur 효과가 시각적으로 살도록 함
+  --color-bg-body:             linear-gradient(135deg, #dce8f5 0%, #eef6fc 40%, #d8eaf6 100%);
+  --color-bg-glass:            rgba(255, 255, 255, 0.45);  // 카드: 더 투명하게 — glass 질감 살림
+  --color-bg-glass-hover:      rgba(255, 255, 255, 0.70);  // 카드 hover
+  --color-bg-nav:              rgba(238, 246, 252, 0.85);  // nav
+  --color-bg-overlay:          rgba(200, 220, 240, 0.50);
+
+  // Borders — 선명한 steel blue 테두리로 대비 확보
+  --color-border-glass:        rgba(30, 100, 200, 0.30);
+  --color-border-glass-hover:  rgba(30, 100, 200, 0.60);
+  --color-border-accent:       rgba(30, 100, 200, 0.50);
+  --color-border-accent-hover: rgba(30, 100, 200, 0.90);
+
+  // Tags
+  --color-tag-bg:              rgba(30, 100, 200, 0.10);   // 태그 버튼
+  --color-tag-border:          rgba(30, 100, 200, 0.40);
+  --color-tag-text:            rgba(20, 75, 160, 1);
+
+  // Shadows — 그라디언트 배경 위 glassmorphism 입체감 극대화
+  --shadow-card:               0 4px 20px rgba(10, 40, 100, 0.22), 0 1px 4px rgba(10, 40, 100, 0.12);
+  --shadow-card-hover:         0 12px 40px rgba(10, 40, 100, 0.32), 0 4px 12px rgba(10, 40, 100, 0.18);
+  --shadow-glow-primary:       0 0 30px rgba(30, 100, 200, 0.45);
+  --shadow-glow-secondary:     0 0 60px rgba(30, 100, 200, 0.22);
+  --shadow-text:               0 0 20px rgba(30, 100, 200, 0.15);
+
+  // Background image & overlay
+  // 서브페이지: 단색 배경 (이미지 없음, 오버레이 비활성)
+  --bg-image:                  none;
+  --bg-color-page:             linear-gradient(135deg, #dce8f5 0%, #eef6fc 40%, #d8eaf6 100%);
+  --bg-overlay-display:        none;
+  --bg-overlay:                rgba(215, 232, 248, 0.55);
+  --bg-overlay-page:           rgba(215, 232, 248, 0.72);
+  --bg-overlay-page-opacity:   0.72;
+
+  // Component-specific
+  --color-btn-bg:              rgba(30, 100, 200, 0.14);
+  --color-btn-bg-hover:        rgba(30, 100, 200, 0.26);
+  --color-btn-primary-bg:      rgba(30, 100, 200, 0.20);
+  --color-code-bg:             rgba(30, 100, 200, 0.08);
+  --color-code-border:         rgba(30, 100, 200, 0.25);
+  --color-code-text:           rgba(20, 75, 160, 1);
+  --color-pre-bg:              rgba(235, 245, 255, 0.85);
+  --color-project-gradient-1:  rgba(30, 100, 200, 0.18);
+  --color-project-gradient-2:  rgba(100, 70, 200, 0.18);
+  --color-project-gradient-h1: rgba(30, 100, 200, 0.32);
+  --color-project-gradient-h2: rgba(100, 70, 200, 0.32);
+  --color-project-icon:        rgba(10, 20, 40, 0.30);
+  --color-filter-bg:           rgba(30, 100, 200, 0.08);   // 카테고리/솔팅 버튼
+  --color-accent-bg-subtle:    rgba(30, 100, 200, 0.06);
+  --color-accent-bg-light:     rgba(30, 100, 200, 0.12);
+  --color-accent-bg-medium:    rgba(30, 100, 200, 0.20);
+  --color-accent-glow:         rgba(30, 100, 200, 0.25);
+  --color-accent-glow-strong:  rgba(30, 100, 200, 0.40);
+  --color-nav-border:          rgba(30, 100, 200, 0.18);
+  --color-footer-border:       rgba(30, 100, 200, 0.15);
+  --color-social-bg:           rgba(30, 100, 200, 0.08);
+  --color-social-bg-hover:     rgba(30, 100, 200, 0.18);
+  --color-separator:           rgba(10, 20, 40, 0.25);
+  --color-table-header-bg:     rgba(74, 144, 217, 0.1);
+  --color-select-option-bg:    #f0f8ff;
+  --color-tag-btn-text:        rgba(20, 30, 48, 0.7);
+  --color-tag-btn-border:      rgba(20, 30, 48, 0.2);
+}
+
+// ============================================
+// SCSS Variables -> CSS Custom Properties
+// (기존 코드 호환 래핑)
+// ============================================
+
+$color-primary-blue:        var(--color-accent);
+$color-primary-blue-light:  var(--color-accent-light);
+$color-primary-blue-dark:   var(--color-accent-dark);
+$color-text-primary:        var(--color-text-primary);
+$color-text-secondary:      var(--color-text-secondary);
+$color-text-tertiary:       var(--color-text-tertiary);
+$color-bg-glass:            var(--color-bg-glass);
+$color-bg-glass-hover:      var(--color-bg-glass-hover);
+$color-bg-nav:              var(--color-bg-nav);
+$color-bg-overlay:          var(--color-bg-overlay);
+$color-border-glass:        var(--color-border-glass);
+$color-border-glass-hover:  var(--color-border-glass-hover);
+$color-border-blue:         var(--color-border-accent);
+$color-border-blue-hover:   var(--color-border-accent-hover);
+$color-tag-bg:              var(--color-tag-bg);
+$color-tag-border:          var(--color-tag-border);
+$color-tag-text:            var(--color-tag-text);
+$shadow-card:               var(--shadow-card);
+$shadow-card-hover:         var(--shadow-card-hover);
+$shadow-glow-primary:       var(--shadow-glow-primary);
+$shadow-glow-secondary:     var(--shadow-glow-secondary);
+$shadow-text:               var(--shadow-text);
