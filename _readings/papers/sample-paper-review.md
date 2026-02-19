@@ -14,6 +14,7 @@ paper:
   journal: "Physical Review Letters"
   arxiv: "2401.12345"
   doi: "10.1103/PhysRevLett.XXX.XXXXXX"
+sitemap: false
 ---
 
 ## Paper Info

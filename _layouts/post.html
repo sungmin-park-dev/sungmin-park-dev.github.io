@@ -71,7 +71,7 @@ layout: base
     <nav class="breadcrumb">
       <a href="/" class="breadcrumb-item">Home</a>
       <span class="breadcrumb-separator">›</span>
-      <a href="/{{ collection_root }}/" class="breadcrumb-item">{{ collection_root | capitalize }}</a>
+      <a href="/{{ collection_root }}/" class="breadcrumb-item">{{ collection_root }}</a>
       {% if url_parts.size > 2 %}
         <span class="breadcrumb-separator">›</span>
         <span class="breadcrumb-item">{{ url_parts[1] | replace: '-', ' ' | capitalize }}</span>

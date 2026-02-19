@@ -12,6 +12,7 @@ tech:
   version: "0.4.x"
   url: "https://github.com/google/jax"
   category: "Scientific Computing"
+sitemap: false
 ---
 
 ## Overview

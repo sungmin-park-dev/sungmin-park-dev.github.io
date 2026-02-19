@@ -31,16 +31,24 @@ description: "Research implementations and development projects"
     {% if project.link and project.link != '#' %}
       {% assign project_link = project.link %}
     {% endif %}
-    <div class="project-card"
+    <div class="project-card{% if project.status == 'in-progress' or project.status == 'planned' %} locked{% endif %}"
          data-status="{{ project.status | default: 'completed' }}"
          data-title="{{ project.title }}"
          data-date="{{ project.date | default: '2024-01-01' }}"
          data-order="{{ project.order | default: 999 }}">
-      <a href="{{ project_link }}" class="project-thumbnail-link">
-        <div class="project-thumbnail">
-          <i class="{{ project.icon }}"></i>
+      {% if project.status == 'completed' %}
+        <a href="{{ project_link }}" class="project-thumbnail-link">
+          <div class="project-thumbnail">
+            <i class="{{ project.icon }}"></i>
+          </div>
+        </a>
+      {% else %}
+        <div class="project-thumbnail-link">
+          <div class="project-thumbnail">
+            <i class="{{ project.icon }}"></i>
+          </div>
         </div>
-      </a>
+      {% endif %}
       {% if project.status %}
         <span class="project-status status-{{ project.status }}">
           <i class="fas fa-circle status-icon"></i>{{ project.status }}
@@ -53,9 +61,13 @@ description: "Research implementations and development projects"
           <span class="project-tag">{{ tag }}</span>
         {% endfor %}
       </div>
-      <a href="{{ project_link }}" class="project-button">
-        {% if project.status == 'planned' %}Coming Soon{% else %}View Project{% endif %}
-      </a>
+      {% if project.status == 'completed' %}
+        <a href="{{ project_link }}" class="project-button">View Project</a>
+      {% elsif project.status == 'in-progress' %}
+        <span class="project-button locked-btn">In Progress</span>
+      {% else %}
+        <span class="project-button locked-btn">Coming Soon</span>
+      {% endif %}
     </div>
     {% endunless %}
   {% endfor %}

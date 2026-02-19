@@ -6,6 +6,7 @@ tags: [Coming Soon]
 link: "#"
 order: 3
 status: planned
+sitemap: false
 ---
 
 ## Coming Soon

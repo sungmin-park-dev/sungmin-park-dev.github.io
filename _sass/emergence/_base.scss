@@ -107,3 +107,18 @@ body {
 .p-xl {
   padding: $spacing-xl;
 }
+
+// --------------------------------------------
+// Site Footer
+// --------------------------------------------
+
+.site-footer {
+  text-align: center;
+  padding: $spacing-md $spacing-lg;
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: $color-text-tertiary;
+  letter-spacing: 0.08em;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: $spacing-xl;
+}

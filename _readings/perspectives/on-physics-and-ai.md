@@ -7,6 +7,7 @@ subcategory: perspectives
 tags: [physics, machine-learning, perspective, ai]
 math: false
 toc: false
+sitemap: false
 ---
 
 ## Perspective

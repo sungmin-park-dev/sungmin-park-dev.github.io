@@ -7,6 +7,7 @@ subcategory: machine-learning
 tags: [PINN, neural-networks, physics]
 math: true
 toc: true
+sitemap: false
 ---
 
 ## Overview

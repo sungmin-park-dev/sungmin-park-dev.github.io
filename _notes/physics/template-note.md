@@ -6,10 +6,11 @@ subcategory: physics          # physics | ai-physics | machine-learning | comput
 tags: [tensor-networks, MPS, DMRG]
 math: true                    # MathJax 사용 여부
 toc: true
-published: true               # Set to false to hide from list
+published: false              # Set to false to hide from list
 # image:                      # 선택: 소셜 미디어 미리보기
 #   path: /assets/img/notes/thumbnail.png
 #   alt: "description"
+sitemap: false
 ---
 
 ## Overview

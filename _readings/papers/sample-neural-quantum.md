@@ -14,6 +14,7 @@ paper:
   journal: "Nature Physics"
   arxiv: "2502.00001"
   doi: "10.1038/s41567-XXX"
+sitemap: false
 ---
 
 ## Paper Info

@@ -128,6 +128,19 @@
   flex-wrap: wrap;
 }
 
+.readings-sort {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  flex-shrink: 0;
+
+  label {
+    font-size: $fs-sm;
+    font-weight: $fw-light;
+    color: $color-text-secondary;
+  }
+}
+
 @media (max-width: $breakpoint-tablet) {
   .readings-controls {
     flex-direction: column;
