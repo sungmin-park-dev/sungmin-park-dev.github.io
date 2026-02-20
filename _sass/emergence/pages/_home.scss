@@ -27,7 +27,7 @@ html, body {
   // it breaks on iOS Safari (background disappears or renders incorrectly)
 
   [data-theme="light"] & {
-    background-image: url('/assets/img/common/bg-light.jpeg');
+    background-image: url('/assets/img/common/bg-light.jpg');
   }
 
   &::after {
