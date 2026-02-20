@@ -6,7 +6,7 @@ icon: fas fa-atom
 tags: [Python, Physics, NumPy]
 link: "#"
 order: 2
-status: in-progress
+status: planned
 sitemap: false
 ---
 
