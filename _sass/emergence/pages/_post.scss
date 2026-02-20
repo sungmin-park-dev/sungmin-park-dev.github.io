@@ -1,6 +1,7 @@
 // ============================================
 // Post Page (Individual Content Layout)
 // ============================================
+@use '../variables' as *;
 
 .post-container {
   min-height: 100vh;
@@ -189,7 +190,20 @@
 }
 
 .post-tag {
-  @extend .tag;
+  display: inline-block;
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: $color-tag-text;
+  background: $color-tag-bg;
+  border: 1px solid $color-tag-border;
+  border-radius: $radius-md;
+  padding: $spacing-xs * 0.5 $spacing-xs * 1.5;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: var(--color-accent-bg-light);
+    border-color: $color-border-blue-hover;
+  }
 }
 
 // Post Body

@@ -1,6 +1,7 @@
 // ============================================
 // About Page
 // ============================================
+@use '../variables' as *;
 
 .about-content {
   max-width: 900px;
@@ -121,9 +122,27 @@
 }
 
 .cv-button {
-  @extend .btn;
-  @extend .btn-large;
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: $fs-md;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  background: var(--color-btn-bg);
+  border: 1px solid $color-border-blue;
+  border-radius: $radius-md;
+  padding: $spacing-sm $spacing-xl;
+  text-decoration: none;
+  transition: all $transition-fast;
+  cursor: pointer;
+  text-align: center;
   margin-top: $spacing-sm;
+
+  &:hover {
+    background: var(--color-btn-bg-hover);
+    border-color: $color-border-blue-hover;
+    transform: translateY(-2px);
+    box-shadow: $shadow-card;
+  }
 }
 
 // Social Links

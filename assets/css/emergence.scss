@@ -7,31 +7,32 @@
 // ============================================
 // Emergence Design System - Main Entry Point
 // ============================================
-// This file imports all SCSS modules and is compiled to emergence.css by Jekyll
+// This file loads all SCSS modules and is compiled to emergence.css by Jekyll
+// Uses @use (Dart Sass module system) instead of deprecated @import
 
 // --------------------------------------------
-// Import Order
+// Load Order
 // --------------------------------------------
 
 // 1. Variables (design tokens - must be first)
-@import 'emergence/variables';
+@use 'emergence/variables';
 
 // 2. Base (resets and utilities)
-@import 'emergence/base';
+@use 'emergence/base';
 
 // 3. Typography (font system)
-@import 'emergence/typography';
+@use 'emergence/typography';
 
 // 4. Components (reusable components)
-@import 'emergence/components';
+@use 'emergence/components';
 
 // 5. Navigation (header and nav)
-@import 'emergence/navigation';
+@use 'emergence/navigation';
 
 // 6. Pages (page-specific styles)
-@import 'emergence/pages/home';
-@import 'emergence/pages/projects';
-@import 'emergence/pages/notes';
-@import 'emergence/pages/readings';
-@import 'emergence/pages/about';
-@import 'emergence/pages/post';
+@use 'emergence/pages/home';
+@use 'emergence/pages/projects';
+@use 'emergence/pages/notes';
+@use 'emergence/pages/readings';
+@use 'emergence/pages/about';
+@use 'emergence/pages/post';
