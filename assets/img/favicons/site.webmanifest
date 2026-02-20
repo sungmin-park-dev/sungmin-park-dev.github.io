@@ -1,19 +1,19 @@
 {
-  "name": "Sung-Min Park",
+  "name": "emergence · Sung-Min Park",
   "short_name": "emergence",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/assets/img/favicons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/assets/img/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "display": "standalone"
+  "theme_color": "#0a0e1a",
+  "background_color": "#0a0e1a",
+  "display": "browser"
 }
