@@ -110,15 +110,17 @@
   }
 }
 
-// Homepage nav: 투명 배경, 테두리 없음 (토글만 표시)
+// Homepage nav: 완전 투명 (토글 버튼만 표시)
 .top-nav-home {
   background: transparent;
   border-bottom: none;
   backdrop-filter: none;
-  pointer-events: none; // nav 영역 클릭 차단
+  -webkit-backdrop-filter: none;
+  box-shadow: none;          // nav-shadow 구분선 제거
+  pointer-events: none;      // nav 영역 클릭 차단
 
   .theme-toggle {
-    pointer-events: auto; // 토글 버튼만 클릭 허용
+    pointer-events: auto;    // 토글 버튼만 클릭 허용
   }
 }
 
