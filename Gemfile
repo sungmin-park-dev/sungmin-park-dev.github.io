@@ -12,6 +12,9 @@ gem "jekyll-sitemap"
 gem "jekyll-feed"
 gem "jekyll-paginate"
 
+# Sass compiler (required for @use module system / Dart Sass)
+gem "sass-embedded"
+
 # Markdown processor
 gem "kramdown-parser-gfm"
 
