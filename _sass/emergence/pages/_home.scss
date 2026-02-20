@@ -94,6 +94,35 @@ html, body {
   margin-top: $spacing-lg;
   padding: $spacing-sm $spacing-lg $spacing-md;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+// Photo credit — dark mode only (Unsplash background)
+.photo-credit {
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: rgba(255, 255, 255, 0.28);
+  letter-spacing: 0.06em;
+
+  a {
+    color: rgba(255, 255, 255, 0.38);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: color $transition-fast, border-color $transition-fast;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.6);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  // hide in light mode (own photo, no credit needed)
+  [data-theme="light"] & {
+    display: none;
+  }
 }
 
 // --------------------------------------------
