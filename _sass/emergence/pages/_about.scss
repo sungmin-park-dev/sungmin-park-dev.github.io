@@ -191,13 +191,21 @@
 @media (max-width: $breakpoint-tablet) {
   .profile-card {
     flex-direction: column;
+    align-items: center;
     text-align: center;
     padding: $spacing-lg;
   }
 
+  .profile-image-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
   .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: auto;      // preserve aspect ratio — no square crop
+    max-height: none;
   }
 
   .profile-name {

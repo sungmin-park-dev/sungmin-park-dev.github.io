@@ -182,7 +182,7 @@ html, body {
   transition: all $transition-normal;
 }
 
-// Bento Grid Layout
+// Bento Grid Layout — order: projects, notes, readings, about
 .card-projects {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
@@ -193,12 +193,12 @@ html, body {
   grid-row: 1 / 3;
 }
 
-.card-about {
+.card-readings {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 }
 
-.card-readings {
+.card-about {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 }

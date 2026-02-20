@@ -17,7 +17,7 @@ status: "Currently on academic leave for military service as a Military Science 
 
 # --- Contact ---
 email: "sungmin.park@kaist.ac.kr"
-cv_url: ""   # set to /assets/files/cv.pdf when ready
+cv_url: "/assets/files/CV.pdf"
 
 # --- Social Links ---
 social:
