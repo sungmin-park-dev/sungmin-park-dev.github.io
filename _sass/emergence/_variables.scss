@@ -98,6 +98,9 @@ $z-tooltip: 2000;
 // ============================================
 // CSS Custom Properties (Theme Switching)
 // ============================================
+// NOTE: 아래 블록은 폴백 기본값입니다.
+// 실제 테마 값은 _data/theme_dark.yml, _data/theme_light.yml에서 관리합니다.
+// 테마 수정은 _data/*.yml 파일을 편집하세요 (SCSS 지식 불필요).
 
 :root {
   // ─── DARK MODE ─────────────────────────────────────────
@@ -138,6 +141,12 @@ $z-tooltip: 2000;
   --shadow-glow-primary:       0 0 40px rgba(0, 255, 255, 0.8);
   --shadow-glow-secondary:     0 0 80px rgba(0, 255, 255, 0.4);
   --shadow-text:               0 2px 12px rgba(0, 0, 0, 0.55), 0 0 40px rgba(255, 255, 255, 0.08);
+  // Interactive shadows (토큰화: 하드코딩 제거용)
+  --shadow-focus-ring:         0 0 0 2px var(--color-accent-bg-subtle);
+  --shadow-btn-glow:           0 0 16px rgba(0, 255, 255, 0.40), 0 4px 20px rgba(0, 0, 0, 0.50), 0 1px 6px rgba(0, 0, 0, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-filter-active:      0 0 20px rgba(0, 255, 255, 0.40), 0 16px 48px rgba(0, 0, 0, 0.60), 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-tag-hover:          0 0 12px rgba(0, 255, 255, 0.40);
+  --shadow-tag-active:         0 0 16px rgba(0, 255, 255, 0.58);
 
   // Subpage background
   --bg-image:                  none;
@@ -235,6 +244,12 @@ $z-tooltip: 2000;
   --shadow-glow-primary:       none;
   --shadow-glow-secondary:     none;
   --shadow-text:               none;
+  // Interactive shadows — 라이트 모드: card shadow 없으므로 glow만 독립 정의
+  --shadow-focus-ring:         0 0 0 2px var(--color-accent-bg-subtle);
+  --shadow-btn-glow:           0 0 16px rgba(40, 110, 175, 0.22);
+  --shadow-filter-active:      0 0 20px rgba(40, 110, 175, 0.22);
+  --shadow-tag-hover:          0 0 12px rgba(40, 110, 175, 0.22);
+  --shadow-tag-active:         0 0 16px rgba(40, 110, 175, 0.40);
 
   // Subpage background — 서브페이지도 같은 빙하 그라디언트 (완화)
   --bg-image:                  none;
@@ -316,3 +331,8 @@ $shadow-card-hover:         var(--shadow-card-hover);
 $shadow-glow-primary:       var(--shadow-glow-primary);
 $shadow-glow-secondary:     var(--shadow-glow-secondary);
 $shadow-text:               var(--shadow-text);
+$shadow-focus-ring:         var(--shadow-focus-ring);
+$shadow-btn-glow:           var(--shadow-btn-glow);
+$shadow-filter-active:      var(--shadow-filter-active);
+$shadow-tag-hover:          var(--shadow-tag-hover);
+$shadow-tag-active:         var(--shadow-tag-active);

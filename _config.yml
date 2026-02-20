@@ -101,7 +101,6 @@ comments:
 
 # Jekyll plugins
 plugins:
-  - jekyll-archives
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
@@ -203,12 +202,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-# Archive page settings
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/

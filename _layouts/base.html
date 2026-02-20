@@ -20,6 +20,20 @@
     <!-- Emergence Design System CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/emergence.css' | relative_url }}">
 
+    <!-- Theme tokens from _data/ (overrides SCSS defaults — edit theme_dark.yml / theme_light.yml) -->
+    {% if site.data.theme_dark %}
+    <style>
+      :root {
+        {% for token in site.data.theme_dark %}--{{ token[0] }}: {{ token[1] }};
+        {% endfor %}
+      }
+      {% if site.data.theme_light %}[data-theme="light"] {
+        {% for token in site.data.theme_light %}--{{ token[0] }}: {{ token[1] }};
+        {% endfor %}
+      }{% endif %}
+    </style>
+    {% endif %}
+
     <!-- FOUC prevention: apply saved theme before CSS renders -->
     <script>
       (function(){

@@ -2,8 +2,6 @@
 // Base Styles
 // ============================================
 
-@import 'variables';
-
 // --------------------------------------------
 // Base Reset
 // --------------------------------------------
@@ -22,20 +20,6 @@ body {
   // 라이트 모드는 그라디언트, 다크 모드는 단색 — 둘 다 CSS 변수로 처리
   background: var(--color-bg-body);
   min-height: 100vh;
-}
-
-body {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-main,
-#main-wrapper,
-.main-wrapper {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
 // --------------------------------------------

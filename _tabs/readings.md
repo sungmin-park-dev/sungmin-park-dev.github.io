@@ -34,31 +34,7 @@ description: "Paper reviews, tech explorations, and perspectives"
     {% assign all_readings = site.readings %}
     {% if all_readings.size > 0 %}
       {% for item in all_readings %}
-        <a href="{{ item.url }}" class="reading-card"
-           data-category="{{ item.subcategory }}"
-           data-date="{{ item.date | date: '%Y-%m-%d' }}"
-           data-title="{{ item.title }}">
-          <div class="reading-category-label">
-            {% if item.subcategory == 'papers' %}
-              <i class="fas fa-file-alt"></i> Papers
-            {% elsif item.subcategory == 'tech' %}
-              <i class="fas fa-wrench"></i> Tech
-            {% elsif item.subcategory == 'perspectives' %}
-              <i class="fas fa-lightbulb"></i> Perspectives
-            {% else %}
-              <i class="fas fa-book-open"></i> Reading
-            {% endif %}
-          </div>
-          <h3 class="reading-title">{{ item.title }}</h3>
-          <span class="reading-date">{{ item.date | date: "%b %d, %Y" }}</span>
-          {% if item.tags.size > 0 %}
-            <div class="reading-tags">
-              {% for tag in item.tags limit:3 %}
-                <span class="reading-tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </a>
+        {% include reading-card.html reading=item %}
       {% endfor %}
     {% else %}
       <div class="empty-state">

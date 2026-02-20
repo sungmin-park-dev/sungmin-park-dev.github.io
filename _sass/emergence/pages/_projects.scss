@@ -46,7 +46,7 @@
   &:focus {
     outline: none;
     border-color: $color-primary-blue;
-    box-shadow: 0 0 0 2px var(--color-accent-bg-subtle);
+    box-shadow: $shadow-focus-ring;
   }
 
   option {
@@ -157,7 +157,7 @@
   &:hover {
     background: var(--color-accent-bg-medium);
     border-color: var(--color-border-accent-hover);
-    box-shadow: 0 0 16px var(--color-accent-glow), $shadow-card;
+    box-shadow: $shadow-btn-glow;
     color: var(--color-accent-light);
   }
 }
@@ -175,8 +175,9 @@
   }
 }
 
-.locked-btn {
-  @extend .btn;
+// .project-button.locked-btn: 복합 셀렉터(specificity 0-2-0)로 .project-button(0-1-0) 오버라이드
+// @extend .btn 제거 — .project-button이 이미 .btn을 @extend하므로 중복 불필요
+.project-button.locked-btn {
   cursor: default;
   pointer-events: none;
   // 버튼 영역에만 blur + 반투명 처리 — "잠긴 영역" 시각화
@@ -184,12 +185,19 @@
   overflow: hidden;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background: var(--color-bg-glass) !important;
-  border-color: var(--color-border-glass) !important;
-  color: $color-text-tertiary !important;
+  background: var(--color-bg-glass);
+  border-color: var(--color-border-glass);
+  color: $color-text-tertiary;
   letter-spacing: 0.08em;
   font-size: $fs-sm;
   opacity: 0.7;
+
+  &:hover {
+    background: var(--color-bg-glass);
+    border-color: var(--color-border-glass);
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 // Project status badges — semantic colors, theme-invariant

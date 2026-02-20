@@ -91,9 +91,10 @@ description: "Background, research interests, and contact"
         </a>
       </div>
 
-      <a href="#" class="cv-button">
+      <!-- CV 파일 준비 시: <a href="/assets/files/cv.pdf" class="cv-button" target="_blank"> 로 교체 -->
+      <span class="cv-button">
         <i class="fas fa-download"></i>Download CV (PDF)
-      </a>
+      </span>
     </div>
   </div>
 </div>

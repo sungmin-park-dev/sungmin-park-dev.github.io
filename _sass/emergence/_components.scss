@@ -2,8 +2,6 @@
 // Emergence Design System - Components
 // ============================================
 
-@import 'variables';
-
 // --------------------------------------------
 // Background Image (unified via CSS var)
 // --------------------------------------------
@@ -263,14 +261,14 @@
     background: $color-bg-glass-hover;
     border-color: $color-border-blue;
     color: $color-primary-blue-light;
-    box-shadow: 0 0 12px var(--color-accent-glow);
+    box-shadow: $shadow-tag-hover;
   }
 
   &.active {
     background: var(--color-accent-bg-medium);
     border-color: $color-primary-blue;
     color: $color-primary-blue-light;
-    box-shadow: 0 0 16px var(--color-accent-glow-strong);
+    box-shadow: $shadow-tag-active;
   }
 }
 

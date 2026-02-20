@@ -35,12 +35,6 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  position: relative;
-
-  &::before,
-  &::after {
-    display: none !important;
-  }
 }
 
 .profile-info {

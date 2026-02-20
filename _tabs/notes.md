@@ -36,37 +36,7 @@ description: "Study notes across physics, AI, and computational methods"
 
     {% if all_notes.size > 0 %}
       {% for post in all_notes %}
-        <a href="{{ post.url }}" class="note-card"
-           data-category="{{ post.subcategory }}"
-           data-date="{{ post.date | date: '%Y-%m-%d' }}"
-           data-title="{{ post.title }}">
-          <div class="note-category-label">
-            {% if post.subcategory == 'physics' %}
-              <i class="fas fa-atom"></i> Physics
-            {% elsif post.subcategory == 'ai-physics' %}
-              <i class="fas fa-brain"></i> AI × Physics
-            {% elsif post.subcategory == 'machine-learning' %}
-              <i class="fas fa-network-wired"></i> Machine Learning
-            {% elsif post.subcategory == 'computation' %}
-              <i class="fas fa-microchip"></i> Computation
-            {% else %}
-              <i class="fas fa-book-open"></i> Notes
-            {% endif %}
-          </div>
-          <div class="note-row-top">
-            <h3 class="note-title">{{ post.title }}</h3>
-            <span class="note-date">{{ post.date | date: "%b %d, %Y" }}</span>
-          </div>
-          {% if post.tags.size > 0 %}
-            <div class="note-row-bottom">
-              <div class="note-tags">
-                {% for tag in post.tags limit:4 %}
-                  <span class="note-tag">{{ tag }}</span>
-                {% endfor %}
-              </div>
-            </div>
-          {% endif %}
-        </a>
+        {% include note-card.html note=post %}
       {% endfor %}
     {% else %}
       <div class="empty-state">

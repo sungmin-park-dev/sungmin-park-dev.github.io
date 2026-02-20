@@ -29,50 +29,7 @@ description: "Research implementations and development projects"
   {% assign planned_projects = site.projects | where: "status", "planned" | sort: "order" %}
   {% assign sorted_projects = completed_projects | concat: inprogress_projects | concat: planned_projects %}
   {% for project in sorted_projects %}
-    {% unless project.published == false %}
-    {% assign project_link = project.url %}
-    {% if project.link and project.link != '#' %}
-      {% assign project_link = project.link %}
-    {% endif %}
-    <div class="project-card{% if project.status == 'in-progress' or project.status == 'planned' %} locked{% endif %}"
-         data-status="{{ project.status | default: 'completed' }}"
-         data-title="{{ project.title }}"
-         data-date="{{ project.date | default: '2024-01-01' }}"
-         data-order="{{ project.order | default: 999 }}">
-      {% if project.status == 'completed' %}
-        <a href="{{ project_link }}" class="project-thumbnail-link">
-          <div class="project-thumbnail">
-            <i class="{{ project.icon }}"></i>
-          </div>
-        </a>
-      {% else %}
-        <div class="project-thumbnail-link">
-          <div class="project-thumbnail">
-            <i class="{{ project.icon }}"></i>
-          </div>
-        </div>
-      {% endif %}
-      {% if project.status %}
-        <span class="project-status status-{{ project.status }}">
-          <i class="fas fa-circle status-icon"></i>{{ project.status }}
-        </span>
-      {% endif %}
-      <h3 class="project-title">{{ project.title }}</h3>
-      <p class="project-description">{{ project.description }}</p>
-      <div class="project-tags">
-        {% for tag in project.tags %}
-          <span class="project-tag">{{ tag }}</span>
-        {% endfor %}
-      </div>
-      {% if project.status == 'completed' %}
-        <a href="{{ project_link }}" class="project-button">View Project</a>
-      {% elsif project.status == 'in-progress' %}
-        <span class="project-button locked-btn">In Progress</span>
-      {% else %}
-        <span class="project-button locked-btn">Coming Soon</span>
-      {% endif %}
-    </div>
-    {% endunless %}
+    {% include project-card.html project=project %}
   {% endfor %}
 </div>
 
