@@ -71,3 +71,4 @@ _sass/emergence/
 - [Live Site](https://sungmin-park-dev.github.io)
 - [GitHub Repository](https://github.com/sungmin-park-dev/sungmin-park-dev.github.io)
 - [Design Philosophy](https://github.com/sungmin-park-dev/sungmin-park-dev.github.io/blob/main/DESIGN.md)
+- [emergence-theme (open-source)](https://github.com/sungmin-park-dev/emergence-theme) — reusable Jekyll theme extracted from this site
