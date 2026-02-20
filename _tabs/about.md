@@ -8,22 +8,24 @@ slug: about
 description: "Background, research interests, and contact"
 ---
 
+{% assign p = site.data.profile %}
+
 <div class="about-content">
   <!-- Profile Card -->
   <div class="profile-card">
     <div class="profile-image-container">
-      <img src="/assets/img/common/avatar.png" alt="Sung-Min Park" class="profile-image">
+      <img src="{{ p.avatar }}" alt="{{ p.name }}" class="profile-image">
     </div>
     <div class="profile-info">
-      <h2 class="profile-name">Sung-Min Park</h2>
-      <div class="profile-name-korean">박성민</div>
+      <h2 class="profile-name">{{ p.name }}</h2>
+      <div class="profile-name-korean">{{ p.name_ko }}</div>
       <div class="profile-affiliation">
-        Integrated MS-PhD Program in Physics<br>
-        Korea Advanced Institute of Science and Technology (KAIST)
+        {{ p.program }}<br>
+        {{ p.institution }}
       </div>
-      <div class="profile-status">
-        Currently on academic leave for military service as a Military Science and Technology Soldier
-      </div>
+      {% if p.status %}
+      <div class="profile-status">{{ p.status }}</div>
+      {% endif %}
     </div>
   </div>
 
@@ -35,16 +37,16 @@ description: "Background, research interests, and contact"
 
       <p><strong>Physics</strong></p>
       <ul>
-        <li>Tensor Networks: Efficient representations of quantum many-body states</li>
-        <li>Neural Network States: Machine learning approaches to quantum many-body problems</li>
-        <li>Quantum Computing & Quantum Information: Computational aspects of quantum systems</li>
+        {% for item in p.research.physics %}
+        <li>{{ item }}</li>
+        {% endfor %}
       </ul>
 
       <p><strong>Machine Learning</strong></p>
       <ul>
-        <li>Physics-Informed Deep Learning: Applying ML techniques to solve physics problems</li>
-        <li>Quantum Machine Learning: Quantum algorithms for machine learning tasks</li>
-        <li>Computational Methods: Developing efficient algorithms for complex systems</li>
+        {% for item in p.research.ml %}
+        <li>{{ item }}</li>
+        {% endfor %}
       </ul>
     </div>
   </div>
@@ -80,21 +82,37 @@ description: "Background, research interests, and contact"
 
       <!-- Social Links -->
       <div class="social-links">
-        <a href="https://github.com/sungmin-park-dev" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+        {% if p.social.github %}
+        <a href="{{ p.social.github }}" target="_blank" rel="noopener" class="social-icon" title="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/smpark-works" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
+        {% endif %}
+        {% if p.social.linkedin %}
+        <a href="{{ p.social.linkedin }}" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="mailto:sungmin.park@kaist.ac.kr" class="social-icon" title="Email">
+        {% endif %}
+        {% if p.email %}
+        <a href="mailto:{{ p.email }}" class="social-icon" title="Email">
           <i class="fas fa-envelope"></i>
         </a>
+        {% endif %}
+        {% if p.social.instagram %}
+        <a href="{{ p.social.instagram }}" target="_blank" rel="noopener" class="social-icon" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        {% endif %}
       </div>
 
-      <!-- CV 파일 준비 시: <a href="/assets/files/cv.pdf" class="cv-button" target="_blank"> 로 교체 -->
+      {% if p.cv_url != "" %}
+      <a href="{{ p.cv_url }}" class="cv-button" target="_blank">
+        <i class="fas fa-download"></i>Download CV (PDF)
+      </a>
+      {% else %}
       <span class="cv-button">
         <i class="fas fa-download"></i>Download CV (PDF)
       </span>
+      {% endif %}
     </div>
   </div>
 </div>

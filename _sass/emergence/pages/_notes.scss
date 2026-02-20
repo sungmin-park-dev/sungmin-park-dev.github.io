@@ -22,7 +22,7 @@
   align-items: center;
   gap: $spacing-sm;
   flex-shrink: 0;
-  margin-left: auto; // 줄바꿈 시에도 항상 우측 고정
+  margin-left: auto; // always pinned to the right even on wrap
 
   label {
     font-size: $fs-sm;

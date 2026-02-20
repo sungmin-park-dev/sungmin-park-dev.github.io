@@ -98,13 +98,13 @@ $z-tooltip: 2000;
 // ============================================
 // CSS Custom Properties (Theme Switching)
 // ============================================
-// NOTE: 아래 블록은 폴백 기본값입니다.
-// 실제 테마 값은 _data/theme_dark.yml, _data/theme_light.yml에서 관리합니다.
-// 테마 수정은 _data/*.yml 파일을 편집하세요 (SCSS 지식 불필요).
+// NOTE: This block contains fallback defaults only.
+// Actual theme values are managed in _data/theme_dark.yml and _data/theme_light.yml.
+// To update the theme, edit the _data/*.yml files (no SCSS knowledge required).
 
 :root {
   // ─── DARK MODE: Stellar Blue ────────────────────────────
-  // 심우주 청백색 항성광 — pure cyan 대비 깊이감 + 가시성 강화
+  // Deep-space blue-white starlight — deeper contrast and visibility than pure cyan
   // Accent (Stellar Blue)
   --color-accent:              rgba(0, 200, 255, 0.92);
   --color-accent-light:        rgba(80, 220, 255, 1);
@@ -115,7 +115,7 @@ $z-tooltip: 2000;
   --color-text-secondary:      rgba(200, 228, 248, 0.85);
   --color-text-tertiary:       rgba(160, 200, 230, 0.55);
 
-  // Backgrounds — 인디고-블랙: OLED 최적화 + 우주 깊이감
+  // Backgrounds — Indigo-black: OLED optimized, deep-space depth
   --color-bg-body:             linear-gradient(135deg, #010306 0%, #030812 50%, #020510 100%);
   --color-bg-glass:            rgba(5, 20, 45, 0.62);
   --color-bg-glass-hover:      rgba(8, 28, 60, 0.78);
@@ -125,7 +125,7 @@ $z-tooltip: 2000;
   --shadow-toggle:             0 2px 8px rgba(0, 0, 0, 0.40);
   --shadow-toggle-hover:       0 4px 16px rgba(0, 0, 0, 0.55);
 
-  // Borders — Stellar Blue 테두리
+  // Borders — Stellar Blue borders
   --color-border-glass:        rgba(0, 200, 255, 0.30);
   --color-border-glass-hover:  rgba(0, 200, 255, 0.70);
   --color-border-accent:       rgba(0, 200, 255, 0.55);
@@ -142,7 +142,7 @@ $z-tooltip: 2000;
   --shadow-glow-primary:       0 0 40px rgba(0, 200, 255, 0.75);
   --shadow-glow-secondary:     0 0 80px rgba(0, 200, 255, 0.35);
   --shadow-text:               0 2px 12px rgba(0, 0, 0, 0.65), 0 0 36px rgba(0, 200, 255, 0.12);
-  // Interactive shadows (토큰화: 하드코딩 제거용)
+  // Interactive shadows (tokenized: removes hardcoded values from partials)
   --shadow-focus-ring:         0 0 0 2px var(--color-accent-bg-subtle);
   --shadow-btn-glow:           0 0 18px rgba(0, 200, 255, 0.45), 0 4px 20px rgba(0, 0, 0, 0.55), 0 1px 6px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.07);
   --shadow-filter-active:      0 0 22px rgba(0, 200, 255, 0.45), 0 16px 48px rgba(0, 0, 0, 0.65), 0 4px 16px rgba(0, 0, 0, 0.40);
@@ -190,7 +190,7 @@ $z-tooltip: 2000;
   --color-hero-tagline:        rgba(200, 228, 248, 0.85);
   --shadow-hero-tagline:       0 1px 10px rgba(0, 0, 0, 0.70), 0 0 28px rgba(0, 200, 255, 0.10);
 
-  // Project status — 선명한 semantic colors (dark)
+  // Project status — vivid semantic colors (dark)
   --color-status-completed:    #00E896;
   --color-status-completed-bg: rgba(0, 232, 150, 0.15);
   --color-status-completed-bd: rgba(0, 232, 150, 0.50);
@@ -204,19 +204,19 @@ $z-tooltip: 2000;
 
 [data-theme="light"] {
   // ─── LIGHT MODE: Deep Glacier ───────────────────────────
-  // 빙하 깊은 곳의 선명한 청색 — 채도 상향, 가시성 개선
+  // Vivid blue from glacial depths — increased saturation for visibility
   //
   // Accent: Deep Glacier Blue (#1560A8)
   --color-accent:              #1560A8;
   --color-accent-light:        #1D78CC;
   --color-accent-dark:         #0E4A82;
 
-  // Text — 대비 강화: 더 짙은 네이비
+  // Text — enhanced contrast: deeper navy
   --color-text-primary:        rgba(5, 14, 32, 0.94);
   --color-text-secondary:      rgba(5, 14, 32, 0.68);
   --color-text-tertiary:       rgba(5, 14, 32, 0.42);
 
-  // Backgrounds — 서늘한 ice tint (pure white 대비 카드 구분 용이)
+  // Backgrounds — cool ice tint (improves card contrast against pure white)
   --color-bg-body:             linear-gradient(160deg, #EEF5FA 0%, #F8FCFF 45%, #E8F2F8 100%);
   --color-bg-glass:            rgba(235, 246, 255, 0.88);
   --color-bg-glass-hover:      rgba(242, 250, 255, 0.96);
@@ -226,18 +226,18 @@ $z-tooltip: 2000;
   --shadow-toggle:             0 1px 4px rgba(0, 0, 0, 0.12);
   --shadow-toggle-hover:       0 2px 8px rgba(0, 0, 0, 0.18);
 
-  // Borders — 선명한 glacier 테두리 (가시성 개선)
+  // Borders — vivid glacier borders (improved visibility)
   --color-border-glass:        rgba(60, 125, 195, 0.32);
   --color-border-glass-hover:  rgba(30, 100, 175, 0.62);
   --color-border-accent:       rgba(30, 100, 175, 0.50);
   --color-border-accent-hover: rgba(15, 75, 140, 0.80);
 
-  // Tags — 선명한 파란 틴트
+  // Tags — vivid blue tint
   --color-tag-bg:              rgba(40, 110, 185, 0.10);
   --color-tag-border:          rgba(30, 100, 175, 0.28);
   --color-tag-text:            #1255A0;
 
-  // Shadows — 은은한 ambient shadow로 카드 구분
+  // Shadows — subtle ambient shadows for card separation
   --shadow-card:               0 2px 12px rgba(0, 30, 80, 0.08), 0 1px 4px rgba(0, 30, 80, 0.05);
   --shadow-card-hover:         0 6px 24px rgba(0, 30, 80, 0.14), 0 2px 8px rgba(0, 30, 80, 0.08);
   --shadow-glow-primary:       none;
@@ -286,11 +286,11 @@ $z-tooltip: 2000;
   --color-tag-btn-text:        rgba(5, 14, 32, 0.78);
   --color-tag-btn-border:      rgba(60, 130, 200, 0.48);
 
-  // Hero tagline — 빙하 위 선명한 네이비 가독성
+  // Hero tagline — vivid navy readability over glacial background
   --color-hero-tagline:        rgba(5, 14, 32, 0.90);
   --shadow-hero-tagline:       0 1px 8px rgba(255, 255, 255, 0.75), 0 0 20px rgba(255, 255, 255, 0.45);
 
-  // Project status — 선명한 semantic colors (light)
+  // Project status — vivid semantic colors (light)
   --color-status-completed:    #006A3A;
   --color-status-completed-bg: rgba(0, 106, 58, 0.10);
   --color-status-completed-bd: rgba(0, 106, 58, 0.42);
@@ -304,7 +304,7 @@ $z-tooltip: 2000;
 
 // ============================================
 // SCSS Variables -> CSS Custom Properties
-// (기존 코드 호환 래핑)
+// (wrapper for backward compatibility)
 // ============================================
 
 $color-primary-blue:        var(--color-accent);

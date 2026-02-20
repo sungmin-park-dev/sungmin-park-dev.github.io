@@ -19,6 +19,7 @@ timezone: Asia/Seoul # Format: Area/City (e.g., Asia/Seoul, America/New_York)
 
 title: "emergence · Sung-Min Park"
 tagline: "quantum many-body · tensor networks · physics-informed ML"
+author: "Sung-Min Park"
 description: >-
   sharing a journey of quantum study and project experiences
 url: "https://sungmin-park-dev.github.io"
@@ -37,15 +38,12 @@ baseurl: ""
 github:
   username: sungmin-park-dev
 
-# Social profile information
+# Social profile information (used for SEO/structured data — see _data/profile.yml for site UI)
 social:
   name: Sung-Min Park
-  email: sungmin.park@kaist.ac.kr
   links:
-    # First link serves as the copyright owner's link
     - https://github.com/sungmin-park-dev
     - https://www.linkedin.com/in/smpark-works
-    - https://www.instagram.com/parksm0226
 
 # =========================
 # 4. External Services & SEO (Configure these later when needed)
@@ -195,10 +193,13 @@ exclude:
   - tools
   - README.md
   - LICENSE
+  - CLAUDE.md
+  - DESIGN.md
   - purgecss.js
   - "*.config.js"
   - "package*.json"
   - vendor/
   - Gemfile
   - Gemfile.lock
+  - .claude/
 

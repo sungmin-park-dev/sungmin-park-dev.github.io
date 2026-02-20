@@ -23,7 +23,7 @@
   box-shadow: var(--color-bg-nav-shadow);
   z-index: $z-nav;
 
-  // nav-links를 viewport 기준 정확한 중앙에 고정
+  // pin nav-links to exact center relative to viewport
   .nav-links {
     position: absolute;
     left: 50%;
@@ -47,7 +47,7 @@
 .nav-links {
   display: flex;
   gap: $spacing-lg;
-  // position/transform은 .top-nav 내부 규칙에서 처리
+  // position/transform handled by .top-nav inner rule
 }
 
 .nav-links a {
@@ -110,17 +110,17 @@
   }
 }
 
-// Homepage nav: 완전 투명 (토글 버튼만 표시)
+// Homepage nav: fully transparent (only theme toggle visible)
 .top-nav-home {
   background: transparent;
   border-bottom: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  box-shadow: none;          // nav-shadow 구분선 제거
-  pointer-events: none;      // nav 영역 클릭 차단
+  box-shadow: none;          // remove nav-shadow separator
+  pointer-events: none;      // block clicks on nav area
 
   .theme-toggle {
-    pointer-events: auto;    // 토글 버튼만 클릭 허용
+    pointer-events: auto;    // allow clicks on toggle only
   }
 }
 
@@ -188,7 +188,7 @@
     gap: $spacing-xs;
     padding: $spacing-sm $spacing-md;
 
-    // 모바일에서는 absolute 중앙 정렬 해제
+    // disable absolute centering on mobile
     .nav-links {
       position: static;
       transform: none;

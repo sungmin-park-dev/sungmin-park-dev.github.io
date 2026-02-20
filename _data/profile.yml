@@ -1,0 +1,37 @@
+# =====================================================
+# emergence — Profile Data
+# =====================================================
+# Edit this file to update personal info site-wide.
+# Used in: _tabs/about.md, _layouts/base.html (SEO)
+# =====================================================
+
+# --- Identity ---
+name: "Sung-Min Park"
+name_ko: "박성민"
+avatar: /assets/img/common/avatar.png
+
+# --- Affiliation ---
+program: "Integrated MS-PhD Program in Physics"
+institution: "Korea Advanced Institute of Science and Technology (KAIST)"
+status: "Currently on academic leave for military service as a Military Science and Technology Soldier"
+
+# --- Contact ---
+email: "sungmin.park@kaist.ac.kr"
+cv_url: ""   # set to /assets/files/cv.pdf when ready
+
+# --- Social Links ---
+social:
+  github: "https://github.com/sungmin-park-dev"
+  linkedin: "https://www.linkedin.com/in/smpark-works"
+  # instagram: "https://www.instagram.com/parksm0226"  # uncomment if needed
+
+# --- Research Interests ---
+research:
+  physics:
+    - "Tensor Networks: Efficient representations of quantum many-body states"
+    - "Neural Network States: Machine learning approaches to quantum many-body problems"
+    - "Quantum Computing & Quantum Information: Computational aspects of quantum systems"
+  ml:
+    - "Physics-Informed Deep Learning: Applying ML techniques to solve physics problems"
+    - "Quantum Machine Learning: Quantum algorithms for machine learning tasks"
+    - "Computational Methods: Developing efficient algorithms for complex systems"

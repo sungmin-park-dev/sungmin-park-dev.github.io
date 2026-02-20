@@ -77,7 +77,7 @@
   flex-direction: column;
   gap: $spacing-sm;
 
-  // active 카드만 hover 반응
+  // only active (unlocked) cards respond to hover
   &:not(.locked):hover {
     transform: translateY(-4px);
     background: $color-bg-glass-hover;
@@ -180,7 +180,7 @@
     transform: translateY(-2px);
     box-shadow: $shadow-card;
   }
-  // active 카드: 버튼을 accent 색상으로 선명하게 강조
+  // active cards: highlight button with accent color
   background: var(--color-btn-primary-bg);
   border-color: var(--color-border-accent);
   color: var(--color-accent-light);
@@ -208,12 +208,12 @@
   }
 }
 
-// .project-button.locked-btn: 복합 셀렉터(specificity 0-2-0)로 .project-button(0-1-0) 오버라이드
-// @extend .btn 제거 — .project-button이 이미 .btn을 @extend하므로 중복 불필요
+// .project-button.locked-btn: compound selector (specificity 0-2-0) overrides .project-button (0-1-0)
+// @extend .btn removed — .project-button already extends .btn, so extending again is redundant
 .project-button.locked-btn {
   cursor: default;
   pointer-events: none;
-  // 버튼 영역에만 blur + 반투명 처리 — "잠긴 영역" 시각화
+  // blur + translucent treatment on button only — visualizes "locked" state
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(4px);

@@ -18,7 +18,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  // 라이트 모드는 그라디언트, 다크 모드는 단색 — 둘 다 CSS 변수로 처리
+  // light mode: gradient, dark mode: solid — both driven by CSS vars
   background: var(--color-bg-body);
   min-height: 100vh;
 }
@@ -76,7 +76,7 @@ body {
   margin-top: $spacing-xl;
 }
 
-// 메인 홈페이지 전용 — 배경 이미지 위, 일반 flow (카드 아래에 자연스럽게 위치)
+// Homepage only — above background image, normal flow (naturally below cards)
 .site-footer-home {
   position: relative;
   margin-top: $spacing-lg;

@@ -27,6 +27,10 @@ package-lock.json
 _sass/vendors
 assets/js/dist
 
+# Claude Code context (local development only)
+CLAUDE.md
+.claude/
+
 # macOS
 .DS_Store
 .AppleDouble

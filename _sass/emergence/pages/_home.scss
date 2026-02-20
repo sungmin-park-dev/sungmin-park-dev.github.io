@@ -4,15 +4,15 @@
 @use '../variables' as *;
 
 // --------------------------------------------
-// Page-level resets (minimal layout 전용)
+// Page-level resets (minimal layout only)
 // --------------------------------------------
 
-// 홈페이지 배경: 다크/라이트 모드 공통 기반
+// Homepage background: shared base for dark/light mode
 html, body {
   background: var(--color-bg-body);
 }
 
-// Hero Background (배경 이미지)
+// Hero Background (background image)
 .hero-bg {
   position: fixed;
   top: 0;
