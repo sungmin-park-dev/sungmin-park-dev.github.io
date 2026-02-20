@@ -6,7 +6,6 @@ icon: fas fa-palette
 tags: ["Jekyll", "SCSS", "Open Source", "Design System"]
 link: "https://github.com/sungmin-park-dev/emergence-theme"
 github_repo: "sungmin-park-dev/emergence-theme"
-demo: "https://sungmin-park-dev.github.io/emergence-theme"
 order: 5
 status: active
 ---

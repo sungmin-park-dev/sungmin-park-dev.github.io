@@ -4,8 +4,8 @@ description: "Minimalist portfolio site built with Jekyll and custom design syst
 categories: [Projects]
 icon: fas fa-globe
 tags: ["Web Design", "Jekyll", "SCSS", "Design System"]
-link: "https://github.com/sungmin-park-dev/sungmin-park-dev.github.io"
-github_repo: "sungmin-park-dev/sungmin-park-dev.github.io"
+link: "https://github.com/sungmin-park-dev/emergence-theme"
+github_repo: "sungmin-park-dev/emergence-theme"
 order: 4
 status: completed
 ---
