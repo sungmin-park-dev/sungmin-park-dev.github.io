@@ -23,7 +23,8 @@ html, body {
   background-image: url('/assets/img/common/bg-dark.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  // Note: background-attachment: fixed is intentionally omitted —
+  // it breaks on iOS Safari (background disappears or renders incorrectly)
 
   [data-theme="light"] & {
     background-image: url('/assets/img/common/bg-light.jpeg');
@@ -211,7 +212,27 @@ html, body {
 }
 
 @media (max-width: $breakpoint-mobile) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    height: auto;
+    gap: $spacing-sm;
+  }
+
+  .card-projects,
+  .card-notes,
+  .card-about,
+  .card-readings {
+    grid-column: 1 / 2;
+    grid-row: auto;
+    height: 80px;
+  }
+
   .bento-card-title {
     font-size: $fs-lg;
+  }
+
+  .hero-container {
+    padding: 2rem 1.25rem;
   }
 }
