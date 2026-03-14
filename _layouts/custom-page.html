@@ -10,7 +10,7 @@ layout: base
 
 <!-- Page Container -->
 <div class="custom-page-container page-{{ page.slug }}">
-  <h1 class="page-title">{{ page.title | downcase }}</h1>
+  <h1 class="page-title" translate="no">{{ page.title | downcase }}</h1>
   {% if page.description %}
     <p class="page-subtitle">{{ page.description }}</p>
   {% endif %}
