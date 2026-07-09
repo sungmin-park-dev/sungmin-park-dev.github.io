@@ -191,6 +191,8 @@ exclude:
   - "*.gemspec"
   - docs
   - tools
+  - AGENTS.md
+  - claude.md
   - README.md
   - LICENSE
   - CLAUDE.md
@@ -202,4 +204,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - .claude/
-

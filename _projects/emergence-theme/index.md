@@ -7,7 +7,7 @@ tags: ["Jekyll", "SCSS", "Open Source", "Design System"]
 link: "https://github.com/sungmin-park-dev/emergence-theme"
 github_repo: "sungmin-park-dev/emergence-theme"
 order: 5
-status: active
+status: completed
 ---
 
 ## Overview

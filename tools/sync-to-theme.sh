@@ -73,7 +73,7 @@ copy "index.html"
 copy "Gemfile"
 copy "Gemfile.lock"
 copy ".gitignore"
-copy ".github/workflows/pages.yml" 2>/dev/null || true
+copy ".github/workflows/pages-deploy.yml" 2>/dev/null || true
 
 # ── 7. Favicons (generic — no personal images) ───────────────────────────────
 echo "▶  Favicons"

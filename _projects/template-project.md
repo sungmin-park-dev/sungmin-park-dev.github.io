@@ -5,7 +5,7 @@ icon: fas fa-code              # FontAwesome icon for thumbnail
 tags: [Python, Quantum, NumPy]
 link: "https://github.com/sungmin-park-dev/repo-name"  # GitHub repo or "#"
 order: 99                      # 카드 정렬 순서 (낮을수록 앞)
-status: active                 # active | completed | planned
+status: planned                # completed | in-progress | planned
 published: false               # Set to true when ready to publish
 # 선택 필드
 # thumbnail: /assets/img/projects/project-name.png  # 커스텀 썸네일
