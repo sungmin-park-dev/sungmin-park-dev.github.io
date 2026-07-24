@@ -1,53 +1,105 @@
 ---
-layout: minimal
-no_site_footer: true
+layout: base
+description: "Research implementations and development projects"
 ---
 
 <!-- Background -->
-<div class="hero-bg"></div>
+<div class="page-bg"></div>
 
-<!-- Top Navigation (홈 전용: 로고·링크 숨김, 토글만) -->
-<nav class="top-nav top-nav-home">
-  <span class="logo" aria-hidden="true"></span>
-  <div class="nav-links" aria-hidden="true"></div>
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-    <i class="fas fa-sun" id="theme-icon"></i>
-  </button>
-</nav>
+<!-- Top Navigation -->
+{% include nav.html %}
 
-<!-- Main content -->
-<div class="hero-container">
-  <a href="/" style="text-decoration: none;">
-    <h1 class="hero-title" translate="no">
-      <span class="light">emergence</span><span class="dot">.</span>
-    </h1>
-  </a>
+<!-- Page Container -->
+<div class="custom-page-container page-home">
+  <h1 class="page-title" translate="no">Sung-Min Park<span class="dot">.</span></h1>
+  <p class="page-subtitle">a student of quantum matter, computation, and the spaces between</p>
 
-  <p class="hero-tagline">a student of quantum matter, computation, and the spaces between</p>
+  <div class="page-content">
+    {% include tag-nebula.html id="projects-tag-cloud" title="tags" %}
 
-  <!-- Bento grid -->
-  <div class="bento-grid" translate="no">
-    <a href="/projects/" class="bento-card card-projects">
-      <div class="bento-card-title">projects</div>
-    </a>
+    <div class="projects-controls">
+      <div class="projects-sort">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select" class="sort-select">
+          <option value="order">Default</option>
+          <option value="title">Title (A-Z)</option>
+          <option value="date-desc">Newest First</option>
+          <option value="date-asc">Oldest First</option>
+          <option value="status">Status</option>
+        </select>
+      </div>
+    </div>
 
-    <a href="/notes/" class="bento-card card-notes">
-      <div class="bento-card-title">notes</div>
-    </a>
+    <div class="projects-grid">
+      {% assign completed_projects = site.projects | where: "status", "completed" | sort: "order" %}
+      {% assign inprogress_projects = site.projects | where: "status", "in-progress" | sort: "order" %}
+      {% assign planned_projects = site.projects | where: "status", "planned" | sort: "order" %}
+      {% assign sorted_projects = completed_projects | concat: inprogress_projects | concat: planned_projects %}
+      {% for project in sorted_projects %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
 
-    <a href="/readings/" class="bento-card card-readings">
-      <div class="bento-card-title">readings</div>
-    </a>
-
-    <a href="/about/" class="bento-card card-about">
-      <div class="bento-card-title">about</div>
-    </a>
+    <div class="projects-empty" style="display: none;">
+      <i class="fas fa-folder-open"></i>
+      <p>No projects found</p>
+    </div>
   </div>
 </div>
 
-<footer class="site-footer site-footer-home">
-  <span translate="no">&copy; emergence &middot; designed by Sung-Min Park</span>
-  <span class="photo-credit">
-    dark background: <a href="https://unsplash.com/photos/blue-and-purple-galaxy-digital-wallpaper-qTEj-KMMq_Q" target="_blank" rel="noopener">Jeremy Thomas / Unsplash</a>
-  </span>
-</footer>
+<script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
+<script>
+// Initialize tag filter
+const tagFilter = new TagFilter('.project-card', '#projects-tag-cloud');
+
+// Project elements
+const projectsGrid = document.querySelector('.projects-grid');
+const projectsEmpty = document.querySelector('.projects-empty');
+const sortSelect = document.getElementById('sort-select');
+
+// Check and show/hide empty state
+function updateEmptyState() {
+  const visibleCards = Array.from(document.querySelectorAll('.project-card'))
+    .filter(card => card.style.display !== 'none');
+
+  if (visibleCards.length === 0) {
+    projectsGrid.style.display = 'none';
+    projectsEmpty.style.display = 'flex';
+  } else {
+    projectsGrid.style.display = 'grid';
+    projectsEmpty.style.display = 'none';
+  }
+}
+
+// Override tag filter to update empty state
+const originalFilterByTag = tagFilter.filterByTag.bind(tagFilter);
+tagFilter.filterByTag = function(selectedTag) {
+  originalFilterByTag(selectedTag);
+  updateEmptyState();
+};
+
+// Sort functionality
+sortSelect.addEventListener('change', () => {
+  const sortBy = sortSelect.value;
+  const cards = Array.from(document.querySelectorAll('.project-card'));
+
+  cards.sort((a, b) => {
+    switch(sortBy) {
+      case 'title':
+        return a.dataset.title.localeCompare(b.dataset.title);
+      case 'date-desc':
+        return new Date(b.dataset.date) - new Date(a.dataset.date);
+      case 'date-asc':
+        return new Date(a.dataset.date) - new Date(b.dataset.date);
+      case 'status':
+        const statusOrder = { 'completed': 1, 'in-progress': 2, 'planned': 3 };
+        return (statusOrder[a.dataset.status] || 4) - (statusOrder[b.dataset.status] || 4);
+      case 'order':
+      default:
+        return parseInt(a.dataset.order) - parseInt(b.dataset.order);
+    }
+  });
+
+  cards.forEach(card => projectsGrid.appendChild(card));
+});
+</script>

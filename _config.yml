@@ -17,7 +17,7 @@ timezone: Asia/Seoul # Format: Area/City (e.g., Asia/Seoul, America/New_York)
 # 2. Page Structure & Content (How Your Site Looks)
 # ===========================================================================
 
-title: "emergence · Sung-Min Park"
+title: "Sung-Min Park"
 tagline: "quantum many-body · tensor networks · physics-informed ML"
 author: "Sung-Min Park"
 description: >-
@@ -122,10 +122,10 @@ collections:
     output: true
     sort_by: order
   notes:
-    output: true
+    output: false
     permalink: /notes/:path/
   readings:
-    output: true
+    output: false
     permalink: /readings/:path/
   projects:
     output: true

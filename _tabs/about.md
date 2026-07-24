@@ -51,6 +51,21 @@ description: "Background, research interests, and contact"
     </div>
   </div>
 
+  <!-- Publications -->
+  <div class="about-section">
+    <h3 class="section-title">Publications</h3>
+    <div class="section-content">
+      <ul>
+        {% for pub in p.publications %}
+        <li>
+          <strong>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</strong><br>
+          <em>{{ pub.authors }} — {{ pub.venue }} ({{ pub.year }})</em>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
   <!-- Personal Interests -->
   <div class="about-section">
     <h3 class="section-title">Personal Interests</h3>

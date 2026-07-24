@@ -1,9 +1,7 @@
 <nav class="top-nav">
-  <a href="/" class="logo" translate="no">emergence</a>
+  <a href="/" class="logo" translate="no">Sung-Min Park</a>
   <div class="nav-links" translate="no">
-    <a href="/projects/" {% if page.url contains '/projects' %}class="active"{% endif %}>projects</a>
-    <a href="/notes/" {% if page.url contains '/notes' %}class="active"{% endif %}>notes</a>
-    <a href="/readings/" {% if page.url contains '/readings' %}class="active"{% endif %}>readings</a>
+    <a href="/" {% if page.url == '/' %}class="active"{% endif %}>projects</a>
     <a href="/about/" {% if page.url contains '/about' %}class="active"{% endif %}>about</a>
   </div>
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">

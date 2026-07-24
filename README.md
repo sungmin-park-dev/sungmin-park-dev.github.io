@@ -1,10 +1,10 @@
-# emergence
+# Sung-Min Park — Portfolio
 
 [![Jekyll](https://img.shields.io/badge/Jekyll-4.4-red.svg)](https://jekyllrb.com/)
 [![Ruby](https://img.shields.io/badge/Ruby-3.3.6-red.svg)](https://www.ruby-lang.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**emergence** is a minimalist portfolio site for quantum physics and machine learning research, built with Jekyll and a fully custom design system.
+A minimalist portfolio site for quantum physics and machine learning research, built with Jekyll and a fully custom design system.
 
 🔗 **Live Site**: [sungmin-park-dev.github.io](https://sungmin-park-dev.github.io)
 
@@ -12,7 +12,7 @@
 
 ## Design Philosophy
 
-**emergence** (창발성) represents emergent phenomena in physics — where simple elements interact to create complex, unpredictable beauty.
+The visual language draws on **emergence** (창발성) — emergent phenomena in physics, where simple elements interact to create complex, unpredictable beauty.
 
 - **OLED Black / Indigo-Black** — the depth of space
 - **Stellar Blue Glow** (`rgba(0, 200, 255)`) — ideas shining in darkness
@@ -26,7 +26,7 @@
 ## Project Structure
 
 ```
-emergence/
+sungmin-park-dev.github.io/
 ├── _layouts/               # HTML templates
 │   ├── base.html           # HTML shell (head, body)
 │   ├── minimal.html        # Homepage layout
@@ -35,14 +35,10 @@ emergence/
 │
 ├── _includes/              # Reusable Liquid partials
 │   ├── nav.html            # Shared navigation
-│   ├── project-card.html   # Project card component
-│   ├── note-card.html      # Note card component
-│   └── reading-card.html   # Reading card component
+│   └── project-card.html   # Project card component
 │
 ├── _tabs/                  # Main navigation pages
 │   ├── projects.md
-│   ├── notes.md
-│   ├── readings.md
 │   └── about.md            # Pulls data from _data/profile.yml
 │
 ├── _data/
@@ -51,8 +47,8 @@ emergence/
 │   └── theme_light.yml     # Light mode design tokens
 │
 ├── _projects/              # Project collection
-├── _notes/                 # Notes collection
-├── _readings/              # Reading collection
+├── _notes/                 # Notes collection (not linked; drafts for a future separate knowledge-garden site)
+├── _readings/              # Reading collection (not linked; drafts for a future separate knowledge-garden site)
 │
 └── _sass/emergence/        # Custom design system (SCSS @use module system)
     ├── _variables.scss
