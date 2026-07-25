@@ -39,7 +39,9 @@
     <!-- FOUC prevention: apply saved theme before CSS renders -->
     <script>
       (function(){
-        var t = localStorage.getItem('theme') || 'dark';
+        var savedTheme = localStorage.getItem('theme');
+        var t = savedTheme ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', t);
       })();
     </script>
@@ -62,11 +64,11 @@
           if (!icon) return;
           icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
-        var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        var currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         updateIcon(currentTheme);
         if (btn) {
           btn.addEventListener('click', function() {
-            var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+            var cur = document.documentElement.getAttribute('data-theme') || 'light';
             var next = cur === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);

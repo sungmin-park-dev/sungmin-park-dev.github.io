@@ -11,27 +11,25 @@ description: "Background, research interests, and contact"
 {% assign p = site.data.profile %}
 
 <div class="about-content">
-  <!-- Profile Card -->
-  <div class="profile-card">
-    <div class="profile-image-container">
-      <img src="{{ p.avatar }}" alt="{{ p.name }}" class="profile-image">
-    </div>
-    <div class="profile-info">
-      <h2 class="profile-name">{{ p.name }}</h2>
-      <div class="profile-name-korean">{{ p.name_ko }}</div>
-      <div class="profile-affiliation">
+  <!-- Profile -->
+  <div class="about-profile">
+    <img src="{{ p.avatar }}" alt="{{ p.name }}" class="about-photo">
+    <div class="about-identity">
+      <h2>{{ p.name }}</h2>
+      <p class="about-identity__ko">{{ p.name_ko }}</p>
+      <p class="about-identity__affiliation">
         {{ p.program }}<br>
         {{ p.institution }}
-      </div>
+      </p>
       {% if p.status %}
-      <div class="profile-status">{{ p.status }}</div>
+      <p class="about-identity__status">{{ p.status }}</p>
       {% endif %}
     </div>
   </div>
 
   <!-- Research Interests -->
   <div class="about-section">
-    <h3 class="section-title">Research Interests</h3>
+    <h3 class="section-title">research interests</h3>
     <div class="section-content">
       <p>My research interests lie at the fascinating intersection of <strong>physics</strong> and <strong>machine learning</strong>, where I explore how computational methods can unlock new insights into complex quantum systems.</p>
 
@@ -53,13 +51,15 @@ description: "Background, research interests, and contact"
 
   <!-- Publications -->
   <div class="about-section">
-    <h3 class="section-title">Publications</h3>
+    <h3 class="section-title">publications</h3>
     <div class="section-content">
-      <ul>
+      <ul class="publication-list">
         {% for pub in p.publications %}
-        <li>
-          <strong>{% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</strong><br>
-          <em>{{ pub.authors }} — {{ pub.venue }} ({{ pub.year }})</em>
+        <li class="publication-entry">
+          <span class="publication-entry__title">
+            {% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+          </span>
+          <span class="publication-entry__meta">{{ pub.authors }} — {{ pub.venue }} ({{ pub.year }})</span>
         </li>
         {% endfor %}
       </ul>
@@ -68,7 +68,7 @@ description: "Background, research interests, and contact"
 
   <!-- Personal Interests -->
   <div class="about-section">
-    <h3 class="section-title">Personal Interests</h3>
+    <h3 class="section-title">personal interests</h3>
     <div class="section-content">
       <p>Beyond research, I enjoy <strong>coding</strong> and <strong>traveling</strong>. There's something particularly satisfying about implementing complex physical phenomena in code and creating visualizations that make abstract concepts tangible.</p>
 
@@ -83,50 +83,37 @@ description: "Background, research interests, and contact"
 
   <!-- Philosophy -->
   <div class="about-section">
-    <h3 class="section-title">Philosophy</h3>
+    <h3 class="section-title">philosophy</h3>
     <div class="section-content">
       <p>I believe that the most exciting discoveries happen at the boundaries between disciplines. By combining the rigor of physics with the power of modern computational tools, we can tackle problems that were previously intractable and gain new perspectives on fundamental questions about nature.</p>
     </div>
   </div>
 
   <!-- Contact / CV -->
-  <div class="about-section text-center">
-    <h3 class="section-title">Contact</h3>
+  <div class="about-section">
+    <h3 class="section-title">contact</h3>
     <div class="section-content">
       <p>Feel free to reach out if you have questions, collaboration ideas, or just want to chat about physics, machine learning, or anything in between!</p>
 
-      <!-- Social Links -->
-      <div class="social-links">
+      <ul class="about-links">
         {% if p.social.github %}
-        <a href="{{ p.social.github }}" target="_blank" rel="noopener" class="social-icon" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
+        <li><a href="{{ p.social.github }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
         {% endif %}
         {% if p.social.linkedin %}
-        <a href="{{ p.social.linkedin }}" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
+        <li><a href="{{ p.social.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
         {% endif %}
         {% if p.email %}
-        <a href="mailto:{{ p.email }}" class="social-icon" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+        <li><a href="mailto:{{ p.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a></li>
         {% endif %}
         {% if p.social.instagram %}
-        <a href="{{ p.social.instagram }}" target="_blank" rel="noopener" class="social-icon" title="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
+        <li><a href="{{ p.social.instagram }}" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
         {% endif %}
-      </div>
+      </ul>
 
       {% if p.cv_url != "" %}
-      <a href="{{ p.cv_url }}" class="cv-button" target="_blank">
-        <i class="fas fa-download"></i>Download CV (PDF)
+      <a href="{{ p.cv_url }}" class="about-cv-link" target="_blank">
+        <i class="fas fa-download" aria-hidden="true"></i> Download CV (PDF)
       </a>
-      {% else %}
-      <span class="cv-button">
-        <i class="fas fa-download"></i>Download CV (PDF)
-      </span>
       {% endif %}
     </div>
   </div>

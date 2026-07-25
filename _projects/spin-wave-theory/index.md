@@ -7,6 +7,7 @@ tags: [Python, Physics, NumPy]
 link: "#"
 order: 2
 status: planned
+project_type: research
 sitemap: false
 ---
 

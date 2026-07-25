@@ -1,105 +1,53 @@
 ---
 layout: base
-description: "Research implementations and development projects"
+title: "projects"
+description: "Computational work for studying quantum matter and the tools that make that work usable."
 ---
 
-<!-- Background -->
 <div class="page-bg"></div>
-
-<!-- Top Navigation -->
 {% include nav.html %}
 
-<!-- Page Container -->
-<div class="custom-page-container page-home">
-  <h1 class="page-title" translate="no">Sung-Min Park<span class="dot">.</span></h1>
-  <p class="page-subtitle">a student of quantum matter, computation, and the spaces between</p>
+<main class="project-home">
+  <header class="project-hero">
+    <h1>projects<span class="project-hero__dot">.</span></h1>
+    <p>
+      Computational work for studying quantum matter—and the tools that make
+      that work usable.
+    </p>
+  </header>
 
-  <div class="page-content">
-    {% include tag-nebula.html id="projects-tag-cloud" title="tags" %}
+  {% assign research_projects = site.projects | where: "project_type", "research" | sort: "order" %}
+  {% assign systems_projects = site.projects | where: "project_type", "systems" | sort: "order" %}
 
-    <div class="projects-controls">
-      <div class="projects-sort">
-        <label for="sort-select">Sort by:</label>
-        <select id="sort-select" class="sort-select">
-          <option value="order">Default</option>
-          <option value="title">Title (A-Z)</option>
-          <option value="date-desc">Newest First</option>
-          <option value="date-asc">Oldest First</option>
-          <option value="status">Status</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="projects-grid">
-      {% assign completed_projects = site.projects | where: "status", "completed" | sort: "order" %}
-      {% assign inprogress_projects = site.projects | where: "status", "in-progress" | sort: "order" %}
-      {% assign planned_projects = site.projects | where: "status", "planned" | sort: "order" %}
-      {% assign sorted_projects = completed_projects | concat: inprogress_projects | concat: planned_projects %}
-      {% for project in sorted_projects %}
-        {% include project-card.html project=project %}
+  <section class="project-group" aria-labelledby="research-projects">
+    <header class="project-group__heading">
+      <span class="project-group__number" aria-hidden="true">01</span>
+      <h2 id="research-projects">research implementations</h2>
+    </header>
+    <div class="project-list">
+      {% for project in research_projects %}
+        {% include project-card.html
+          project=project
+          index=forloop.index
+          featured=forloop.first
+        %}
       {% endfor %}
     </div>
+  </section>
 
-    <div class="projects-empty" style="display: none;">
-      <i class="fas fa-folder-open"></i>
-      <p>No projects found</p>
+  <section class="project-group" aria-labelledby="systems-projects">
+    <header class="project-group__heading">
+      <span class="project-group__number" aria-hidden="true">02</span>
+      <h2 id="systems-projects">software &amp; design systems</h2>
+    </header>
+    <div class="project-list">
+      {% for project in systems_projects %}
+        {% include project-card.html
+          project=project
+          index=forloop.index
+          featured=forloop.first
+        %}
+      {% endfor %}
     </div>
-  </div>
-</div>
-
-<script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
-<script>
-// Initialize tag filter
-const tagFilter = new TagFilter('.project-card', '#projects-tag-cloud');
-
-// Project elements
-const projectsGrid = document.querySelector('.projects-grid');
-const projectsEmpty = document.querySelector('.projects-empty');
-const sortSelect = document.getElementById('sort-select');
-
-// Check and show/hide empty state
-function updateEmptyState() {
-  const visibleCards = Array.from(document.querySelectorAll('.project-card'))
-    .filter(card => card.style.display !== 'none');
-
-  if (visibleCards.length === 0) {
-    projectsGrid.style.display = 'none';
-    projectsEmpty.style.display = 'flex';
-  } else {
-    projectsGrid.style.display = 'grid';
-    projectsEmpty.style.display = 'none';
-  }
-}
-
-// Override tag filter to update empty state
-const originalFilterByTag = tagFilter.filterByTag.bind(tagFilter);
-tagFilter.filterByTag = function(selectedTag) {
-  originalFilterByTag(selectedTag);
-  updateEmptyState();
-};
-
-// Sort functionality
-sortSelect.addEventListener('change', () => {
-  const sortBy = sortSelect.value;
-  const cards = Array.from(document.querySelectorAll('.project-card'));
-
-  cards.sort((a, b) => {
-    switch(sortBy) {
-      case 'title':
-        return a.dataset.title.localeCompare(b.dataset.title);
-      case 'date-desc':
-        return new Date(b.dataset.date) - new Date(a.dataset.date);
-      case 'date-asc':
-        return new Date(a.dataset.date) - new Date(b.dataset.date);
-      case 'status':
-        const statusOrder = { 'completed': 1, 'in-progress': 2, 'planned': 3 };
-        return (statusOrder[a.dataset.status] || 4) - (statusOrder[b.dataset.status] || 4);
-      case 'order':
-      default:
-        return parseInt(a.dataset.order) - parseInt(b.dataset.order);
-    }
-  });
-
-  cards.forEach(card => projectsGrid.appendChild(card));
-});
-</script>
+  </section>
+</main>

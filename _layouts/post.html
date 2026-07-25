@@ -60,7 +60,11 @@ layout: base
     <nav class="breadcrumb">
       <a href="/" class="breadcrumb-item">Home</a>
       <span class="breadcrumb-separator">›</span>
-      <a href="/{{ collection_root }}/" class="breadcrumb-item">{{ collection_root }}</a>
+      {% if page.collection == "projects" %}
+        <a href="/" class="breadcrumb-item">projects</a>
+      {% else %}
+        <a href="/{{ collection_root }}/" class="breadcrumb-item">{{ collection_root }}</a>
+      {% endif %}
       {% if url_parts.size > 2 %}
         <span class="breadcrumb-separator">›</span>
         <span class="breadcrumb-item">{{ url_parts[1] | replace: '-', ' ' | capitalize }}</span>

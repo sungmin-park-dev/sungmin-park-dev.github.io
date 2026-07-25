@@ -29,29 +29,22 @@
 }
 
 .sidebar-section {
-  background: $color-bg-glass;
-  backdrop-filter: $blur-glass;
-  border-radius: $radius-lg;
-  border: 1px solid $color-border-glass;
-  padding: $spacing-md;
   flex-shrink: 0;
+  padding-bottom: $spacing-md;
+  border-bottom: 1px solid var(--color-separator);
 
-  &.toc-section {
-    margin-top: 0;
-  }
-
-  &.tags-section {
-    margin-top: 0;
-    margin-bottom: 0;
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 }
 
 .sidebar-title {
   font-size: $fs-xs;
-  font-weight: $fw-light;
-  color: $color-text-primary;
+  font-weight: $fw-medium;
+  color: $color-text-tertiary;
   margin-bottom: $spacing-sm;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -102,18 +95,8 @@
 
 .sidebar-tag {
   font-size: $fs-xs;
-  font-weight: $fw-light;
-  color: $color-tag-text;
-  background: $color-tag-bg;
-  border: 1px solid $color-tag-border;
-  border-radius: $radius-sm;
-  padding: $spacing-xs * 0.4 $spacing-xs * 0.8;
-  transition: all $transition-fast;
-
-  &:hover {
-    background: var(--color-accent-bg-medium);
-    border-color: $color-border-blue-hover;
-  }
+  font-weight: $fw-regular;
+  color: $color-text-tertiary;
 }
 
 // Breadcrumb
@@ -134,8 +117,7 @@
   transition: all $transition-fast;
 
   &:hover {
-    color: $color-primary-blue-light;
-    text-shadow: 0 0 10px var(--color-accent-glow);
+    color: $color-primary-blue;
   }
 }
 
@@ -156,12 +138,12 @@
 }
 
 .post-title {
-  font-size: $fs-3xl;
-  font-weight: $fw-extra-light;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: $fw-semibold;
   color: $color-text-primary;
-  line-height: $lh-tight;
+  line-height: 1.1;
   margin-bottom: $spacing-md;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
 }
 
 .post-meta {
@@ -192,18 +174,10 @@
 .post-tag {
   display: inline-block;
   font-size: $fs-xs;
-  font-weight: $fw-light;
-  color: $color-tag-text;
-  background: $color-tag-bg;
-  border: 1px solid $color-tag-border;
-  border-radius: $radius-md;
-  padding: $spacing-xs * 0.5 $spacing-xs * 1.5;
-  transition: all $transition-fast;
-
-  &:hover {
-    background: var(--color-accent-bg-light);
-    border-color: $color-border-blue-hover;
-  }
+  font-weight: $fw-medium;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $color-text-tertiary;
 }
 
 // Post Body
@@ -241,7 +215,6 @@
     &:hover {
       color: $color-primary-blue;
       border-bottom-color: $color-primary-blue;
-      text-shadow: 0 0 10px var(--color-accent-glow);
     }
   }
 
@@ -271,11 +244,44 @@
     }
   }
 
-  ul, ol {
+  ol {
     margin: $spacing-md 0;
     padding-left: $spacing-lg;
 
     li { margin-bottom: $spacing-xs; }
+  }
+
+  ul {
+    list-style: none;
+    margin: $spacing-md 0;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      padding-left: $spacing-md;
+      margin-bottom: $spacing-xs;
+
+      &::before {
+        content: "\2022"; // bullet — top-level items carry the most ink
+        position: absolute;
+        left: 0;
+        color: $color-text-secondary;
+      }
+    }
+
+    // Sub-items rank lower — lighten the mark as hierarchy deepens
+    ul {
+      margin: $spacing-xs * 0.5 0;
+
+      li {
+        padding-left: $spacing-sm;
+
+        &::before {
+          content: "\25E6"; // open bullet
+          color: $color-text-tertiary;
+        }
+      }
+    }
   }
 
   blockquote {
@@ -333,22 +339,17 @@
 }
 
 .related-card {
-  background: $color-bg-glass;
-  backdrop-filter: $blur-glass;
-  border-radius: $radius-md;
-  border: 1px solid $color-border-glass;
+  border: 1px solid var(--color-separator);
   padding: $spacing-md;
   text-decoration: none;
-  transition: all $transition-normal;
+  transition: background 180ms ease, border-color 180ms ease;
   display: flex;
   flex-direction: column;
   gap: $spacing-xs;
 
   &:hover {
-    background: $color-bg-glass-hover;
-    border-color: $color-border-glass-hover;
-    transform: translateY(-4px);
-    box-shadow: $shadow-card;
+    background: var(--color-accent-bg-subtle);
+    border-color: $color-primary-blue;
   }
 }
 
@@ -395,18 +396,13 @@
   flex-direction: column;
   gap: $spacing-xs;
   padding: $spacing-md;
-  background: $color-bg-glass;
-  backdrop-filter: $blur-glass;
-  border-radius: $radius-md;
-  border: 1px solid $color-border-glass;
+  border: 1px solid var(--color-separator);
   text-decoration: none;
-  transition: all $transition-normal;
+  transition: background 180ms ease, border-color 180ms ease;
 
   &:hover {
-    background: $color-bg-glass-hover;
-    border-color: $color-border-glass-hover;
-    transform: translateY(-4px);
-    box-shadow: $shadow-card;
+    background: var(--color-accent-bg-subtle);
+    border-color: $color-primary-blue;
   }
 }
 

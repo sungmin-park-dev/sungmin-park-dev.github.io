@@ -6,11 +6,8 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.3"
 
 # Jekyll plugins
-gem "jekyll-archives"
 gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
-gem "jekyll-feed"
-gem "jekyll-paginate"
 
 # Sass compiler (required for @use module system / Dart Sass)
 gem "sass-embedded"

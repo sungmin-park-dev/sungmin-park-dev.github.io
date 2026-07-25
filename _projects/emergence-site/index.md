@@ -1,13 +1,14 @@
 ---
-title: "emergence"
-description: "Minimalist portfolio site built with Jekyll and custom design system, inspired by quantum many-body physics"
+title: "Research Portfolio System"
+description: "Custom Jekyll portfolio for organizing research implementations, software systems, and publications."
 categories: [Projects]
 icon: fas fa-globe
 tags: ["Web Design", "Jekyll", "SCSS", "Design System"]
-link: "https://github.com/sungmin-park-dev/emergence-theme"
-github_repo: "sungmin-park-dev/emergence-theme"
+link: "https://github.com/sungmin-park-dev/sungmin-park-dev.github.io"
+github_repo: "sungmin-park-dev/sungmin-park-dev.github.io"
 order: 4
 status: completed
+project_type: systems
 ---
 
 ## Overview
@@ -27,17 +28,17 @@ The design draws inspiration from quantum many-body physics:
 
 ## Tech Stack
 
-- **Generator**: Jekyll 4.3 (decoupled from Chirpy theme)
+- **Generator**: Jekyll 4.4 (decoupled from Chirpy theme)
 - **Styling**: Custom SCSS design system (emergence)
 - **Icons**: FontAwesome 6
 - **Hosting**: GitHub Pages
-- **Plugins**: jekyll-archives, jekyll-seo-tag, jekyll-sitemap, jekyll-feed
+- **Plugins**: jekyll-seo-tag, jekyll-sitemap
 
 ## Features
 
 - ✨ Fully custom design system with modular SCSS architecture
 - 🎨 Glassmorphic UI with subtle animations and hover effects
-- 📱 Responsive grid layouts for projects, notes, and readings
+- 📱 Responsive layouts for projects and content pages
 - 🌙 OLED-optimized dark interface
 - ⚡ Lightweight and fast (no heavy frameworks)
 
@@ -55,8 +56,8 @@ _sass/emergence/
 └── pages/              # Page-specific styles
     ├── _home.scss
     ├── _projects.scss
-    ├── _notes.scss
-    └── _readings.scss
+    ├── _about.scss
+    └── _post.scss
 ```
 
 ### Key Challenges Solved

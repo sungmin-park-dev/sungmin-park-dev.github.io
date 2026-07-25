@@ -1,0 +1,22 @@
+# Merge these named sections into _config.yml.
+collections:
+  notes:
+    output: false
+    permalink: /notes/:path/
+  readings:
+    output: false
+    permalink: /readings/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: post
+      toc: true
+  - scope:
+      path: ""
+      type: readings
+    values:
+      layout: post
+      toc: true

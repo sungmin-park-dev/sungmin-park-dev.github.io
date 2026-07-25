@@ -12,12 +12,15 @@ A minimalist portfolio site for quantum physics and machine learning research, b
 
 ## Design Philosophy
 
-The visual language draws on **emergence** (창발성) — emergent phenomena in physics, where simple elements interact to create complex, unpredictable beauty.
+The portfolio uses a restrained editorial system that keeps attention on the
+work itself.
 
-- **OLED Black / Indigo-Black** — the depth of space
-- **Stellar Blue Glow** (`rgba(0, 200, 255)`) — ideas shining in darkness
-- **Glassmorphism** — layered information with depth
-- **Ultra-Light Typography** (100–200 weight) — minimal visual noise
+- **Project type first** — research implementations and software systems form
+  the primary structure
+- **Status second** — maturity is visible without controlling the page order
+- **Typographic hierarchy** — scale and spacing identify the leading project
+  in each group
+- **Neutral surfaces, one blue accent** — no decorative gradients or glow
 
 📖 Full design philosophy in [`DESIGN.md`](DESIGN.md)
 
@@ -29,16 +32,14 @@ The visual language draws on **emergence** (창발성) — emergent phenomena in
 sungmin-park-dev.github.io/
 ├── _layouts/               # HTML templates
 │   ├── base.html           # HTML shell (head, body)
-│   ├── minimal.html        # Homepage layout
 │   ├── custom-page.html    # Tab pages layout
 │   └── post.html           # Individual content pages
 │
 ├── _includes/              # Reusable Liquid partials
 │   ├── nav.html            # Shared navigation
-│   └── project-card.html   # Project card component
+│   └── project-card.html   # Project entry component
 │
 ├── _tabs/                  # Main navigation pages
-│   ├── projects.md
 │   └── about.md            # Pulls data from _data/profile.yml
 │
 ├── _data/
@@ -47,8 +48,7 @@ sungmin-park-dev.github.io/
 │   └── theme_light.yml     # Light mode design tokens
 │
 ├── _projects/              # Project collection
-├── _notes/                 # Notes collection (not linked; drafts for a future separate knowledge-garden site)
-├── _readings/              # Reading collection (not linked; drafts for a future separate knowledge-garden site)
+├── _archive/               # Inactive, restorable template features
 │
 └── _sass/emergence/        # Custom design system (SCSS @use module system)
     ├── _variables.scss
@@ -97,36 +97,7 @@ tags: ["Tag1", "Tag2"]
 link: "#"
 order: 1
 status: planned   # planned | in-progress | completed
----
-```
-
-### Add a Note
-
-Create `_notes/[category]/[note-name].md`:
-
-```yaml
----
-title: "Note Title"
-date: 2025-01-01 00:00:00 +0900
-subcategory: physics   # physics | machine-learning | computation
-tags: ["tensor-networks"]
-math: true
-toc: true
----
-```
-
-### Add a Reading
-
-Create `_readings/papers/[name].md`:
-
-```yaml
----
-title: "Paper Review: Title"
-date: 2025-01-01 00:00:00 +0900
-subcategory: papers   # papers | tech | perspectives
-tags: ["quantum"]
-math: true
-toc: true
+project_type: research   # research | systems
 ---
 ```
 
@@ -144,6 +115,15 @@ Edit `_data/theme_dark.yml` or `_data/theme_light.yml` — no SCSS knowledge req
 
 ---
 
+## Archived Template Features
+
+Inactive Notes, Readings, blog, project filtering, Dev Container, theme-sync,
+and legacy Chirpy asset features are kept under
+[`_archive/legacy-template-features/`](_archive/legacy-template-features/) with
+restoration instructions. They are excluded from the generated site.
+
+---
+
 ## Tech Stack
 
 | Category | Technology |
@@ -151,22 +131,24 @@ Edit `_data/theme_dark.yml` or `_data/theme_light.yml` — no SCSS knowledge req
 | Generator | Jekyll 4.4 |
 | Styling | SCSS (`@use` module system) |
 | Icons | FontAwesome 6 |
-| Comments | Utterances (GitHub Issues) |
 | Hosting | GitHub Pages |
-| Plugins | `jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-feed`, `jekyll-paginate` |
+| Plugins | `jekyll-seo-tag`, `jekyll-sitemap` |
 
 ---
 
 ## Build & Deploy
 
 ```bash
-# Local build (no deprecation warnings)
-LANG=en_US.UTF-8 bundle exec jekyll build
+# Local build (use the repository's Ruby version)
+PATH=/Users/david/.rbenv/versions/3.3.6/bin:$PATH \
+LANG=en_US.UTF-8 \
+bundle exec jekyll build
 
 # Deploy: push to main branch → GitHub Actions auto-deploys
 git push origin main
 
 # HTML validation
+PATH=/Users/david/.rbenv/versions/3.3.6/bin:$PATH \
 bundle exec htmlproofer _site --disable-external
 ```
 
@@ -174,4 +156,4 @@ bundle exec htmlproofer _site --disable-external
 
 ## License
 
-MIT License — feel free to use this theme for your own portfolio.
+MIT License — feel free to adapt the site code for your own portfolio.
