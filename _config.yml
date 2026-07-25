@@ -23,9 +23,6 @@ author: "Sung-Min Park"
 description: >-
   sharing a journey of quantum study and project experiences
 url: "https://sungmin-park-dev.github.io"
-avatar: /assets/img/common/preview.png
-logo: /assets/img/common/preview.png
-social_preview_image: /assets/img/common/preview.png
 toc: true
 baseurl: ""
 
@@ -113,6 +110,10 @@ collections:
 
 # Default settings for different content types
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/common/social-preview.png
   - scope:
       path: ""
       type: tabs

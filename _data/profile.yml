@@ -2,13 +2,13 @@
 # emergence — Profile Data
 # =====================================================
 # Edit this file to update personal info site-wide.
-# Used in: _tabs/about.md, _layouts/base.html (SEO)
+# Used in: _tabs/about.md
 # =====================================================
 
 # --- Identity ---
 name: "Sung-Min Park"
 name_ko: "박성민"
-avatar: /assets/img/common/avatar.png
+avatar: /assets/img/common/avatar.jpg
 
 # --- Affiliation ---
 program: "Integrated MS-PhD Program in Physics"
