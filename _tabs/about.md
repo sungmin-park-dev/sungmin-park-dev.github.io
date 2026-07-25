@@ -13,7 +13,7 @@ description: "Background, research interests, and contact"
 <div class="about-content">
   <!-- Profile -->
   <div class="about-profile">
-    <img src="{{ p.avatar }}" alt="{{ p.name }}" class="about-photo">
+    <img src="{{ p.avatar | relative_url }}" alt="{{ p.name }}" class="about-photo">
     <div class="about-identity">
       <h2>{{ p.name }}</h2>
       <p class="about-identity__ko">{{ p.name_ko }}</p>
