@@ -1,7 +1,7 @@
 ---
 layout: base
 title: "projects"
-description: "Computational work for studying quantum matter and the tools that make that work usable."
+description: "Research implementations, and the software and design systems built alongside them."
 ---
 
 <div class="page-bg"></div>
@@ -10,20 +10,25 @@ description: "Computational work for studying quantum matter and the tools that 
 <main class="project-home">
   <header class="project-hero">
     <h1>projects<span class="project-hero__dot">.</span></h1>
-    <p>
-      Computational work for studying quantum matter—and the tools that make
-      that work usable.
-    </p>
   </header>
 
   {% assign research_projects = site.projects | where: "project_type", "research" | sort: "order" %}
   {% assign systems_projects = site.projects | where: "project_type", "systems" | sort: "order" %}
 
-  <section class="project-group" aria-labelledby="research-projects">
-    <header class="project-group__heading">
-      <span class="project-group__number" aria-hidden="true">01</span>
-      <h2 id="research-projects">research implementations</h2>
-    </header>
+  <div class="project-tabs" role="tablist" aria-label="Project categories">
+    <button type="button" class="project-tab active" role="tab" aria-selected="true" aria-controls="research-panel" id="research-tab" data-target="research-panel">
+      <span class="project-tab__number" aria-hidden="true">01</span> research implementations
+    </button>
+    <button type="button" class="project-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="systems-panel" id="systems-tab" data-target="systems-panel">
+      <span class="project-tab__number" aria-hidden="true">02</span> software &amp; design systems
+    </button>
+  </div>
+
+  <section class="project-panel" id="research-panel" role="tabpanel" aria-labelledby="research-tab">
+    <p class="project-panel__intro">
+      Computational work for studying quantum matter—and the tools that make
+      that work usable.
+    </p>
     <div class="project-list">
       {% for project in research_projects %}
         {% include project-card.html
@@ -35,11 +40,11 @@ description: "Computational work for studying quantum matter and the tools that 
     </div>
   </section>
 
-  <section class="project-group" aria-labelledby="systems-projects">
-    <header class="project-group__heading">
-      <span class="project-group__number" aria-hidden="true">02</span>
-      <h2 id="systems-projects">software &amp; design systems</h2>
-    </header>
+  <section class="project-panel" id="systems-panel" role="tabpanel" aria-labelledby="systems-tab" hidden>
+    <p class="project-panel__intro">
+      Software and design tooling built along the way—including the design
+      system this site runs on.
+    </p>
     <div class="project-list">
       {% for project in systems_projects %}
         {% include project-card.html
@@ -51,3 +56,35 @@ description: "Computational work for studying quantum matter and the tools that 
     </div>
   </section>
 </main>
+
+<script>
+  (function () {
+    var tabs = Array.from(document.querySelectorAll('.project-tab'));
+    var panels = Array.from(document.querySelectorAll('.project-panel'));
+
+    function activate(tab) {
+      tabs.forEach(function (t) {
+        var selected = t === tab;
+        t.classList.toggle('active', selected);
+        t.setAttribute('aria-selected', selected);
+        t.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach(function (panel) {
+        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+      });
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () {
+        activate(tab);
+      });
+      tab.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        next.focus();
+        activate(next);
+      });
+    });
+  })();
+</script>

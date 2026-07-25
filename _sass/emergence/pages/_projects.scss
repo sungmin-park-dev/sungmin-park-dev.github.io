@@ -10,12 +10,11 @@
 }
 
 .project-hero {
-  min-height: 16rem;
+  min-height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1.5rem 0 2.5rem;
-  border-bottom: 1px solid var(--color-separator);
+  padding: 1.5rem 0 2rem;
 
   h1 {
     max-width: 10ch;
@@ -24,48 +23,68 @@
     line-height: 0.92;
     letter-spacing: -0.055em;
   }
-
-  p {
-    max-width: 840px;
-    margin: 1.5rem 0 0;
-    color: $color-text-primary;
-    font-size: $fs-lead;
-    font-weight: $fw-regular;
-    line-height: 1.3;
-    letter-spacing: -0.03em;
-  }
 }
 
 .project-hero__dot {
   color: $color-primary-blue;
 }
 
-.project-group {
-  display: grid;
-  grid-template-columns: minmax(11rem, 0.25fr) minmax(0, 1fr);
-  gap: clamp(1.5rem, 2.5vw, 2.75rem);
-  padding: 2.5rem 0;
+.project-tabs {
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 3rem);
   border-bottom: 1px solid var(--color-separator);
 }
 
-.project-group__heading {
-  align-self: start;
+.project-tab {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 1.1rem 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  color: $color-text-tertiary;
+  font-family: $font-primary;
+  font-size: $fs-section-heading;
+  font-weight: $fw-semibold;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease;
 
-  h2 {
-    max-width: 12ch;
-    margin-top: 0.65rem;
-    font-size: $fs-section-heading;
-    font-weight: $fw-semibold;
-    line-height: 1.18;
-    letter-spacing: -0.025em;
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  &.active {
+    color: $color-text-primary;
+    border-bottom-color: $color-primary-blue;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary-blue;
+    outline-offset: 2px;
   }
 }
 
-.project-group__number {
+.project-tab__number {
   color: $color-primary-blue;
   font-size: $fs-sm;
   font-weight: $fw-semibold;
   letter-spacing: 0.08em;
+}
+
+.project-panel {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--color-separator);
+}
+
+.project-panel__intro {
+  max-width: 42rem;
+  margin: 0 0 1.75rem;
+  color: $color-text-secondary;
+  font-size: $fs-base;
+  line-height: 1.55;
 }
 
 .project-list {
@@ -219,15 +238,6 @@
   .project-home {
     width: min(100% - 3rem, 1180px);
   }
-
-  .project-group {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .project-group__heading h2 {
-    max-width: none;
-  }
 }
 
 @media (max-width: $breakpoint-tablet) {
@@ -237,21 +247,35 @@
   }
 
   .project-hero {
-    min-height: 15rem;
-    padding: 1.5rem 0 2rem;
-
-    p {
-      margin-top: 1.5rem;
-    }
+    min-height: 9rem;
+    padding: 1.5rem 0 1.5rem;
   }
 
-  .project-group {
+  .project-tabs {
+    gap: 1.5rem;
+  }
+
+  .project-tab {
+    font-size: $fs-base;
+  }
+
+  .project-panel {
     padding: 2.25rem 0;
   }
 
   .project-list {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .project-tabs {
+    gap: 1.25rem;
+  }
+
+  .project-tab {
+    font-size: $fs-sm;
   }
 }
 
