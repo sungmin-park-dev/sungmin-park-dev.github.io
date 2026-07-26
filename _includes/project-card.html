@@ -1,11 +1,15 @@
 {% unless include.project.published == false %}
 {% assign project = include.project %}
 {% assign project_link = project.url %}
+{% assign project_is_external = false %}
 {% if project.link and project.link != '#' %}
   {% assign project_link = project.link %}
+  {% if project.link contains '://' %}
+    {% assign project_is_external = true %}
+  {% endif %}
 {% endif %}
 {% assign project_number = include.index | prepend: "0" | slice: -2, 2 %}
-<article class="project-entry project-entry--{{ project.status }}{% if include.featured %} project-entry--featured{% endif %}">
+<article class="project-entry project-entry--{{ project.status }}">
   <div class="project-entry__meta">
     <span class="project-entry__index" aria-hidden="true">{{ project_number }}</span>
     <span class="project-entry__status project-entry__status--{{ project.status }}">
@@ -13,13 +17,7 @@
     </span>
   </div>
 
-  <h3 class="project-entry__title">
-    {% if project.status == "completed" %}
-      <a href="{{ project_link }}">{{ project.title }}</a>
-    {% else %}
-      {{ project.title }}
-    {% endif %}
-  </h3>
+  <h3 class="project-entry__title">{{ project.title }}</h3>
 
   <p class="project-entry__description">{{ project.description }}</p>
 
@@ -30,8 +28,8 @@
   </ul>
 
   {% if project.status == "completed" %}
-    <a href="{{ project_link }}" class="project-entry__link">
-      view project <span aria-hidden="true">↗</span>
+    <a href="{{ project_link }}" class="project-entry__link" aria-label="View {{ project.title | escape }}">
+      view project <span aria-hidden="true">{% if project_is_external %}↗{% else %}→{% endif %}</span>
     </a>
   {% endif %}
 </article>

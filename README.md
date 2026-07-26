@@ -4,7 +4,8 @@
 [![Ruby](https://img.shields.io/badge/Ruby-3.3.6-red.svg)](https://www.ruby-lang.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-A minimalist portfolio site for quantum physics and machine learning research, built with Jekyll and a fully custom design system.
+An image-led portfolio for quantum physics and machine learning research, built
+with Jekyll and the custom Emergence design system.
 
 🔗 **Live Site**: [sungmin-park-dev.github.io](https://sungmin-park-dev.github.io)
 
@@ -12,17 +13,25 @@ A minimalist portfolio site for quantum physics and machine learning research, b
 
 ## Design Philosophy
 
-The portfolio uses a restrained editorial system that keeps attention on the
-work itself.
+Deep Glacier and Stellar Field are the light and dark environments—not
+decorative backdrops. Both modes keep the same geometry while their optical
+treatment changes with the photograph.
 
-- **Project type first** — research implementations and software systems form
-  the primary structure
-- **Status second** — maturity is visible without controlling the page order
-- **Typographic hierarchy** — scale and spacing identify the leading project
-  in each group
-- **Neutral surfaces, one blue accent** — no decorative gradients or glow
+- **Field** — the Glacier or Stellar image establishes the environment
+- **Plane** — a small number of optical surfaces protect navigation and reading
+- **Trace** — thin horizons communicate selection, separation, and continuity
+- **Point** — circular indicators are reserved for state, focus, and the theme
+  control
+- **Project type first** — research implementations and software systems remain
+  the primary content structure
 
-📖 Full design philosophy in [`DESIGN.md`](DESIGN.md)
+The Horizon Rail is therefore a low, long Plane with one active Trace; it is
+not a generic pill. Glacier uses translucent ice, navy type, and diffuse light.
+Stellar uses indigo glass, cool white type, cyan edges, and glow only where it
+communicates state.
+
+📖 See [`DESIGN.md`](DESIGN.md) for the full form contract and
+[`ASSET-LICENSES.md`](ASSET-LICENSES.md) for photograph licensing.
 
 ---
 
@@ -156,4 +165,6 @@ bundle exec htmlproofer _site --disable-external
 
 ## License
 
-MIT License — feel free to adapt the site code for your own portfolio.
+The site code is available under the [MIT License](LICENSE). The Deep Glacier,
+Stellar Field, and composite preview images have separate terms documented in
+[`ASSET-LICENSES.md`](ASSET-LICENSES.md).

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Emergence Design System CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/emergence.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/emergence.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
     <!-- Theme tokens from _data/ (overrides SCSS defaults — edit theme_dark.yml / theme_light.yml) -->
     {% if site.data.theme_dark %}
@@ -46,10 +46,19 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     {{ content }}
     {% unless page.no_site_footer %}
     <footer class="site-footer">
       <span translate="no">&copy; Sung-Min Park</span>
+      <span class="photo-credit photo-credit--light">
+        deep glacier:
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">Sung-Min Park / CC BY 4.0</a>
+      </span>
+      <span class="photo-credit photo-credit--dark">
+        stellar field:
+        <a href="https://unsplash.com/photos/blue-and-purple-galaxy-digital-wallpaper-E0AHdsENmDg" target="_blank" rel="noopener">Jeremy Thomas / Unsplash</a>
+      </span>
     </footer>
     {% endunless %}
 
@@ -59,9 +68,25 @@
         // Theme toggle
         var btn = document.getElementById('theme-toggle');
         var icon = document.getElementById('theme-icon');
+        function syncUtterancesTheme(theme) {
+          var frame = document.querySelector('iframe.utterances-frame');
+          if (!frame || !frame.contentWindow) return;
+          frame.contentWindow.postMessage({
+            type: 'set-theme',
+            theme: theme === 'dark' ? 'photon-dark' : 'github-light'
+          }, 'https://utteranc.es');
+        }
         function updateIcon(theme) {
-          if (!icon) return;
-          icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+          var targetEnvironment = theme === 'dark' ? 'Deep Glacier' : 'Stellar Field';
+          if (icon) {
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+          }
+          if (btn) {
+            btn.setAttribute('aria-label', 'Switch to ' + targetEnvironment);
+            btn.setAttribute('title', 'Switch to ' + targetEnvironment);
+            btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+          }
+          syncUtterancesTheme(theme);
         }
         var currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         updateIcon(currentTheme);
@@ -78,10 +103,68 @@
         // Hamburger menu
         var hamburger = document.getElementById('nav-hamburger');
         var navLinks = document.querySelector('.nav-links');
+        var topNav = document.querySelector('.top-nav');
+        function setMenuState(expanded) {
+          if (!hamburger || !navLinks) return;
+          hamburger.classList.toggle('open', expanded);
+          navLinks.classList.toggle('open', expanded);
+          hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+          hamburger.setAttribute('aria-label', expanded ? 'Close menu' : 'Open menu');
+          if (topNav) topNav.classList.toggle('top-nav--menu-open', expanded);
+        }
         if (hamburger && navLinks) {
           hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('open');
-            navLinks.classList.toggle('open');
+            setMenuState(hamburger.getAttribute('aria-expanded') !== 'true');
+          });
+          navLinks.addEventListener('click', function(event) {
+            if (event.target.closest('a')) setMenuState(false);
+          });
+          document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
+              setMenuState(false);
+              hamburger.focus();
+            }
+          });
+        }
+
+        // The homepage rail starts as a light optical trace and strengthens
+        // once the reader moves from the open environment into content.
+        if (topNav && topNav.dataset.navContext === 'hero') {
+          var projectIndex = document.getElementById('project-index');
+          var projectsLink = topNav.querySelector('[data-nav-section="projects"]');
+          var contentThreshold = 48;
+          var getScrollTop = function() {
+            return window.scrollY
+              || document.documentElement.scrollTop
+              || document.body.scrollTop
+              || 0;
+          };
+          var updateNavThreshold = function() {
+            if (!projectIndex) return;
+            contentThreshold = projectIndex.getBoundingClientRect().top
+              + getScrollTop()
+              - topNav.offsetHeight
+              - 24;
+          };
+          var updateNavSurface = function() {
+            var inContent = getScrollTop() >= contentThreshold;
+            topNav.classList.toggle('top-nav--scrolled', inContent);
+            if (projectsLink) {
+              projectsLink.classList.toggle('active', inContent);
+              if (inContent) {
+                projectsLink.setAttribute('aria-current', 'location');
+              } else {
+                projectsLink.removeAttribute('aria-current');
+              }
+            }
+          };
+          updateNavThreshold();
+          updateNavSurface();
+          window.addEventListener('scroll', updateNavSurface, { passive: true });
+          document.body.addEventListener('scroll', updateNavSurface, { passive: true });
+          window.addEventListener('resize', function() {
+            updateNavThreshold();
+            updateNavSurface();
           });
         }
       })();

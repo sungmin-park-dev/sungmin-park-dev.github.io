@@ -155,6 +155,7 @@ exclude:
   - LICENSE
   - CLAUDE.md
   - DESIGN.md
+  - ASSET-LICENSES.md
   - purgecss.js
   - "*.config.js"
   - "package*.json"

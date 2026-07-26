@@ -8,6 +8,10 @@
   flex-direction: column;
 }
 
+.custom-page-container.page-about {
+  background: var(--color-reading-surface);
+}
+
 // --------------------------------------------
 // Profile block (photo + identity)
 // --------------------------------------------
@@ -220,8 +224,9 @@
   }
 
   &:focus-visible {
-    outline: 2px solid $color-primary-blue;
-    outline-offset: 4px;
+    outline: 2px solid $color-primary-blue-light;
+    outline-offset: 3px;
+    box-shadow: var(--shadow-focus-ring);
   }
 }
 

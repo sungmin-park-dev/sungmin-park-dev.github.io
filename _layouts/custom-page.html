@@ -9,7 +9,7 @@ layout: base
 {% include nav.html %}
 
 <!-- Page Container -->
-<div class="custom-page-container page-{{ page.slug }}">
+<main class="custom-page-container page-{{ page.slug }}" id="main-content">
   <header class="page-hero">
     <h1 class="page-title" translate="no">{{ page.title | downcase }}<span class="dot">.</span></h1>
     {% if page.description %}
@@ -20,4 +20,4 @@ layout: base
   <div class="page-content">
     {{ content }}
   </div>
-</div>
+</main>

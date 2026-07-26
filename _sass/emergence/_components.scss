@@ -14,14 +14,13 @@
   width: 100%;
   height: 100%;
   z-index: $z-background;
-  // --bg-image: none = solid/gradient, url = image + overlay
+  // The photograph establishes the environment; the overlay only protects
+  // text contrast and never replaces the image.
   background: var(--bg-color-page);
   background-image: var(--bg-image);
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: var(--bg-position, center);
 
-  // show overlay only when image is present (hidden when none)
   &::after {
     content: '';
     position: absolute;
@@ -41,21 +40,25 @@
 
 .glass-card {
   background: $color-bg-glass;
-  backdrop-filter: $blur-glass;
-  -webkit-backdrop-filter: $blur-glass;
-  border-radius: $radius-xl;
+  backdrop-filter: var(--surface-filter);
+  -webkit-backdrop-filter: var(--surface-filter);
+  border-radius: var(--radius-panel);
   border: 1px solid $color-border-glass;
   box-shadow: $shadow-card;
   padding: $spacing-lg;
-  transition: all $transition-normal;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
 
   // light mode: keep 1px border (separation via border-color only)
   [data-theme="light"] & {
     border-width: 1px;
   }
 
-  &:hover {
-    transform: translateY(-8px);
+  &--interactive:hover {
+    transform: translateY(-3px);
     background: $color-bg-glass-hover;
     box-shadow: $shadow-card-hover;
     border-color: $color-border-glass-hover;
@@ -76,7 +79,10 @@
   border: 1px solid $color-tag-border;
   border-radius: $radius-md;
   padding: $spacing-xs * 0.5 $spacing-xs * 1.5;
-  transition: all $transition-fast;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
 
   &:hover {
     background: var(--color-accent-bg-light);
@@ -99,7 +105,12 @@
   border-radius: $radius-sm;
   padding: $spacing-xs * 1.5 $spacing-lg;
   text-decoration: none;
-  transition: all $transition-fast;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
   cursor: pointer;
   text-align: center;
 
@@ -112,6 +123,12 @@
 
   &:active {
     transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary-blue-light;
+    outline-offset: 3px;
+    box-shadow: var(--shadow-focus-ring);
   }
 
   i {
@@ -136,16 +153,14 @@
 
 .custom-page-container {
   width: min(100% - 4rem, 1180px);
-  margin: 0 auto;
-  padding: 5rem 0 2rem;
-  opacity: 0;
-  animation: fadeIn $transition-page-load;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  margin: 6rem auto 2rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--color-bg-glass);
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-atmosphere);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: var(--surface-filter);
+  -webkit-backdrop-filter: var(--surface-filter);
 }
 
 // --------------------------------------------
@@ -161,10 +176,36 @@
 @media (max-width: $breakpoint-tablet) {
   .custom-page-container {
     width: min(100% - 2rem, 1180px);
-    padding-top: 4.5rem;
+    margin-top: 5.5rem;
+    padding: 1.5rem;
   }
 
   .glass-card {
     padding: $spacing-md;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .page-bg {
+    background-position: var(--bg-position-mobile, var(--bg-position, center));
+  }
+
+  .custom-page-container {
+    width: min(100% - 1.5rem, 1180px);
+    padding: 1.25rem;
+    border-radius: var(--radius-atmosphere);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-card,
+  .btn {
+    transition: none;
+  }
+
+  .glass-card--interactive:hover,
+  .btn:hover,
+  .btn:active {
+    transform: none;
   }
 }

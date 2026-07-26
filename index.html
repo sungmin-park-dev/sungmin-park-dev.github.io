@@ -7,53 +7,67 @@ description: "Research implementations, and the software and design systems buil
 <div class="page-bg"></div>
 {% include nav.html %}
 
-<main class="project-home">
+<main class="project-home" id="main-content">
   <header class="project-hero">
-    <h1>projects<span class="project-hero__dot">.</span></h1>
+    <p class="project-hero__eyebrow" translate="no">Sung-Min Park · portfolio</p>
+    <h1 aria-label="emergence" translate="no">
+      <span>emergence</span><span class="project-hero__dot">.</span>
+    </h1>
+    <p class="project-hero__tagline">
+      a student of quantum matter, computation, and the spaces between
+    </p>
+    <a class="project-hero__cue" href="#project-index">
+      explore projects <span aria-hidden="true">↓</span>
+    </a>
   </header>
 
   {% assign research_projects = site.projects | where: "project_type", "research" | sort: "order" %}
   {% assign systems_projects = site.projects | where: "project_type", "systems" | sort: "order" %}
 
-  <div class="project-tabs" role="tablist" aria-label="Project categories">
-    <button type="button" class="project-tab active" role="tab" aria-selected="true" aria-controls="research-panel" id="research-tab" data-target="research-panel">
-      <span class="project-tab__number" aria-hidden="true">01</span> research implementations
-    </button>
-    <button type="button" class="project-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="systems-panel" id="systems-tab" data-target="systems-panel">
-      <span class="project-tab__number" aria-hidden="true">02</span> software &amp; design systems
-    </button>
-  </div>
-
-  <section class="project-panel" id="research-panel" role="tabpanel" aria-labelledby="research-tab">
-    <p class="project-panel__intro">
-      Computational work for studying quantum matter—and the tools that make
-      that work usable.
-    </p>
-    <div class="project-list">
-      {% for project in research_projects %}
-        {% include project-card.html
-          project=project
-          index=forloop.index
-          featured=forloop.first
-        %}
-      {% endfor %}
+  <section class="project-index" id="project-index" aria-labelledby="project-index-title">
+    <div class="project-index__header">
+      <p class="project-index__label" translate="no">selected work / 01—02</p>
+      <h2 id="project-index-title">projects<span class="project-hero__dot">.</span></h2>
     </div>
-  </section>
 
-  <section class="project-panel" id="systems-panel" role="tabpanel" aria-labelledby="systems-tab" hidden>
-    <p class="project-panel__intro">
-      Software and design tooling built along the way—including the design
-      system this site runs on.
-    </p>
-    <div class="project-list">
-      {% for project in systems_projects %}
-        {% include project-card.html
-          project=project
-          index=forloop.index
-          featured=forloop.first
-        %}
-      {% endfor %}
+    <div class="project-tabs" role="tablist" aria-label="Project categories">
+      <button type="button" class="project-tab active" role="tab" aria-selected="true" aria-controls="research-panel" id="research-tab" data-target="research-panel">
+        <span class="project-tab__number" aria-hidden="true">01</span> research implementations
+      </button>
+      <button type="button" class="project-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="systems-panel" id="systems-tab" data-target="systems-panel">
+        <span class="project-tab__number" aria-hidden="true">02</span> software &amp; design systems
+      </button>
     </div>
+
+    <section class="project-panel" id="research-panel" role="tabpanel" aria-labelledby="research-tab">
+      <p class="project-panel__intro">
+        Computational work for studying quantum matter—and the tools that make
+        that work usable.
+      </p>
+      <div class="project-list">
+        {% for project in research_projects %}
+          {% include project-card.html
+            project=project
+            index=forloop.index
+          %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="project-panel" id="systems-panel" role="tabpanel" aria-labelledby="systems-tab" hidden>
+      <p class="project-panel__intro">
+        Software and design tooling built along the way—including the design
+        system this site runs on.
+      </p>
+      <div class="project-list">
+        {% for project in systems_projects %}
+          {% include project-card.html
+            project=project
+            index=forloop.index
+          %}
+        {% endfor %}
+      </div>
+    </section>
   </section>
 </main>
 

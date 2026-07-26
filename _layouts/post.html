@@ -27,14 +27,14 @@ layout: base
 {% include nav.html %}
 
 <!-- Post Container -->
-<div class="post-container">
+<main class="post-container{% unless page.toc %} post-container--reading-only{% endunless %}" id="main-content">
   <!-- Left Sidebar: TOC + Tags -->
   {% if page.toc %}
   <aside class="left-sidebar">
     <!-- TOC -->
     <div class="sidebar-section toc-section">
-      <h3 class="sidebar-title">Contents</h3>
-      <div id="toc-content"></div>
+      <h3 class="sidebar-title" id="toc-title">Contents</h3>
+      <nav id="toc-content" aria-labelledby="toc-title"></nav>
     </div>
 
     <!-- Tags -->
@@ -57,18 +57,20 @@ layout: base
     {% assign url_parts = page.url | split: '/' | where_exp: "part", "part != ''" %}
     {% assign collection_root = url_parts[0] %}
 
-    <nav class="breadcrumb">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/" class="breadcrumb-item">Home</a>
-      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-separator" aria-hidden="true">›</span>
       {% if page.collection == "projects" %}
         <a href="/" class="breadcrumb-item">projects</a>
       {% else %}
         <a href="/{{ collection_root }}/" class="breadcrumb-item">{{ collection_root }}</a>
       {% endif %}
       {% if url_parts.size > 2 %}
-        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-separator" aria-hidden="true">›</span>
         <span class="breadcrumb-item">{{ url_parts[1] | replace: '-', ' ' | capitalize }}</span>
       {% endif %}
+      <span class="breadcrumb-separator" aria-hidden="true">›</span>
+      <span class="breadcrumb-item" aria-current="page">{{ page.title }}</span>
     </nav>
 
     <!-- Post Header -->
@@ -78,7 +80,7 @@ layout: base
       <div class="post-meta">
         {% if page.date %}
           <span class="post-date">
-            <i class="far fa-calendar"></i>
+            <i class="far fa-calendar" aria-hidden="true"></i>
             {{ page.date | date: "%B %d, %Y" }}
           </span>
         {% endif %}
@@ -150,7 +152,7 @@ layout: base
         {% assign prev_index = current_index | minus: 1 %}
         {% assign next_index = current_index | plus: 1 %}
 
-        <nav class="post-navigation">
+        <nav class="post-navigation" aria-label="Project navigation">
           <div class="nav-previous">
             {% if prev_index >= 0 %}
               {% assign prev_post = collection[prev_index] %}
@@ -175,19 +177,27 @@ layout: base
     {% endif %}
 
     <!-- Comments (Utterances) -->
-    {% if page.comments != false %}
+    {% if page.comments != false and site.comments.utterances.repo %}
+      {% assign utterances_issue_term = site.comments.utterances.issue_term | default: "pathname" %}
       <div class="post-comments">
-        <script src="https://utteranc.es/client.js"
-          repo="{{ site.comments.utterances.repo }}"
-          issue-term="{{ site.comments.utterances.issue_term }}"
-          theme="photon-dark"
-          crossorigin="anonymous"
-          async>
+        <script>
+          (function() {
+            var comments = document.currentScript.parentElement;
+            var utterances = document.createElement('script');
+            var currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            utterances.src = 'https://utteranc.es/client.js';
+            utterances.setAttribute('repo', {{ site.comments.utterances.repo | jsonify }});
+            utterances.setAttribute('issue-term', {{ utterances_issue_term | jsonify }});
+            utterances.setAttribute('theme', currentTheme === 'dark' ? 'photon-dark' : 'github-light');
+            utterances.setAttribute('crossorigin', 'anonymous');
+            utterances.async = true;
+            comments.appendChild(utterances);
+          })();
         </script>
       </div>
     {% endif %}
   </article>
-</div>
+</main>
 
 <!-- TOC JavaScript -->
 {% if page.toc %}
@@ -200,8 +210,14 @@ layout: base
 
     var headings = postBody.querySelectorAll('h2, h3');
     if (headings.length === 0) {
+      var tocSection = document.querySelector('.toc-section');
       var sidebar = document.querySelector('.left-sidebar');
-      if (sidebar) sidebar.style.display = 'none';
+      var postContainer = document.querySelector('.post-container');
+      if (tocSection) tocSection.hidden = true;
+      if (sidebar && !sidebar.querySelector('.tags-section')) {
+        sidebar.hidden = true;
+        if (postContainer) postContainer.classList.add('post-container--reading-only');
+      }
       return;
     }
 
@@ -235,8 +251,10 @@ layout: base
 
       document.querySelectorAll('.toc-link').forEach(function(link) {
         link.classList.remove('active');
+        link.removeAttribute('aria-current');
         if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
+          link.setAttribute('aria-current', 'location');
         }
       });
     });

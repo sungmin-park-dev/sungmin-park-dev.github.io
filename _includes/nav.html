@@ -1,13 +1,17 @@
-<nav class="top-nav">
-  <a href="/" class="logo" translate="no">Sung-Min Park</a>
-  <div class="nav-links" translate="no">
-    <a href="/" {% if page.url == '/' %}class="active"{% endif %}>projects</a>
-    <a href="/about/" {% if page.url contains '/about' %}class="active"{% endif %}>about</a>
+<nav
+  class="top-nav{% if page.url == '/' %} top-nav--hero{% else %} top-nav--content{% endif %}"
+  data-nav-context="{% if page.url == '/' %}hero{% else %}content{% endif %}"
+  aria-label="Primary"
+>
+  <a href="/" class="logo" aria-label="emergence home" translate="no">emergence<span class="logo__dot">.</span></a>
+  <div class="nav-links" id="primary-nav" translate="no">
+    <a href="/#project-index" data-nav-section="projects"{% if page.collection == 'projects' %} class="active" aria-current="location"{% endif %}>projects</a>
+    <a href="/about/"{% if page.url contains '/about' %} class="active" aria-current="page"{% endif %}>about</a>
   </div>
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-    <i class="fas fa-sun" id="theme-icon"></i>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
+    <i class="fas fa-sun" id="theme-icon" aria-hidden="true"></i>
   </button>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+  <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
