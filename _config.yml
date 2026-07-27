@@ -113,7 +113,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/img/common/social-preview.png
+      image: /assets/img/common/social-preview.jpg
   - scope:
       path: ""
       type: tabs

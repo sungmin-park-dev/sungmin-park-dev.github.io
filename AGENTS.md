@@ -103,5 +103,5 @@ Blog-related plugin configuration and dependency notes are preserved under
 
 - Empty `href` values can fail HTML Proofer.
 - Unsupported project statuses can disappear from the homepage because `index.html` builds the grid from known status buckets.
-- Broken asset extension references are easy to miss after image compression or rename; current home background references are `bg-dark.jpg` and `bg-light.jpg`.
+- Broken asset extension references are easy to miss after image compression or rename; current home backgrounds use 1920/3840 AVIF and WebP derivatives with `bg-dark.jpg` / `bg-light.jpg` as compatibility fallbacks.
 - If collection additions do not appear, check both `collections:` and `defaults:` in `_config.yml`.

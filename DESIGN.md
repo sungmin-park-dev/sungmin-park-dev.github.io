@@ -67,10 +67,10 @@ Field 위에 직접 놓을 수 있는 요소는 큰 워드마크, 짧은 환경 
 
 | 계층 | 역할 | 기본 형태 |
 |---|---|---|
-| Atmospheric plane | 프로젝트 인덱스 등 환경 탐색을 위한 주요 영역 | 24–28px 반경, 중간 투명도 |
-| Reading plane | 긴 프로젝트 본문 | 24–28px 반경, 가장 높은 가독성 |
-| Instrument panel | TOC, 필터, 보조 탐색 | 14–18px 반경, 주요 영역보다 낮은 위계 |
-| Item plane | 독립적으로 선택 가능한 프로젝트나 관련 항목 | 14–18px 반경 |
+| Atmospheric plane | 프로젝트 인덱스 등 환경 탐색을 위한 주요 영역 | 18–22px 반경, 중간 투명도 |
+| Reading plane | 긴 프로젝트 본문 | 18–22px 반경, 가장 높은 가독성 |
+| Instrument panel | TOC, 필터, 보조 탐색 | 10–14px 반경, 주요 영역보다 낮은 위계 |
+| Item plane | 독립적으로 선택 가능한 프로젝트나 관련 항목 | 10–14px 반경 |
 | Compact control | 하나의 짧은 행동을 수행하는 버튼 | 내용 길이에 맞춘 capsule 허용 |
 
 Plane 중첩은 다음 세 단계까지만 허용한다.
@@ -148,9 +148,9 @@ Point는 다음 요소에만 사용한다.
 
 반경은 장식 강도가 아니라 요소의 역할을 나타낸다.
 
-- `radius-atmosphere`: 24–28px
+- `radius-atmosphere`: 18–22px (기본값 20px)
   페이지의 주요 Atmospheric 또는 Reading plane에만 사용한다.
-- `radius-panel`: 14–18px
+- `radius-panel`: 10–14px (기본값 12px)
   Item plane과 Instrument panel에 사용한다.
 - `radius-control`: full 또는 capsule
   하나의 짧은 행동을 수행하는 compact control에만 사용한다.
@@ -326,7 +326,7 @@ Deep Glacier와 Stellar Field는 동일한 구조와 형태 문법을 공유한�
 
 ## 표면과 상호작용
 
-- 큰 reading surface는 28px, 내부 panel은 18px 반경을 기본으로 한다.
+- 큰 reading surface는 20px, 내부 panel은 12px 반경을 기본으로 한다.
 - hover는 2–3px의 작은 상승, 경계색 변화, 환경별 그림자만 사용한다.
 - Stellar glow는 dot, 활성 경계, focus처럼 의미가 있는 지점에 한정한다.
 - Deep Glacier는 glow보다 넓고 낮은 청색 그림자를 사용한다.
@@ -335,10 +335,15 @@ Deep Glacier와 Stellar Field는 동일한 구조와 형태 문법을 공유한�
 
 ## 이미지와 크롭
 
-- 원본 자산:
-  - `assets/img/common/bg-light.jpg` — Deep Glacier
-  - `assets/img/common/bg-dark.jpg` — Stellar Field
-  - `assets/img/common/social-preview.png` — 두 환경을 함께 보여주는 공유 카드
+- 배포 자산:
+  - `assets/img/common/bg-light.jpg`, `bg-dark.jpg` — 호환성용 JPEG fallback
+  - `assets/img/common/bg-{light,dark}-{1920,3840}.avif` — 우선 전송되는
+    해상도별 AVIF 파생본
+  - `assets/img/common/bg-{light,dark}-{1920,3840}.webp` — AVIF를 지원하지
+    않는 브라우저를 위한 WebP 파생본
+  - `assets/img/common/social-preview.jpg` — 두 환경을 함께 보여주는 공유 카드
+- CSS `image-set()`이 파일 형식과 화면 밀도에 맞는 배경을 선택하며, 이를 지원하지
+  않는 브라우저는 JPEG fallback을 사용한다.
 - 데스크톱은 이미지 중앙 구도를 기본으로 한다.
 - 모바일은 주 피사체가 남도록 테마별 `bg-position-mobile` 토큰을 사용한다.
 - Glacier의 저작자·CC BY 4.0 표기와 Stellar의 출처 표시는 환경별 footer에 유지한다.
