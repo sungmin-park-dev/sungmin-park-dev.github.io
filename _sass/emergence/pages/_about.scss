@@ -9,12 +9,12 @@
 }
 
 .custom-page-container.page-about {
-  max-width: 980px;
+  max-width: 820px;
   background: var(--color-reading-surface);
 }
 
 // --------------------------------------------
-// Profile block (photo + identity)
+// Profile block (icon + identity)
 // --------------------------------------------
 
 .about-profile {
@@ -25,12 +25,18 @@
   border-bottom: 1px solid var(--color-separator);
 }
 
-.about-photo {
+.about-avatar {
   flex-shrink: 0;
   width: 168px;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
+  height: 168px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-bg-glass);
+  border: 1px solid var(--color-border-glass);
+  color: $color-text-tertiary;
+  font-size: 4.5rem;
 }
 
 .about-identity h2 {
@@ -241,7 +247,9 @@
     gap: 1.5rem;
   }
 
-  .about-photo {
+  .about-avatar {
     width: 128px;
+    height: 128px;
+    font-size: 3.5rem;
   }
 }
