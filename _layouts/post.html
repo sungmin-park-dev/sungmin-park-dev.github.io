@@ -77,7 +77,14 @@ layout: base
     <header class="post-header">
       <h1 class="post-title">{{ page.title }}</h1>
 
+      {% unless page.collection == "projects" %}
       <div class="post-meta">
+        {% comment %}
+          page.date falls back to the current build time when unset
+          (Jekyll::Document#date), so it's only meaningful for
+          collections that explicitly set a real date — not projects,
+          which are ordered by `order` instead.
+        {% endcomment %}
         {% if page.date %}
           <span class="post-date">
             <i class="far fa-calendar" aria-hidden="true"></i>
@@ -93,6 +100,7 @@ layout: base
           </div>
         {% endif %}
       </div>
+      {% endunless %}
     </header>
 
     <!-- Post Body -->
@@ -119,7 +127,7 @@ layout: base
 
       {% if related_posts.size > 0 %}
         <section class="related-posts">
-          <h2 class="related-title">Related Posts</h2>
+          <h2 class="related-title">{% if page.collection == "projects" %}Related Projects{% else %}Related Posts{% endif %}</h2>
           <div class="related-grid">
             {% for post in related_posts limit:3 %}
               <a href="{{ post.url }}" class="related-card">
@@ -127,7 +135,7 @@ layout: base
                 {% if post.description %}
                   <p class="related-card-desc">{{ post.description }}</p>
                 {% endif %}
-                {% if post.date %}
+                {% if post.date and page.collection != "projects" %}
                   <span class="related-card-date">{{ post.date | date: "%b %d, %Y" }}</span>
                 {% endif %}
               </a>
@@ -139,7 +147,13 @@ layout: base
 
     <!-- Prev/Next Navigation -->
     {% if page.collection %}
-      {% assign collection = site[page.collection] | where_exp: "item", "item.published != false" | sort: "date" %}
+      {% comment %}
+        Projects are sequenced by `order` (the same field the homepage
+        index uses), not by date — see the date comment above.
+      {% endcomment %}
+      {% assign sort_key = "date" %}
+      {% if page.collection == "projects" %}{% assign sort_key = "order" %}{% endif %}
+      {% assign collection = site[page.collection] | where_exp: "item", "item.published != false" | sort: sort_key %}
       {% assign current_index = -1 %}
       {% for item in collection %}
         {% if item.url == page.url %}
