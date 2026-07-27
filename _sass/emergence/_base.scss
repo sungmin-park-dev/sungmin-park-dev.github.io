@@ -101,6 +101,27 @@ body {
   }
 }
 
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    display: inline-flex;
+    color: inherit;
+    font-size: 0.95rem;
+    transition: color 180ms ease;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-primary-blue;
+    }
+  }
+}
+
 [data-theme="light"] .photo-credit--dark {
   display: none;
 }
@@ -109,7 +130,7 @@ body {
   display: none;
 }
 
-// Homepage only — above background image, normal flow (naturally below cards)
+// Homepage only — above background image, normal flow (naturally below content)
 .site-footer-home {
   position: relative;
   margin-top: $spacing-lg;
@@ -120,5 +141,9 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .skip-link {
+    transition: none;
   }
 }

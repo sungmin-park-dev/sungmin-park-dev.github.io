@@ -71,7 +71,7 @@ p {
 
 strong {
   font-weight: $fw-semibold;
-  color: $color-primary-blue-light;
+  color: $color-text-primary;
 }
 
 em {
@@ -142,10 +142,6 @@ ul, ol {
   line-height: 0.92;
   letter-spacing: -0.045em;
   margin: 0;
-
-  .dot {
-    color: $color-primary-blue;
-  }
 }
 
 .page-subtitle {

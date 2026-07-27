@@ -26,9 +26,11 @@ treatment changes with the photograph.
   the primary content structure
 
 The Horizon Rail is therefore a low, long Plane with one active Trace; it is
-not a generic pill. Glacier uses translucent ice, navy type, and diffuse light.
-Stellar uses indigo glass, cool white type, cyan edges, and glow only where it
-communicates state.
+not a generic pill. Glacier uses a near-white reading surface and charcoal
+type; Stellar uses a near-black surface and off-white type. Both reserve one
+muted blue-grey accent for links, active traces, focus, and the hero signature;
+low-saturation status colors are the only semantic exception. Repeated projects
+and related content are separated by rules rather than cards.
 
 📖 See [`DESIGN.md`](DESIGN.md) for the full form contract and
 [`ASSET-LICENSES.md`](ASSET-LICENSES.md) for photograph licensing.
@@ -46,7 +48,7 @@ sungmin-park-dev.github.io/
 │
 ├── _includes/              # Reusable Liquid partials
 │   ├── nav.html            # Shared navigation
-│   └── project-card.html   # Project entry component
+│   └── project-card.html   # Project row renderer
 │
 ├── _tabs/                  # Main navigation pages
 │   └── about.md            # Pulls data from _data/profile.yml

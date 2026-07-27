@@ -61,9 +61,9 @@ Important contracts:
   `project_type: systems`; this is the primary grouping.
 - Valid project `status` values are `completed`, `in-progress`, and `planned`.
 - `index.html`, `_includes/project-card.html`, and `_sass/emergence/pages/_projects.scss` all depend on those exact status strings.
-- `completed` projects are rendered as linkable cards. `in-progress` and `planned` projects are rendered as locked cards.
+- `completed` projects are rendered as linkable rows. `in-progress` and `planned` projects are rendered as locked rows.
 - Avoid introducing `active`; it is not part of the current renderer contract.
-- `published: false` hides a project card through `_includes/project-card.html`.
+- `published: false` hides a project row through `_includes/project-card.html`.
 
 ## Build And Deploy
 

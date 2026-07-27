@@ -1,6 +1,6 @@
 ---
 title: "Research Portfolio System"
-description: "Personal Jekyll research portfolio using the image-led Emergence system and Glacier / Galaxy environments."
+description: "Personal Jekyll research portfolio using the image-led Emergence system and Deep Glacier / Stellar Field environments."
 categories: [Projects]
 icon: fas fa-globe
 tags: ["Web Design", "Jekyll", "SCSS", "Design System"]
@@ -26,8 +26,8 @@ theme. Its reusable, identity-neutral version is maintained separately as
 The design starts from two photographic environments rather than treating them
 as decorative backgrounds:
 
-- **Glacier** — a bright, open light environment shaped by horizon, diffusion, and low visual density
-- **Galaxy** — a dark environment shaped by depth, star points, and restrained cyan light
+- **Deep Glacier** — a bright, open light environment shaped by horizon, diffusion, and low visual density
+- **Stellar Field** — a dark environment shaped by depth, star points, and restrained ice-blue light
 - **Field / Plane / Trace / Point** — a role-based grammar for backgrounds, reading surfaces, separators, and controls
 - **Horizon Rail** — navigation aligned with the environmental horizon rather than a generic floating navbar
 - **Content-preserving surfaces** — translucency and shadow are used only where reading or interaction requires them

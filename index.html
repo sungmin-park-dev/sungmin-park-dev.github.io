@@ -8,17 +8,13 @@ description: "Research implementations, and the software and design systems buil
 {% include nav.html %}
 
 <main class="project-home" id="main-content">
-  <header class="project-hero">
-    <p class="project-hero__eyebrow" translate="no">Sung-Min Park · portfolio</p>
-    <h1 aria-label="emergence" translate="no">
-      <span>emergence</span><span class="project-hero__dot">.</span>
+  <header class="home-hero">
+    <h1 aria-label="Sung-Min Park" translate="no">
+      Sung-Min Park
     </h1>
-    <p class="project-hero__tagline">
+    <p class="home-hero__tagline">
       a student of quantum matter, computation, and the spaces between
     </p>
-    <a class="project-hero__cue" href="#project-index">
-      explore projects <span aria-hidden="true">↓</span>
-    </a>
   </header>
 
   {% assign research_projects = site.projects | where: "project_type", "research" | sort: "order" %}
@@ -27,7 +23,7 @@ description: "Research implementations, and the software and design systems buil
   <section class="project-index" id="project-index" aria-labelledby="project-index-title">
     <div class="project-index__header">
       <p class="project-index__label" translate="no">selected work / 01—02</p>
-      <h2 id="project-index-title">projects<span class="project-hero__dot">.</span></h2>
+      <h2 id="project-index-title">projects</h2>
     </div>
 
     <div class="project-tabs" role="tablist" aria-label="Project categories">

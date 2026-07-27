@@ -11,8 +11,8 @@
 
 // The image is the first subject. The title and copy sit in open atmosphere
 // rather than inside a panel.
-.project-hero {
-  min-height: clamp(42rem, 100svh, 68rem);
+.home-hero {
+  min-height: clamp(38rem, 88svh, 58rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +20,6 @@
   padding: 7rem 0 6rem;
 }
 
-.project-hero__eyebrow,
 .project-index__label {
   margin: 0 0 1.25rem;
   color: $color-text-secondary;
@@ -29,28 +28,19 @@
   font-weight: $fw-regular;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  text-shadow: var(--shadow-hero-tagline);
+  text-shadow: none;
 }
 
-.project-hero__eyebrow {
-  color: var(--color-hero-tagline);
-}
-
-.project-hero h1 {
+.home-hero h1 {
   max-width: none;
-  font-size: clamp(5rem, 12vw, 10rem);
+  font-size: clamp(4.75rem, 10vw, 8rem);
   font-weight: $fw-thin;
   line-height: 0.82;
   letter-spacing: -0.07em;
   text-shadow: var(--shadow-text);
 }
 
-.project-hero__dot {
-  color: $color-primary-blue;
-  text-shadow: var(--shadow-glow-primary);
-}
-
-.project-hero__tagline {
+.home-hero__tagline {
   max-width: 48rem;
   margin: 2.25rem 0 0;
   color: var(--color-hero-tagline);
@@ -62,48 +52,11 @@
   text-shadow: var(--shadow-hero-tagline);
 }
 
-.project-hero__cue {
-  display: inline-flex;
-  gap: 0.75rem;
-  align-items: center;
-  margin-top: 3rem;
-  padding: 0.7rem 1rem;
-  color: $color-text-primary;
-  background: var(--color-bg-glass);
-  border: 1px solid var(--color-border-glass);
-  border-radius: var(--radius-control);
-  box-shadow: var(--shadow-card);
-  backdrop-filter: var(--surface-filter);
-  -webkit-backdrop-filter: var(--surface-filter);
-  font-size: $fs-sm;
-  font-weight: $fw-medium;
-  text-decoration: none;
-  transition:
-    background 220ms ease,
-    border-color 220ms ease,
-    transform 220ms ease,
-    box-shadow 220ms ease;
-
-  &:hover {
-    color: $color-text-primary;
-    background: var(--color-bg-glass-hover);
-    border-color: var(--color-border-accent-hover);
-    box-shadow: var(--shadow-card-hover);
-    transform: translateY(-2px);
-  }
-
-  &:focus-visible {
-    outline: 2px solid $color-primary-blue-light;
-    outline-offset: 3px;
-    box-shadow: var(--shadow-focus-ring);
-  }
-}
-
 .project-index {
   scroll-margin-top: 6rem;
   margin-bottom: 3rem;
   padding: clamp(1.5rem, 4vw, 3rem);
-  background: var(--color-bg-glass);
+  background: var(--color-reading-surface);
   border: 1px solid var(--color-border-glass);
   border-radius: var(--radius-atmosphere);
   box-shadow: var(--shadow-card);
@@ -112,11 +65,11 @@
 }
 
 .project-index__header {
-  padding-bottom: 2.5rem;
+  padding-bottom: 2rem;
 }
 
 .project-index__header h2 {
-  font-size: clamp(3.25rem, 7vw, 6rem);
+  font-size: clamp(2.75rem, 5.5vw, 4.75rem);
   font-weight: $fw-light;
   line-height: 0.9;
   letter-spacing: -0.055em;
@@ -170,7 +123,7 @@
 }
 
 .project-panel {
-  padding: 2.5rem 0 0;
+  padding: 2rem 0 0;
 }
 
 .project-panel__intro {
@@ -183,36 +136,26 @@
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   align-items: start;
 }
 
 .project-entry {
   min-width: 0;
-  min-height: 16rem;
-  padding: 1.25rem;
+  min-height: 0;
+  padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
-  background: var(--color-panel-inner);
-  border: 1px solid var(--color-separator);
-  border-radius: var(--radius-panel);
-  box-shadow: var(--shadow-panel);
-  transition:
-    background 220ms ease,
-    border-color 220ms ease,
-    transform 220ms ease,
-    box-shadow 220ms ease;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--color-separator);
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.project-entry--completed {
-  &:hover,
-  &:focus-within {
-    background: var(--color-bg-glass-hover);
-    border-color: $color-primary-blue;
-    box-shadow: var(--shadow-card-hover);
-    transform: translateY(-3px);
-  }
+.project-entry:last-child {
+  border-bottom: 1px solid var(--color-separator);
 }
 
 .project-entry__meta {
@@ -258,7 +201,7 @@
 }
 
 .project-entry__title {
-  margin-top: 1.25rem;
+  margin-top: 1rem;
   font-size: $fs-project-heading;
   font-weight: $fw-semibold;
   line-height: 1.15;
@@ -271,18 +214,14 @@
   color: $color-text-secondary;
   font-size: $fs-base;
   line-height: 1.55;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 }
 
 .project-entry__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 1.25rem;
-  margin-top: auto;
-  padding-top: 1.25rem;
+  margin-top: 1rem;
+  padding-top: 0;
   color: $color-text-tertiary;
   font-size: $fs-sm;
 
@@ -333,17 +272,19 @@
     width: min(100% - 2rem, 1180px);
   }
 
-  .project-hero {
-    min-height: 78svh;
+  .home-hero {
+    min-height: 72svh;
     padding: 7rem 0 4rem;
   }
 
-  .project-hero h1 {
+  .home-hero h1 {
     font-size: clamp(4.5rem, 17vw, 7rem);
   }
 
   .project-index {
     padding: 1.5rem;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .project-tabs {
@@ -351,7 +292,10 @@
   }
 
   .project-tab {
+    flex: 1 1 0;
+    min-width: 0;
     font-size: $fs-base;
+    line-height: 1.25;
   }
 
   .project-panel {
@@ -368,16 +312,16 @@
     width: min(100% - 1.5rem, 1180px);
   }
 
-  .project-hero {
-    min-height: 82svh;
+  .home-hero {
+    min-height: 72svh;
     padding-top: 6rem;
   }
 
-  .project-hero h1 {
+  .home-hero h1 {
     font-size: clamp(3.9rem, 19vw, 5.2rem);
   }
 
-  .project-hero__tagline {
+  .home-hero__tagline {
     max-width: 32ch;
     letter-spacing: 0.08em;
   }
@@ -400,15 +344,10 @@
   margin-top: 0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .project-hero__cue,
-  .project-entry {
-    transition: none;
-  }
-
-  .project-hero__cue:hover,
-  .project-entry--completed:hover,
-  .project-entry--completed:focus-within {
-    transform: none;
+@media (prefers-reduced-transparency: reduce) {
+  .project-index {
+    background: var(--bg-color-page);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }

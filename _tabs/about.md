@@ -51,7 +51,7 @@ description: "Background, research interests, and contact"
 
   <!-- Publications -->
   <div class="about-section">
-    <h3 class="section-title">publications</h3>
+    <h3 class="section-title" id="publications">publications</h3>
     <div class="section-content">
       <ul class="publication-list">
         {% for pub in p.publications %}

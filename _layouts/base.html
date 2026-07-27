@@ -49,8 +49,17 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
     {{ content }}
     {% unless page.no_site_footer %}
+    {% assign p = site.data.profile %}
     <footer class="site-footer">
       <span translate="no">&copy; Sung-Min Park</span>
+      {% if p.social.github or p.social.linkedin or p.email or p.social.instagram %}
+      <ul class="footer-social" aria-label="Social links">
+        {% if p.social.github %}<li><a href="{{ p.social.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>{% endif %}
+        {% if p.social.linkedin %}<li><a href="{{ p.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>{% endif %}
+        {% if p.email %}<li><a href="mailto:{{ p.email }}" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>{% endif %}
+        {% if p.social.instagram %}<li><a href="{{ p.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>{% endif %}
+      </ul>
+      {% endif %}
       <span class="photo-credit photo-credit--light">
         deep glacier:
         <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">Sung-Min Park / CC BY 4.0</a>
