@@ -1,11 +1,11 @@
 ---
 title: "emergence-theme"
-description: "Open-source Jekyll portfolio theme extracted from this site — flat editorial design system, tokenized colors, content collections"
+description: "Open-source Jekyll design system with Glacier light and Galaxy dark environments, reusable presets, and tokenized components"
 categories: [Projects]
 icon: fas fa-palette
 tags: ["Jekyll", "SCSS", "Open Source", "Design System"]
-link: "https://github.com/sungmin-park-dev/emergence-theme"
-github_repo: "sungmin-park-dev/emergence-theme"
+link: "https://github.com/emergence-project/emergence-theme"
+github_repo: "emergence-project/emergence-theme"
 order: 5
 status: completed
 project_type: systems
@@ -13,24 +13,31 @@ project_type: systems
 
 ## Overview
 
-**emergence-theme** is an open-source Jekyll portfolio theme extracted from this site. It provides a complete starting point for researchers and academics who want a minimal, editorial-style portfolio without building from scratch.
+**emergence-theme** is the organization-owned, open-source Jekyll design
+system extracted and anonymized from this portfolio. Its default demo can be
+cloned and previewed immediately: a restrained editorial foundation with the
+image-led Glacier / Galaxy preset already applied.
 
 ## Features
 
-- Dual dark/light themes with CSS custom properties — toggled at runtime, respects system preference on first visit
-- Projects homepage grouped by `project_type` (research / systems), sorted by `order`
-- Notes and Readings collections grouped automatically by content `subcategory` — no hardcoded category list to edit
-- Post layout with TOC sidebar, breadcrumb navigation, and Utterances comments
-- Fully tokenized SCSS design system — every color is a CSS custom property, editable via `_data/` YAML with no SCSS knowledge required
-- No theme gem dependency — pure Jekyll 4.3
+- Glacier light and Galaxy dark environments with a persistent runtime toggle
+- Responsive AVIF and WebP background assets with JPEG compatibility fallbacks
+- Shared Field / Plane / Trace / Point grammar across navigation, reading surfaces, and controls
+- Projects grouped by `project_type`, with optional Notes and Readings collections
+- YAML theme data, CSS custom properties, modular SCSS, and portable token exports
+- Jekyll 4 with no theme-gem dependency, deployed through GitHub Actions
 
 ## Design Concepts
 
-- A single restrained accent color per theme — near-white/near-black surfaces, no glow or elevation
-- Hierarchy built from thin rules, type weight, and whitespace instead of cards or badges
-- Bullet-hierarchy list style: filled bullets for top-level items, open bullets for nested sub-items — ink decreases as hierarchy deepens
-- SF Pro system font stack; Regular body text, Semibold entry titles, Light only in the page hero
+- **Landscape first, instruments second, content third** — imagery establishes the environment before interface surfaces appear
+- Glacier and Galaxy share one information structure while retaining independent optical treatment
+- Planes exist only where reading contrast or functional grouping requires them; Trace and spacing handle lighter separation
+- The Horizon Rail navigation and Point-like theme control describe location and environment without obscuring the photographs
+- Focus visibility, reduced-motion behavior, and explicit theme-toggle labels are part of the component contract
 
 ## Links
 
-- [GitHub Repository](https://github.com/sungmin-park-dev/emergence-theme)
+- [GitHub Repository](https://github.com/emergence-project/emergence-theme)
+- [Live Demo](https://emergence-project.github.io/emergence-theme/)
+- [Design System](https://github.com/emergence-project/emergence-theme/blob/main/DESIGN.md)
+- [Glacier / Galaxy Preset](https://github.com/emergence-project/emergence-theme/tree/main/presets/glacier-stellar)

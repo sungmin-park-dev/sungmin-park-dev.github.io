@@ -1,6 +1,6 @@
 ---
 title: "Research Portfolio System"
-description: "Custom Jekyll portfolio for organizing research implementations, software systems, and publications."
+description: "Personal Jekyll research portfolio using the image-led Emergence system and Glacier / Galaxy environments."
 categories: [Projects]
 icon: fas fa-globe
 tags: ["Web Design", "Jekyll", "SCSS", "Design System"]
@@ -13,34 +13,41 @@ project_type: systems
 
 ## Overview
 
-**emergence** is a custom-built portfolio website that embodies the concept of emergent phenomena in physics — where simple elements combine to create complex, beautiful systems.
+**emergence** is a custom-built research portfolio for presenting research
+implementations, software systems, and publications within one coherent visual
+environment.
 
-The site features a completely custom design system built from scratch, with no reliance on pre-built themes beyond the Jekyll engine itself.
+The site uses a custom design system built on Jekyll rather than a packaged
+theme. Its reusable, identity-neutral version is maintained separately as
+[`emergence-project/emergence-theme`](https://github.com/emergence-project/emergence-theme).
 
 ## Design Philosophy
 
-The design draws inspiration from quantum many-body physics:
+The design starts from two photographic environments rather than treating them
+as decorative backgrounds:
 
-- **OLED Black Background** (`#000000`) — representing the void of space and infinite possibilities
-- **Cyan Glow** — ideas shining through darkness, like stars in the cosmos
-- **Glassmorphism** — layered information creating depth and dimension
-- **Ultra-Light Typography** (100-200 weight) — minimal visual noise, maximum clarity
+- **Glacier** — a bright, open light environment shaped by horizon, diffusion, and low visual density
+- **Galaxy** — a dark environment shaped by depth, star points, and restrained cyan light
+- **Field / Plane / Trace / Point** — a role-based grammar for backgrounds, reading surfaces, separators, and controls
+- **Horizon Rail** — navigation aligned with the environmental horizon rather than a generic floating navbar
+- **Content-preserving surfaces** — translucency and shadow are used only where reading or interaction requires them
 
 ## Tech Stack
 
 - **Generator**: Jekyll 4.4 (decoupled from Chirpy theme)
 - **Styling**: Custom SCSS design system (emergence)
+- **Media**: Responsive AVIF / WebP environments with JPEG fallbacks
 - **Icons**: FontAwesome 6
 - **Hosting**: GitHub Pages
 - **Plugins**: jekyll-seo-tag, jekyll-sitemap
 
 ## Features
 
-- ✨ Fully custom design system with modular SCSS architecture
-- 🎨 Glassmorphic UI with subtle animations and hover effects
-- 📱 Responsive layouts for projects and content pages
-- 🌙 OLED-optimized dark interface
-- ⚡ Lightweight and fast (no heavy frameworks)
+- Persistent light / dark environment control with system-preference initialization
+- Projects grouped by work type with explicit completion states
+- A continuous About reading surface and focused project layouts
+- Responsive image delivery and theme-specific mobile crops
+- Keyboard focus, reduced-motion handling, and accessible environment labels
 
 ## Implementation Highlights
 
@@ -54,7 +61,6 @@ _sass/emergence/
 ├── _components.scss    # Reusable components
 ├── _navigation.scss    # Header navigation
 └── pages/              # Page-specific styles
-    ├── _home.scss
     ├── _projects.scss
     ├── _about.scss
     └── _post.scss
@@ -62,14 +68,15 @@ _sass/emergence/
 
 ### Key Challenges Solved
 
-1. **Chirpy Decoupling**: Removed theme dependency while keeping useful plugins
-2. **UTF-8 Encoding**: Handled Korean comments in SCSS files
-3. **Modular Architecture**: Created reusable components with consistent design tokens
-4. **Glassmorphism**: Implemented layered glass effects with backdrop filters
+1. **Theme Decoupling**: Removed the Chirpy dependency while preserving the required Jekyll plugins
+2. **Design Grammar**: Converted visual intuition into explicit Field / Plane / Trace / Point contracts
+3. **Responsive Environments**: Added format and density variants without abandoning original imagery
+4. **Public Extraction**: Separated the reusable theme from personal identity and project content
 
 ## Links
 
 - [Live Site](https://sungmin-park-dev.github.io)
 - [GitHub Repository](https://github.com/sungmin-park-dev/sungmin-park-dev.github.io)
 - [Design Philosophy](https://github.com/sungmin-park-dev/sungmin-park-dev.github.io/blob/main/DESIGN.md)
-- [emergence-theme (open-source)](https://github.com/sungmin-park-dev/emergence-theme) — reusable Jekyll theme extracted from this site
+- [emergence-theme (open-source)](https://github.com/emergence-project/emergence-theme) — reusable Jekyll design system extracted from this site
+- [emergence-theme live demo](https://emergence-project.github.io/emergence-theme/)
