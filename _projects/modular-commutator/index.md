@@ -42,3 +42,7 @@ the underlying topological data of the phase?
 - Built a reusable pipeline for extracting subsystem entanglement entropies
   from a ground state and combining them into modular commutator values
   across arbitrary tripartitions.
+
+## Links
+
+- [Geometric additivity of the modular commutator for multipartite entanglement](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.075167) — *Physical Review B* 111, 075167 (2025)
