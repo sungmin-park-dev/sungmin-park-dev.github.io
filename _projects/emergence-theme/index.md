@@ -6,6 +6,7 @@ icon: fas fa-palette
 tags: ["Jekyll", "SCSS", "Open Source", "Design System"]
 link: "https://github.com/emergence-project/emergence-theme"
 github_repo: "emergence-project/emergence-theme"
+permalink: /projects/emergence-theme/
 order: 5
 status: completed
 project_type: systems

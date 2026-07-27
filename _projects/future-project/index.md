@@ -4,6 +4,7 @@ description: "This space is reserved for upcoming research projects and computat
 icon: fas fa-flask
 tags: [Coming Soon]
 link: "#"
+permalink: /projects/future-project/
 order: 3
 status: planned
 published: false

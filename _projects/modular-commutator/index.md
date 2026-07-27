@@ -5,6 +5,7 @@ categories: [Projects]
 icon: fas fa-calculator
 tags: ["Entanglement Bootstrap", "Chiral Topological Order", "Free Fermion"]
 link: "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.075167"
+permalink: /projects/modular-commutator/
 order: 1
 status: completed
 project_type: research

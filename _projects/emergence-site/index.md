@@ -6,6 +6,7 @@ icon: fas fa-globe
 tags: ["Web Design", "Jekyll", "SCSS", "Design System"]
 link: "https://github.com/sungmin-park-dev/sungmin-park-dev.github.io"
 github_repo: "sungmin-park-dev/sungmin-park-dev.github.io"
+permalink: /projects/emergence-site/
 order: 4
 status: completed
 project_type: systems

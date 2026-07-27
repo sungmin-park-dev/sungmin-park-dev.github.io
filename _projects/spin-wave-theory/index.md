@@ -5,6 +5,7 @@ categories: [Projects]
 icon: fas fa-atom
 tags: [Python, Physics, NumPy]
 link: "#"
+permalink: /projects/spin-wave-theory/
 order: 2
 status: planned
 project_type: research
