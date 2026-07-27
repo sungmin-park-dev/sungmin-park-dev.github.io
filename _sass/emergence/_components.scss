@@ -17,7 +17,10 @@
   // The photograph establishes the environment; the overlay only protects
   // text contrast and never replaces the image.
   background: var(--bg-color-page);
-  background-image: var(--bg-image);
+  background-image: var(--bg-image-fallback);
+  @supports (background-image: image-set(url('../img/common/bg-dark.jpg') type('image/jpeg') 1x)) {
+    background-image: var(--bg-image);
+  }
   background-size: cover;
   background-position: var(--bg-position, center);
 
