@@ -8,8 +8,10 @@
 사진은 사이트의 정체성을 담당하지만, 실제 읽기 구간에서는 저채도 중립 표면과
 Trace 중심 구조를 사용해 콘텐츠가 항상 먼저 보이게 한다.
 
-과거 브랜치 `orginal-emergence-deep-glacier-stellar-blue`의 이미지와
-`emergence.` 중심 구성을 계승하되, 현재의 프로젝트·About 정보 구조를 유지한다.
+과거 브랜치 `orginal-emergence-deep-glacier-stellar-blue`의 이미지와 시각 언어를
+계승하되, 정체성은 프로젝트 코드네임 `emergence.`가 아니라 실제 인물(Sung-Min
+Park)을 중심으로 한다. `emergence`는 디자인 시스템·프로젝트 이름으로만 남고 UI
+워드마크로는 쓰지 않는다. 현재의 프로젝트·About 정보 구조를 유지한다.
 Notes/Readings처럼 비활성화된 과거 콘텐츠 구조는 복원하지 않는다.
 
 ## 환경 원칙
@@ -69,11 +71,11 @@ Field 위에 직접 놓을 수 있는 요소는 큰 워드마크, 짧은 환경 
 
 | 계층 | 역할 | 기본 형태 |
 |---|---|---|
-| Atmospheric plane | 프로젝트 인덱스 등 환경 탐색을 위한 주요 영역 | 12–16px 반경, 높은 읽기 대비 |
-| Reading plane | 긴 프로젝트 본문 | 12–16px 반경, 가장 높은 가독성 |
-| Instrument panel | TOC, 필터, 보조 탐색 | 6–10px 반경, 주요 영역보다 낮은 위계 |
-| Item plane | 별도 표면이 꼭 필요한 독립 도구 | 6–10px 반경, 예외적으로만 사용 |
-| Compact control | 하나의 짧은 행동을 수행하는 버튼 | 4px 또는 Point; capsule은 사용하지 않음 |
+| Atmospheric plane | 프로젝트 인덱스 등 환경 탐색을 위한 주요 영역 | 6px 반경, 높은 읽기 대비 |
+| Reading plane | 긴 프로젝트 본문 | 6px 반경, 가장 높은 가독성 |
+| Instrument panel | TOC, 필터, 보조 탐색 | 4px 반경, 주요 영역보다 낮은 위계 |
+| Item plane | 별도 표면이 꼭 필요한 독립 도구 | 4px 반경, 예외적으로만 사용 |
+| Compact control | 하나의 짧은 행동을 수행하는 버튼 | 2px 또는 Point; capsule은 사용하지 않음 |
 
 Plane은 기본적으로 한 단계만 사용한다. 기능상 필요한 Instrument만 한 단계 더
 허용하며, 프로젝트와 관련 콘텐츠의 반복 항목은 Plane 대신 Trace 행으로 표현한다.
@@ -137,7 +139,7 @@ Point는 다음 요소에만 사용한다.
 | 요소 | 형태 문법 | 도출되는 형태 |
 |---|---|---|
 | 홈페이지 히어로 | Field | 박스 없는 열린 구성 |
-| 상단 내비게이션 | Plane + Trace | 낮고 긴 Horizon Rail |
+| 상단 내비게이션 | Plane + Trace | 화면 폭 전체의 플러시 Horizon Rail (반경 없음) |
 | 테마 전환 | Point | 원형 환경 제어 장치 |
 | 프로젝트 인덱스 | Atmospheric plane | 하나의 넓은 반투명 표면 |
 | 프로젝트 목록 | Trace | 하나의 Plane 안에서 1px rule로 나뉜 행 |
@@ -151,11 +153,11 @@ Point는 다음 요소에만 사용한다.
 
 반경은 장식 강도가 아니라 요소의 역할을 나타낸다.
 
-- `radius-atmosphere`: 12–16px (기본값 14px)
+- `radius-atmosphere`: 기본값 6px
   페이지의 주요 Atmospheric 또는 Reading plane에만 사용한다.
-- `radius-panel`: 6–10px (기본값 8px)
+- `radius-panel`: 기본값 4px
   기능적으로 독립된 Instrument panel에 사용한다.
-- `radius-control`: 기본값 4px
+- `radius-control`: 기본값 2px
   하나의 짧은 행동을 수행하는 compact control에만 사용한다.
 - `radius-point`: 50%
   상태와 단일 환경 제어에만 사용한다.
@@ -173,10 +175,10 @@ Rail**이다. 사용자가 환경 속에서 현재 위치를 확인하고 다른
 
 ### 형태
 
-- 콘텐츠 축과 정렬된 낮고 긴 수평 Plane을 사용한다.
-- 완전한 capsule보다 `radius-panel`의 부드러운 직사각형을 사용한다.
+- 뷰포트 좌우 끝까지 붙는 화면 폭 전체의 낮은 Plane을 사용한다 (`border-radius: 0`).
+- 콘텐츠 축과 정렬된 좌우 padding만 두고, 별도의 여백이나 캡슐 형태로 띄우지 않는다.
 - 높이와 시각적 무게를 최소화해 사진과 히어로보다 앞서 보이지 않게 한다.
-- 테두리는 Horizon Trace 역할을 하며, 별도의 장식선을 중복해서 사용하지 않는다.
+- 하단 1px 테두리가 Horizon Trace 역할을 하며, 별도의 장식선을 중복해서 사용하지 않는다.
 
 ### 상태
 
@@ -186,8 +188,9 @@ Rail**이다. 사용자가 환경 속에서 현재 위치를 확인하고 다른
 
 - 배경 투명도와 그림자를 가장 낮게 유지한다.
 - 빙하의 하늘과 우주의 별이 Rail을 통해 충분히 보여야 한다.
-- 작은 `emergence.`는 위치를 알려주는 orientation label이고, 큰 히어로 워드마크는
-  장면의 주제다.
+- nav의 작은 이름 워드마크(`Sung-Min Park`)는 위치를 알려주는 orientation
+  label이고, 큰 히어로 워드마크는 장면의 주제다. 둘은 같은 이름을 다른 크기와
+  굵기로 보여준다.
 - 두 워드마크가 경쟁하지 않도록 크기, 대비, 시각적 밀도를 분명하게 구분한다.
 - 프로젝트 인덱스에 도달하기 전에는 `projects` 활성 Trace를 표시하지 않는다.
 
@@ -201,7 +204,7 @@ Rail**이다. 사용자가 환경 속에서 현재 위치를 확인하고 다른
 
 ### 내비게이션 역할
 
-- `emergence.` 로고는 페이지 또는 환경의 시작점으로 이동한다.
+- nav 로고(`Sung-Min Park`)는 페이지 또는 환경의 시작점으로 이동한다.
 - `projects`는 프로젝트 인덱스로 이동한다.
 - `about`은 About reading plane으로 이동한다.
 - 로고와 `projects`가 동일한 목적지를 가리키지 않게 한다.
@@ -304,7 +307,7 @@ Deep Glacier와 Stellar Field는 동일한 구조와 형태 문법을 공유한�
 
 ### 홈페이지
 
-- 첫 화면은 사진과 큰 `emergence.` 워드마크가 주인공이다.
+- 첫 화면은 사진과 큰 이름 워드마크(`Sung-Min Park`)가 주인공이다.
 - 짧은 연구 태그라인과 프로젝트로 내려가는 단일 cue만 함께 둔다.
 - 프로젝트 목록은 첫 환경 장면 아래 하나의 큰 atmospheric surface 안에 배치한다.
 - `research`와 `systems` 탭, 프로젝트 상태, 링크 동작은 기존 계약을 유지한다.
@@ -321,8 +324,9 @@ Deep Glacier와 Stellar Field는 동일한 구조와 형태 문법을 공유한�
 
 ## 타이포그래피
 
-- 기본 글꼴은 SF Pro 계열 시스템 스택이다.
-- `emergence.`와 페이지 타이틀은 Thin/Light를 사용해 사진의 넓은 공간과 호흡한다.
+- 기본 글꼴은 Inter이며, 환경 라벨·태그·모노스페이스 요소에는 JetBrains Mono를
+  사용한다.
+- 이름 워드마크와 페이지 타이틀은 Thin/Light를 사용해 사진의 넓은 공간과 호흡한다.
 - 프로젝트 제목과 본문 위계는 Semibold/Regular로 읽기 성능을 유지한다.
 - 환경 라벨과 태그라인에만 모노스페이스와 넓은 자간을 제한적으로 사용한다.
 - Stellar에서는 text shadow가 사진의 밝은 별 위 대비를 보호하고, Glacier에서는
@@ -330,9 +334,9 @@ Deep Glacier와 Stellar Field는 동일한 구조와 형태 문법을 공유한�
 
 ## 표면과 상호작용
 
-- 큰 reading surface는 14px, 기능적 내부 panel은 8px 반경을 기본으로 한다.
+- 큰 reading surface는 6px, 기능적 내부 panel은 4px 반경을 기본으로 한다.
 - hover는 위치 이동이나 glow 없이 텍스트와 경계색만 바꾼다.
-- Stellar glow는 히어로의 핵심 dot 한 곳에만 사용한다.
+- Stellar glow는 테마 전환 버튼처럼 정체성을 나타내는 핵심 Point 한 곳에만 사용한다.
 - Deep Glacier는 glow 없이 작고 낮은 중립 그림자를 사용한다.
 - 키보드 focus는 배경과 관계없이 식별 가능한 외곽선을 제공한다.
 - `prefers-reduced-motion`에서도 레이아웃은 정적으로 유지된다.
