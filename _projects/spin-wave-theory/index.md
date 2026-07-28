@@ -23,3 +23,7 @@ Sample content.
 ## Results
 
 Sample content.
+
+## Links
+
+- [Linear-Spin-Wave-Theory](https://github.com/sungmin-park-dev/Linear-Spin-Wave-Theory) — Python package for linear spin wave theory (LSWT) computation
