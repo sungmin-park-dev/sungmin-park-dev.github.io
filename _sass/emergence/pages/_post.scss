@@ -196,12 +196,14 @@
 
 // Post Body
 .post-body {
-  font-size: $fs-md;
-  font-weight: $fw-light;
+  font-family: $font-serif;
+  font-size: 1.125rem;
+  font-weight: $fw-regular;
   color: $color-text-secondary;
   line-height: $lh-relaxed;
 
   h2, h3, h4, h5, h6 {
+    font-family: $font-primary;
     font-weight: $fw-light;
     color: $color-text-primary;
     margin-top: $spacing-xl;
@@ -503,7 +505,7 @@
   }
 
   .post-body {
-    font-size: $fs-base;
+    font-size: 1.0625rem;
 
     h2 { font-size: $fs-xl; }
     h3 { font-size: $fs-lg; }
