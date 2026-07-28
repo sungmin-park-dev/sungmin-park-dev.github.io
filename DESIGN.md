@@ -327,8 +327,11 @@ Deep Glacier와 Stellar Field는 동일한 구조와 형태 문법을 공유한�
 - 글꼴은 세 갈래로 역할이 고정되어 있다.
   - Inter — 모든 제목과 UI 텍스트 (히어로 워드마크, 로고, nav, 탭, 사이드바 라벨)
   - JetBrains Mono — 메타데이터류 (인덱스 번호, 상태 배지, 태그, 히어로 태그라인)
-  - STIX Two Text — 프로젝트 본문 prose 전용. MathJax의 기본 TeX 스타일
-    수식과 자연스럽게 어울리도록 고른 서체다. 다른 곳에는 쓰지 않는다.
+  - Source Serif 4 — 프로젝트 본문 prose 전용. STIX Two Text는 대비가 강해
+    학술지 본문처럼 무겁게 읽혀서(연구/개발 프로젝트 모두에 부담스러워)
+    x-height가 크고 획 대비가 낮은 Source Serif 4로 교체했다. 폴백
+    체인(`STIX Two Text` → `Georgia`)에는 남겨 MathJax 수식과 여전히
+    자연스럽게 어울리도록 유지한다. 다른 곳에는 쓰지 않는다.
 - 환경 라벨과 태그라인에만 모노스페이스와 넓은 자간을 제한적으로 사용한다.
 - Stellar에서는 text shadow가 사진의 밝은 별 위 대비를 보호하고, Glacier에서는
   흰 확산광 shadow가 짙은 글자를 분리한다.
@@ -354,7 +357,7 @@ SCSS 파일에 흩어지지 않고 한 곳에서 통제된다.
 | 로고 | `$fw-logo` | Light | nav 로고 텍스트 |
 | nav 링크 | `$fw-nav-link` | Regular | `projects`/`about` nav 링크, 로고의 `\| <section>` 접미사 |
 | 탭 컨트롤 | `$fw-tab` | Semibold | 홈의 `research implementations` / `software & design systems` 탭 |
-| 본문 prose | `$fw-body-serif` | Regular | 프로젝트 본문 문단 (STIX Two Text) |
+| 본문 prose | `$fw-body-serif` | Regular | 프로젝트 본문 문단 (Source Serif 4) |
 
 ## 표면과 상호작용
 
