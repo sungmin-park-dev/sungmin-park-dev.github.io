@@ -153,7 +153,7 @@
 
 .post-title {
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: $fw-semibold;
+  font-weight: $fw-post-title;
   color: $color-text-primary;
   line-height: 1.1;
   margin-bottom: $spacing-md;
@@ -198,13 +198,13 @@
 .post-body {
   font-family: $font-serif;
   font-size: 1.125rem;
-  font-weight: $fw-regular;
+  font-weight: $fw-body-serif;
   color: $color-text-secondary;
   line-height: $lh-relaxed;
 
   h2, h3, h4, h5, h6 {
     font-family: $font-primary;
-    font-weight: $fw-light;
+    font-weight: $fw-section-title;
     color: $color-text-primary;
     margin-top: $spacing-xl;
     margin-bottom: $spacing-md;
@@ -237,7 +237,7 @@
   }
 
   code {
-    font-family: 'Monaco', 'Menlo', monospace;
+    font-family: $font-monospace;
     font-size: $fs-sm;
     background: var(--color-code-bg);
     border: 1px solid var(--color-code-border);

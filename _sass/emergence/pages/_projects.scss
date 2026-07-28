@@ -23,7 +23,7 @@
 .home-hero h1 {
   max-width: none;
   font-size: clamp(4.75rem, 10vw, 8rem);
-  font-weight: $fw-thin;
+  font-weight: $fw-hero;
   line-height: 0.82;
   letter-spacing: -0.07em;
   text-shadow: var(--shadow-text);
@@ -59,7 +59,7 @@
 
 .project-index__header h2 {
   font-size: clamp(2.75rem, 5.5vw, 4.75rem);
-  font-weight: $fw-light;
+  font-weight: $fw-page-heading;
   line-height: 0.9;
   letter-spacing: -0.055em;
 }
@@ -82,7 +82,7 @@
   border-bottom: 2px solid transparent;
   font-family: $font-primary;
   font-size: $fs-section-heading;
-  font-weight: $fw-semibold;
+  font-weight: $fw-tab;
   letter-spacing: -0.02em;
   cursor: pointer;
   transition: color 180ms ease, border-color 180ms ease;

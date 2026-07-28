@@ -137,7 +137,7 @@ ul, ol {
 .page-title {
   font-family: $font-primary;
   font-size: $fs-display;
-  font-weight: $fw-light;
+  font-weight: $fw-page-heading;
   color: $color-text-primary;
   line-height: 0.92;
   letter-spacing: -0.045em;
@@ -156,7 +156,7 @@ ul, ol {
 
 .section-title {
   font-size: $fs-section-heading;
-  font-weight: $fw-semibold;
+  font-weight: $fw-section-title;
   color: $color-text-primary;
   letter-spacing: -0.025em;
   margin-bottom: $spacing-md;

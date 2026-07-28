@@ -42,7 +42,7 @@
   color: $color-text-primary;
   font-family: $font-primary;
   font-size: $fs-lg;
-  font-weight: $fw-light;
+  font-weight: $fw-logo;
   letter-spacing: -0.04em;
   text-decoration: none;
   transition: color 180ms ease;
@@ -56,7 +56,7 @@
 // project detail page, is the one persistent way back to the index.
 .logo__section {
   color: $color-text-tertiary;
-  font-weight: $fw-regular;
+  font-weight: $fw-nav-link;
   letter-spacing: -0.01em;
   text-transform: lowercase;
 }
@@ -89,7 +89,7 @@
   color: $color-text-secondary;
   font-family: $font-primary;
   font-size: $fs-base;
-  font-weight: $fw-regular;
+  font-weight: $fw-nav-link;
   text-decoration: none;
   transition: color 180ms ease;
 

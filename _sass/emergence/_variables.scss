@@ -19,6 +19,44 @@ $fw-regular: 400;
 $fw-medium: 500;
 $fw-semibold: 600;
 
+// --------------------------------------------
+// Typography roles — semantic aliases over the raw weight/family scale
+// above. Components should reference these, not $fw-*/$font-* directly,
+// so a role's look is controlled from exactly one place. Documented in
+// DESIGN.md's Typography section — keep both in sync.
+//
+// This is a three-step display hierarchy by nesting depth (the bigger
+// and more singular the heading, the lighter it goes), plus one shared
+// weight for every in-content section heading regardless of which page
+// it's on:
+//   hero wordmark (.home-hero h1)              -> $fw-hero (thinnest)
+//   page/index heading (.page-title,
+//     .project-index__header h2)               -> $fw-page-heading
+//   a page's own H1 (.post-title)               -> $fw-post-title
+//   section headings inside reading content
+//     (.post-body h2-h6, .section-title)        -> $fw-section-title
+// --------------------------------------------
+
+$fw-hero: $fw-thin;
+$fw-page-heading: $fw-light;
+$fw-post-title: $fw-semibold;
+
+// Section headings inside reading content: project-body h2–h6
+// (Overview, Motivation, ...) and About's .section-title (publications,
+// contact, ...). Same role wherever it appears, so it gets one weight.
+$fw-section-title: $fw-semibold;
+
+// Persistent navigation chrome — logo, nav links, tab controls. Distinct
+// from content headings; a selected tab is intentionally heavier than a
+// plain nav link to signal "active."
+$fw-logo: $fw-light;
+$fw-nav-link: $fw-regular;
+$fw-tab: $fw-semibold;
+
+// Long-form reading prose (project bodies). Serif at regular weight —
+// see $font-serif below.
+$fw-body-serif: $fw-regular;
+
 $fs-xs: 0.75rem;
 $fs-sm: 0.85rem;
 $fs-base: 1rem;

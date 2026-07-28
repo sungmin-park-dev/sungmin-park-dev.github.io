@@ -324,13 +324,37 @@ Deep Glacier와 Stellar Field는 동일한 구조와 형태 문법을 공유한�
 
 ## 타이포그래피
 
-- 기본 글꼴은 Inter이며, 환경 라벨·태그·모노스페이스 요소에는 JetBrains Mono를
-  사용한다.
-- 이름 워드마크와 페이지 타이틀은 Thin/Light를 사용해 사진의 넓은 공간과 호흡한다.
-- 프로젝트 제목과 본문 위계는 Semibold/Regular로 읽기 성능을 유지한다.
+- 글꼴은 세 갈래로 역할이 고정되어 있다.
+  - Inter — 모든 제목과 UI 텍스트 (히어로 워드마크, 로고, nav, 탭, 사이드바 라벨)
+  - JetBrains Mono — 메타데이터류 (인덱스 번호, 상태 배지, 태그, 히어로 태그라인)
+  - STIX Two Text — 프로젝트 본문 prose 전용. MathJax의 기본 TeX 스타일
+    수식과 자연스럽게 어울리도록 고른 서체다. 다른 곳에는 쓰지 않는다.
 - 환경 라벨과 태그라인에만 모노스페이스와 넓은 자간을 제한적으로 사용한다.
 - Stellar에서는 text shadow가 사진의 밝은 별 위 대비를 보호하고, Glacier에서는
   흰 확산광 shadow가 짙은 글자를 분리한다.
+
+### Weight 역할 계층
+
+굵기는 장식이 아니라 "중첩 깊이"를 나타낸다. 크고 단독으로 등장하는
+워드마크일수록 얇고, 읽기 콘텐츠 안에 중첩될수록 두꺼워진다. 같은 역할이면
+어느 페이지에 있든 같은 굵기를 쓴다 — 예를 들어 프로젝트 본문의 섹션 제목과
+About의 섹션 제목은 서로 다른 템플릿이지만 정확히 같은 역할이므로 같은
+굵기(Semibold)를 쓴다.
+
+원시 굵기 값(`$fw-thin` ~ `$fw-semibold`)을 컴포넌트에 직접 박아 넣지 않고,
+`_variables.scss`의 역할 토큰을 통해서만 쓴다 — 그래야 굵기 규칙이 여러
+SCSS 파일에 흩어지지 않고 한 곳에서 통제된다.
+
+| 역할 | 토큰 | 굵기 | 적용 대상 |
+|---|---|---|---|
+| Hero 워드마크 | `$fw-hero` | Thin | 홈 히어로 `Sung-Min Park` |
+| Page/Index 제목 | `$fw-page-heading` | Light | `about` 페이지 타이틀, 홈의 `projects` 인덱스 제목 |
+| Post 제목 | `$fw-post-title` | Semibold | 프로젝트 상세 페이지 H1 |
+| 섹션 제목 | `$fw-section-title` | Semibold | 프로젝트 본문 h2–h6(Overview, Motivation, ...), About의 `.section-title`(publications, contact, ...) — 같은 역할, 항상 같은 굵기 |
+| 로고 | `$fw-logo` | Light | nav 로고 텍스트 |
+| nav 링크 | `$fw-nav-link` | Regular | `projects`/`about` nav 링크, 로고의 `\| <section>` 접미사 |
+| 탭 컨트롤 | `$fw-tab` | Semibold | 홈의 `research implementations` / `software & design systems` 탭 |
+| 본문 prose | `$fw-body-serif` | Regular | 프로젝트 본문 문단 (STIX Two Text) |
 
 ## 표면과 상호작용
 
