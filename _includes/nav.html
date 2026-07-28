@@ -3,7 +3,21 @@
   data-nav-context="{% if page.url == '/' %}hero{% else %}content{% endif %}"
   aria-label="Primary"
 >
+  {% if page.collection == "projects" %}
+  <a href="/#project-index" class="logo" aria-label="Sung-Min Park — back to projects" translate="no">
+    <span class="logo__name">Sung-Min Park</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>projects</span>
+  </a>
+  {% elsif page.url contains "/about" %}
+  <a href="/about/" class="logo" aria-label="Sung-Min Park — about" translate="no">
+    <span class="logo__name">Sung-Min Park</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>about</span>
+  </a>
+  {% elsif page.url == "/" %}
+  <a href="/" class="logo" id="nav-logo" aria-label="Sung-Min Park home" translate="no">
+    <span class="logo__name">Sung-Min Park</span><span class="logo__section" id="logo-section" hidden><span class="logo__sep" aria-hidden="true">|</span>projects</span>
+  </a>
+  {% else %}
   <a href="/" class="logo" aria-label="Sung-Min Park home" translate="no">Sung-Min Park</a>
+  {% endif %}
   <div class="nav-links" id="primary-nav" translate="no">
     <a href="/#project-index" data-nav-section="projects"{% if page.collection == 'projects' %} class="active" aria-current="location"{% endif %}>projects</a>
     <a href="/about/"{% if page.url contains '/about' %} class="active" aria-current="page"{% endif %}>about</a>

@@ -146,6 +146,8 @@
         if (topNav && topNav.dataset.navContext === 'hero') {
           var projectIndex = document.getElementById('project-index');
           var projectsLink = topNav.querySelector('[data-nav-section="projects"]');
+          var logo = document.getElementById('nav-logo');
+          var logoSection = document.getElementById('logo-section');
           var contentThreshold = 48;
           var getScrollTop = function() {
             return window.scrollY
@@ -170,6 +172,10 @@
               } else {
                 projectsLink.removeAttribute('aria-current');
               }
+            }
+            if (logoSection) logoSection.hidden = !inContent;
+            if (logo) {
+              logo.setAttribute('aria-label', inContent ? 'Sung-Min Park — projects' : 'Sung-Min Park home');
             }
           };
           updateNavThreshold();

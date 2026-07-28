@@ -37,6 +37,8 @@
 }
 
 .logo {
+  display: inline-flex;
+  align-items: baseline;
   color: $color-text-primary;
   font-family: $font-primary;
   font-size: $fs-lg;
@@ -48,6 +50,21 @@
   &:hover {
     color: $color-text-primary;
   }
+}
+
+// Doubles as an orientation label — shows the current section and, from a
+// project detail page, is the one persistent way back to the index.
+.logo__section {
+  color: $color-text-tertiary;
+  font-size: $fs-sm;
+  font-weight: $fw-regular;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+}
+
+.logo__sep {
+  margin: 0 0.5em;
+  opacity: 0.5;
 }
 
 .logo,
