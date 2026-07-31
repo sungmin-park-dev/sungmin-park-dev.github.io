@@ -1,10 +1,11 @@
 ---
-title: "Linear Spin Wave Theory"
-description: "Numerical implementation of linear spin wave theory for studying magnon excitations in quantum magnetic systems."
+title: "Spin Supersolid in Triangular Lattice"
+description: "We study Spin Supersolid Candidates Na₂BaCo(PO₄)₂ using spin-wave theory, tensor network, renormalization group analysis."
 categories: [Projects]
 icon: fas fa-atom
 tags: ["Na₂BaCo(PO₄)₂", "Spin Wave Theory", "Holstein-Primakoff", "Magnon Spectra"]
-link: "#"
+link: "https://arxiv.org/abs/2601.20963"
+paper: "arXiv:2601.20963 (2026)"
 permalink: /projects/spin-wave-theory/
 order: 2
 status: planned

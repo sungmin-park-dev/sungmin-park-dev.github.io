@@ -20,6 +20,17 @@
 
   <p class="project-entry__description">{{ project.description }}</p>
 
+  {% if project.link and project.paper %}
+    <a
+      class="project-entry__paper"
+      href="{{ project.link }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ project.paper }} <span aria-hidden="true">↗</span>
+    </a>
+  {% endif %}
+
   <ul class="project-entry__tags" aria-label="Project topics">
     {% for tag in project.tags limit: 3 %}
       <li>{{ tag }}</li>

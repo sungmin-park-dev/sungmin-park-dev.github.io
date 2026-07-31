@@ -1,10 +1,11 @@
 ---
 title: "Modular Commutator and Chiral Topological Order"
-description: "Implementation of modular commutator entropy calculations for quantum many-body systems using tensor network methods."
+description: "Uncovering of geometric additivity of modular commutator."
 categories: [Projects]
 icon: fas fa-calculator
 tags: ["Entanglement Bootstrap", "Chiral Topological Order", "Free Fermion"]
 link: "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.075167"
+paper: "Physical Review B 111, 075167 (2025)"
 permalink: /projects/modular-commutator/
 order: 1
 status: completed

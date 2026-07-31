@@ -28,6 +28,12 @@ project_type: physics                  # physics | software — 홈 탭 분류.
                                        #   나온다. index.html 상단 주석 참고.
 published: false                       # true 로 바꿔야 홈 목록에 노출
 
+# link + paper: 둘 다 있어야 카드 설명문 아래에 논문 링크가 뜬다.
+#   하나만 있으면 아무것도 렌더링되지 않는다 (project-card.html의
+#   {% if project.link and project.paper %} 참고).
+# link: "https://arxiv.org/abs/..."     # 논문 URL
+# paper: "arXiv:2601.20963 (2026)"      # 카드에 보일 짧은 인용 표기
+
 # permalink: 폴더 구조로 만들 때만 [ACTIVE], flat 파일이면 불필요.
 #   이 파일처럼 _projects/ 바로 아래 flat .md 면 생략해도 된다.
 #   이미지 등 첨부파일 때문에 _projects/<slug>/index.md 폴더 구조로 만든다면
@@ -40,14 +46,6 @@ published: false                       # true 로 바꿔야 홈 목록에 노출
 # 아래 필드들은 현재 어떤 템플릿에서도 읽지 않는다. 기존 프로젝트 문서에
 # 남아 있는 값들은 과거 Chirpy 테마 시절의 잔재이거나, 쓰려다 만 것이다.
 # 지우지 않고 남겨두되, 살아있는 필드로 착각하지 말 것.
-#
-# link: "https://github.com/user/repo"
-#   프로젝트의 외부 원본(논문·저장소) URL.
-#   2026-07-27 이전에는 카드 제목이 이 URL 로 바로 나갔지만, 지금은 카드가
-#   항상 내부 상세 페이지로 연결되고 외부 링크는 본문 "## Links" 섹션에
-#   직접 적는다. 그래서 이 필드는 현재 참조되지 않는다.
-#   활성화 방법: _includes/project-card.html 에서 project.url 대신
-#   project.link 를 쓰도록 되돌린다 (커밋 e8aea02 의 역방향).
 #
 # icon: fas fa-code
 #   FontAwesome 아이콘 이름. 카드가 아이콘 썸네일을 쓰던 시절의 필드.
@@ -65,7 +63,7 @@ published: false                       # true 로 바꿔야 홈 목록에 노출
 #   GitHub Actions 단계를 추가해야 한다. 정적 빌드만으로는 불가능.
 #
 # demo: "https://demo-url.com"
-#   라이브 데모 링크. 활성화 방법: link 와 같은 방식으로 본문
+#   라이브 데모 링크. 활성화 방법: 새 필드를 만들기보다 본문
 #   "## Links" 섹션에 직접 적는 편이 낫다.
 #
 # thumbnail: /assets/img/projects/name.png
