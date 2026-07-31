@@ -14,18 +14,6 @@ description: "Research implementations, and the software and design systems buil
 
   {% assign physics_projects = site.projects | where: 'project_type', 'physics' | sort: 'order' %}
   {% assign software_projects = site.projects | where: 'project_type', 'software' | sort: 'order' %}
-
-  {% assign physics_tags = "" | split: "," %}
-  {% for project in physics_projects %}
-    {% assign physics_tags = physics_tags | concat: project.tags %}
-  {% endfor %}
-  {% assign physics_tags = physics_tags | uniq %}
-
-  {% assign software_tags = "" | split: "," %}
-  {% for project in software_projects %}
-    {% assign software_tags = software_tags | concat: project.tags %}
-  {% endfor %}
-  {% assign software_tags = software_tags | uniq %}
   {%- comment -%}
     Reserved third category: project_type value "ml" (applied ML / signal
     processing), for once a project is ready to publish. No tab or panel
@@ -69,11 +57,6 @@ description: "Research implementations, and the software and design systems buil
     </div>
 
     <section class="project-panel" id="physics-panel" role="tabpanel" aria-labelledby="physics-tab">
-      <ul class="project-entry__tags project-panel__topics" aria-label="Filter quantum physics by topic">
-        {% for tag in physics_tags %}
-          <li><button type="button" class="topic-filter" data-tag="{{ tag }}" aria-pressed="false">{{ tag }}</button></li>
-        {% endfor %}
-      </ul>
       <div class="project-list">
         {% for project in physics_projects %}
           {%
@@ -86,11 +69,6 @@ description: "Research implementations, and the software and design systems buil
     </section>
 
     <section class="project-panel" id="software-panel" role="tabpanel" aria-labelledby="software-tab" hidden>
-      <ul class="project-entry__tags project-panel__topics" aria-label="Filter software development by topic">
-        {% for tag in software_tags %}
-          <li><button type="button" class="topic-filter" data-tag="{{ tag }}" aria-pressed="false">{{ tag }}</button></li>
-        {% endfor %}
-      </ul>
       <div class="project-list">
         {% for project in software_projects %}
           {%
@@ -131,34 +109,6 @@ description: "Research implementations, and the software and design systems buil
         var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
         next.focus();
         activate(next);
-      });
-    });
-
-    panels.forEach(function (panel) {
-      var filters = Array.from(panel.querySelectorAll('.topic-filter'));
-      var entries = Array.from(panel.querySelectorAll('.project-entry'));
-
-      filters.forEach(function (filter) {
-        filter.addEventListener('click', function () {
-          var alreadyActive = filter.classList.contains('active');
-
-          filters.forEach(function (f) {
-            f.classList.remove('active');
-            f.setAttribute('aria-pressed', 'false');
-          });
-
-          if (alreadyActive) {
-            entries.forEach(function (entry) { entry.hidden = false; });
-            return;
-          }
-
-          filter.classList.add('active');
-          filter.setAttribute('aria-pressed', 'true');
-          entries.forEach(function (entry) {
-            var tags = (entry.dataset.tags || '').split('|');
-            entry.hidden = tags.indexOf(filter.dataset.tag) === -1;
-          });
-        });
       });
     });
   })();
