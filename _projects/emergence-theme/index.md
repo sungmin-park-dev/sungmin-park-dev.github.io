@@ -1,5 +1,5 @@
 ---
-title: "emergence-theme"
+title: "Emergence Design System"
 description: "Open-source Jekyll design system with Glacier light and Galaxy dark environments, reusable presets, and tokenized components"
 categories: [Projects]
 icon: fas fa-palette
@@ -14,10 +14,12 @@ project_type: software
 
 ## Overview
 
-**emergence-theme** is the organization-owned, open-source Jekyll design
-system extracted and anonymized from this portfolio. Its default demo can be
-cloned and previewed immediately: a restrained editorial foundation with the
-image-led Glacier / Galaxy preset already applied.
+**Emergence** is the organization-owned, open-source Jekyll design system
+extracted and anonymized from this portfolio, published as
+[`emergence-project/emergence-theme`](https://github.com/emergence-project/emergence-theme).
+Its default demo can be cloned and previewed immediately: a restrained
+editorial foundation with the image-led Glacier / Galaxy preset already
+applied.
 
 ## Features
 

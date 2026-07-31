@@ -1,6 +1,6 @@
 ---
-title: "Research Portfolio System"
-description: "Personal Jekyll research portfolio using the image-led Emergence system and Deep Glacier / Stellar Field environments."
+title: "Portfolio Site (This Site)"
+description: "This site itself — a Jekyll research portfolio built on the Emergence design system (Deep Glacier / Stellar Field)."
 categories: [Projects]
 icon: fas fa-globe
 tags: ["Web Design", "Jekyll", "SCSS", "Design System"]
@@ -14,12 +14,13 @@ project_type: software
 
 ## Overview
 
-**emergence** is a custom-built research portfolio for presenting research
-implementations, software systems, and publications within one coherent visual
-environment.
+This site is a custom-built research portfolio for presenting research
+implementations, software projects, and publications within one coherent
+visual environment.
 
-The site uses a custom design system built on Jekyll rather than a packaged
-theme. Its reusable, identity-neutral version is maintained separately as
+It's built on **Emergence**, a custom SCSS design system developed for this
+site rather than a packaged theme. Its reusable, identity-neutral version is
+maintained separately as
 [`emergence-project/emergence-theme`](https://github.com/emergence-project/emergence-theme).
 
 ## Design Philosophy
@@ -79,5 +80,5 @@ _sass/emergence/
 - [Live Site](https://sungmin-park-dev.github.io)
 - [GitHub Repository](https://github.com/sungmin-park-dev/sungmin-park-dev.github.io)
 - [Design Philosophy](https://github.com/sungmin-park-dev/sungmin-park-dev.github.io/blob/main/DESIGN.md)
-- [emergence-theme (open-source)](https://github.com/emergence-project/emergence-theme) — reusable Jekyll design system extracted from this site
-- [emergence-theme live demo](https://emergence-project.github.io/emergence-theme/)
+- [Emergence Design System (open-source)](https://github.com/emergence-project/emergence-theme) — reusable Jekyll design system extracted from this site
+- [Emergence Design System live demo](https://emergence-project.github.io/emergence-theme/)
