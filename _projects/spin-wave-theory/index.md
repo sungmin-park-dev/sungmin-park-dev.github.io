@@ -15,13 +15,19 @@ sitemap: false
 
 ## Overview
 
-A Python package for linear spin wave theory (LSWT): magnon excitations of a
-classical magnetic order are obtained by expanding a spin exchange
-Hamiltonian to quadratic order and diagonalizing the resulting bosonic
-theory, then used to compute the magnon spectrum's thermodynamic, dynamical,
-and topological properties.
+Studies the spin supersolid phase of the triangular-lattice antiferromagnet
+Na₂BaCo(PO₄)₂, combining spin-wave theory, tensor-network methods, and
+renormalization-group analysis to trace its stability against spin-orbit
+coupling and thermal fluctuations — the subject of ["Spin-orbit-induced
+Instability and Finite-Temperature Stabilization of a Triangular-lattice
+Supersolid"](https://arxiv.org/abs/2601.20963) (arXiv:2601.20963, 2026).
 
-## Method
+The code behind this splits into two parts: analysis scripts specific to
+this paper's tensor-network and renormalization-group calculations, and the
+spin-wave-theory core, which was generalized beyond this one result and
+published separately as a reusable package (see Links).
+
+## Method: Spin-Wave Component
 
 - Start from a bilinear spin exchange Hamiltonian on a given lattice and
   magnetic structure, with the classical ground-state order fixed per
@@ -41,4 +47,5 @@ magnon bands (Berry curvature, Chern number, thermal Hall conductance).
 
 ## Links
 
-- [Linear-Spin-Wave-Theory](https://github.com/sungmin-park-dev/Linear-Spin-Wave-Theory) — Python package for linear spin wave theory (LSWT) computation
+- [Spin-orbit-induced Instability and Finite-Temperature Stabilization of a Triangular-lattice Supersolid](https://arxiv.org/abs/2601.20963) — arXiv:2601.20963 (2026)
+- [Linear-Spin-Wave-Theory](https://github.com/sungmin-park-dev/Linear-Spin-Wave-Theory) — Python package for linear spin wave theory (LSWT) computation, generalized from this project's spin-wave component
