@@ -14,6 +14,18 @@ description: "Research implementations, and the software and design systems buil
 
   {% assign physics_projects = site.projects | where: 'project_type', 'physics' | sort: 'order' %}
   {% assign software_projects = site.projects | where: 'project_type', 'software' | sort: 'order' %}
+
+  {% assign physics_tags = "" | split: "," %}
+  {% for project in physics_projects %}
+    {% assign physics_tags = physics_tags | concat: project.tags %}
+  {% endfor %}
+  {% assign physics_tags = physics_tags | uniq %}
+
+  {% assign software_tags = "" | split: "," %}
+  {% for project in software_projects %}
+    {% assign software_tags = software_tags | concat: project.tags %}
+  {% endfor %}
+  {% assign software_tags = software_tags | uniq %}
   {%- comment -%}
     Reserved third category: project_type value "ml" (applied ML / signal
     processing), for once a project is ready to publish. No tab or panel
@@ -57,6 +69,11 @@ description: "Research implementations, and the software and design systems buil
     </div>
 
     <section class="project-panel" id="physics-panel" role="tabpanel" aria-labelledby="physics-tab">
+      <ul class="project-entry__tags project-panel__topics" aria-label="Topics in quantum physics">
+        {% for tag in physics_tags %}
+          <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
       <div class="project-list">
         {% for project in physics_projects %}
           {%
@@ -69,6 +86,11 @@ description: "Research implementations, and the software and design systems buil
     </section>
 
     <section class="project-panel" id="software-panel" role="tabpanel" aria-labelledby="software-tab" hidden>
+      <ul class="project-entry__tags project-panel__topics" aria-label="Topics in software development">
+        {% for tag in software_tags %}
+          <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
       <div class="project-list">
         {% for project in software_projects %}
           {%
