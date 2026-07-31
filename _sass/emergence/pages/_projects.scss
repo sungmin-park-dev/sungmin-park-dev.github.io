@@ -115,14 +115,6 @@
   padding: 2rem 0 0;
 }
 
-.project-panel__intro {
-  max-width: 100%;
-  margin: 0 0 1.75rem;
-  color: $color-text-secondary;
-  font-size: $fs-base;
-  line-height: 1.55;
-}
-
 .project-list {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
