@@ -125,7 +125,8 @@
 }
 
 .topic-filter {
-  padding: 0 0 0.15rem;
+  padding: 0.35rem 0;
+  margin: -0.35rem 0;
   background: none;
   border: 0;
   border-bottom: 1px solid transparent;
@@ -295,7 +296,7 @@
 .project-entry__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 1.25rem;
+  row-gap: 0.35rem;
   margin-top: 1rem;
   padding-top: 0;
   color: $color-text-tertiary;
@@ -303,14 +304,9 @@
   font-size: $fs-xs;
   letter-spacing: 0.03em;
 
-  li {
-    position: relative;
-  }
-
-  li:not(:last-child)::after {
+  li:not(:first-child)::before {
     content: '·';
-    position: absolute;
-    left: calc(100% + 0.5rem);
+    margin: 0 0.6rem;
     color: var(--color-separator);
   }
 }
