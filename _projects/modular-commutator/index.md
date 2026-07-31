@@ -1,6 +1,6 @@
 ---
 title: "Modular Commutator and Chiral Topological Order"
-description: "Uncovering of geometric additivity of modular commutator."
+description: "Uncovering the geometric additivity of the modular commutator."
 categories: [Projects]
 icon: fas fa-calculator
 tags: ["Entanglement Bootstrap", "Chiral Topological Order", "Free Fermion"]

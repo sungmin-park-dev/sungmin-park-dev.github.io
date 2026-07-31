@@ -1,6 +1,6 @@
 ---
 title: "Spin Supersolid in Triangular Lattice"
-description: "We study Spin Supersolid Candidates Na₂BaCo(PO₄)₂ using spin-wave theory, tensor network, renormalization group analysis."
+description: "Studying the spin supersolid candidate Na₂BaCo(PO₄)₂ with spin-wave theory, tensor networks, and renormalization group analysis."
 categories: [Projects]
 icon: fas fa-atom
 tags: ["Na₂BaCo(PO₄)₂", "Spin Wave Theory", "Holstein-Primakoff", "Magnon Spectra"]

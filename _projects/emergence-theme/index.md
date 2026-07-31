@@ -1,6 +1,6 @@
 ---
 title: "Emergence Design System"
-description: "Open-source Jekyll design system with Glacier light and Galaxy dark environments, reusable presets, and tokenized components"
+description: "Open-source Jekyll design system with Glacier light and Galaxy dark environments, reusable presets, and tokenized components."
 categories: [Projects]
 icon: fas fa-palette
 tags: ["Jekyll", "SCSS", "Open Source", "Design System"]
