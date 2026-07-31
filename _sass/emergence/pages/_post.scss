@@ -404,12 +404,24 @@
 
 // Post Navigation
 .post-navigation {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $spacing-md;
   margin-top: $spacing-xl;
   padding-top: $spacing-xl;
   border-top: 1px solid $color-border-glass;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: $spacing-xl;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: $color-border-glass;
+    transform: translateX(-50%);
+  }
 }
 
 .nav-previous,
