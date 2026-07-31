@@ -117,6 +117,38 @@
 
 .project-panel__topics {
   margin-bottom: 1.75rem;
+
+  li {
+    padding: 0;
+    border: 0;
+  }
+}
+
+.topic-filter {
+  padding: 0.2rem 0.55rem;
+  background: none;
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-control);
+  color: $color-text-tertiary;
+  font-family: $font-monospace;
+  font-size: $fs-xs;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  &.active {
+    color: $color-text-primary;
+    border-color: $color-primary-blue;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary-blue-light;
+    outline-offset: 2px;
+  }
 }
 
 .project-list {
@@ -137,6 +169,10 @@
   border-top: 1px solid var(--color-separator);
   border-radius: 0;
   box-shadow: none;
+
+  &[hidden] {
+    display: none;
+  }
 }
 
 .project-entry:last-child {
