@@ -403,8 +403,13 @@ SCSS 파일에 흩어지지 않고 한 곳에서 통제된다.
 프로젝트에는 두 축이 있다.
 
 1. `project_type`
-   - `research`
-   - `systems`
+   - `physics` — 양자 다체계·텐서 네트워크 등 물리 연구
+   - `software` — 이 사이트를 포함한 소프트웨어·디자인 시스템 툴링
+   - `ml` (예약됨) — 응용 ML·신호처리. 2026-07-28 기준 아직 홈에 탭/패널이
+     없다. 첫 프로젝트가 게시 준비되면 `index.html`의 physics/software
+     패턴을 그대로 복사해 세 번째 탭을 추가한다(탭 전환 스크립트는
+     `.project-tab`/`.project-panel` 전체를 범용으로 순회하므로 JS는
+     손댈 필요 없음).
 2. `status`
    - `completed`
    - `in-progress`

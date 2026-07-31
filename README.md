@@ -108,7 +108,7 @@ tags: ["Tag1", "Tag2"]
 link: "#"
 order: 1
 status: planned   # planned | in-progress | completed
-project_type: research   # research | systems
+project_type: physics   # physics | software (ml reserved, no tab yet)
 ---
 ```
 

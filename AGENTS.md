@@ -57,8 +57,11 @@ Readings templates are preserved under
 Important contracts:
 
 - Project entries use folder pages such as `_projects/example-project/index.md`.
-- Homepage projects must set `project_type: research` or
-  `project_type: systems`; this is the primary grouping.
+- Homepage projects must set `project_type: physics` or
+  `project_type: software`; this is the primary grouping. A third value,
+  `ml` (applied ML / signal processing), is reserved for when the first
+  such project is ready to publish — no tab/panel renders it yet (see the
+  comment above the tab markup in `index.html`).
 - Valid project `status` values are `completed`, `in-progress`, and `planned`.
 - `index.html`, `_includes/project-card.html`, and `_sass/emergence/pages/_projects.scss` all depend on those exact status strings.
 - `completed` projects are rendered as linkable rows. `in-progress` and `planned` projects are rendered as locked rows.

@@ -1,5 +1,5 @@
 ---
-title: "Linear Spin Wave Theory Implementation"
+title: "Linear Spin Wave Theory"
 description: "Numerical implementation of linear spin wave theory for studying magnon excitations in quantum magnetic systems."
 categories: [Projects]
 icon: fas fa-atom
@@ -8,7 +8,7 @@ link: "#"
 permalink: /projects/spin-wave-theory/
 order: 2
 status: planned
-project_type: research
+project_type: physics
 sitemap: false
 ---
 

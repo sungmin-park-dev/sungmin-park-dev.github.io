@@ -9,7 +9,7 @@ github_repo: "sungmin-park-dev/sungmin-park-dev.github.io"
 permalink: /projects/emergence-site/
 order: 4
 status: completed
-project_type: systems
+project_type: software
 ---
 
 ## Overview

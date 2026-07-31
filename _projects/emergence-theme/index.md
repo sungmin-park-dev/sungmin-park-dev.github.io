@@ -9,7 +9,7 @@ github_repo: "emergence-project/emergence-theme"
 permalink: /projects/emergence-theme/
 order: 5
 status: completed
-project_type: systems
+project_type: software
 ---
 
 ## Overview

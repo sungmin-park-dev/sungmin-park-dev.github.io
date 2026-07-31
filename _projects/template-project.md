@@ -21,8 +21,11 @@ tags: [Python, Quantum, NumPy]         # 카드에 앞 3개, 상세 페이지 �
 order: 99                              # 정렬 순서 (낮을수록 앞). 날짜 대신 이걸 씀
 status: planned                        # completed | in-progress | planned
                                        #   completed 만 제목이 링크가 됨
-project_type: research                 # research | systems — 홈 탭 분류.
-                                       #   없으면 어느 탭에도 안 나옴
+project_type: physics                  # physics | software — 홈 탭 분류.
+                                       #   없으면 어느 탭에도 안 나옴. ml 은
+                                       #   예약된 값(2026-07-28) — 아직 탭이
+                                       #   없어서 이 값을 써도 어디에도 안
+                                       #   나온다. index.html 상단 주석 참고.
 published: false                       # true 로 바꿔야 홈 목록에 노출
 
 # permalink: 폴더 구조로 만들 때만 [ACTIVE], flat 파일이면 불필요.

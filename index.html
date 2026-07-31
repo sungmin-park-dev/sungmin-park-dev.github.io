@@ -3,22 +3,27 @@ layout: base
 title: "projects"
 description: "Research implementations, and the software and design systems built alongside them."
 ---
-
 <div class="page-bg"></div>
 {% include nav.html %}
 
 <main class="project-home" id="main-content">
   <header class="home-hero">
-    <h1 aria-label="Sung-Min Park" translate="no">
-      Sung-Min Park
-    </h1>
-    <p class="home-hero__tagline">
-      a student of quantum matter, computation, and the spaces between
-    </p>
+    <h1 aria-label="Sung-Min Park" translate="no">Sung-Min Park</h1>
+    <p class="home-hero__tagline">a student of quantum matter, computation, and the spaces between</p>
   </header>
 
-  {% assign research_projects = site.projects | where: "project_type", "research" | sort: "order" %}
-  {% assign systems_projects = site.projects | where: "project_type", "systems" | sort: "order" %}
+  {% assign physics_projects = site.projects | where: 'project_type', 'physics' | sort: 'order' %}
+  {% assign software_projects = site.projects | where: 'project_type', 'software' | sort: 'order' %}
+  {%- comment -%}
+    Reserved third category: project_type value "ml" (applied ML / signal
+    processing), for once a project is ready to publish. No tab or panel
+    exists for it yet — when the first entry is ready, add a third
+    project-tab / project-panel pair here following the physics/software
+    pattern above (ids ml-tab / ml-panel, number "03"), plus a matching
+    assign line for the filtered project list. The tab-switch script below
+    is generic over every project-tab / project-panel element, so no JS
+    change is needed.
+  {%- endcomment -%}
 
   <section class="project-index" id="project-index" aria-labelledby="project-index-title">
     <div class="project-index__header">
@@ -26,22 +31,39 @@ description: "Research implementations, and the software and design systems buil
     </div>
 
     <div class="project-tabs" role="tablist" aria-label="Project categories">
-      <button type="button" class="project-tab active" role="tab" aria-selected="true" aria-controls="research-panel" id="research-tab" data-target="research-panel">
-        <span class="project-tab__number" aria-hidden="true">01</span> research implementations
+      <button
+        type="button"
+        class="project-tab active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="physics-panel"
+        id="physics-tab"
+        data-target="physics-panel"
+      >
+        <span class="project-tab__number" aria-hidden="true">01</span> quantum physics
       </button>
-      <button type="button" class="project-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="systems-panel" id="systems-tab" data-target="systems-panel">
-        <span class="project-tab__number" aria-hidden="true">02</span> software &amp; design systems
+      <button
+        type="button"
+        class="project-tab"
+        role="tab"
+        aria-selected="false"
+        tabindex="-1"
+        aria-controls="software-panel"
+        id="software-tab"
+        data-target="software-panel"
+      >
+        <span class="project-tab__number" aria-hidden="true">02</span> software development
       </button>
     </div>
 
-    <section class="project-panel" id="research-panel" role="tabpanel" aria-labelledby="research-tab">
+    <section class="project-panel" id="physics-panel" role="tabpanel" aria-labelledby="physics-tab">
       <p class="project-panel__intro">
-        Computational work for studying quantum matter—and the tools that make
-        that work usable.
+        Computational studies of quantum many-body systems—magnon spectra, entanglement structure, and topological order.
       </p>
       <div class="project-list">
-        {% for project in research_projects %}
-          {% include project-card.html
+        {% for project in physics_projects %}
+          {%
+            include project-card.html
             project=project
             index=forloop.index
           %}
@@ -49,14 +71,14 @@ description: "Research implementations, and the software and design systems buil
       </div>
     </section>
 
-    <section class="project-panel" id="systems-panel" role="tabpanel" aria-labelledby="systems-tab" hidden>
+    <section class="project-panel" id="software-panel" role="tabpanel" aria-labelledby="software-tab" hidden>
       <p class="project-panel__intro">
-        Software and design tooling built along the way—including the design
-        system this site runs on.
+        Software and design tooling built along the way—including the design system this site runs on.
       </p>
       <div class="project-list">
-        {% for project in systems_projects %}
-          {% include project-card.html
+        {% for project in software_projects %}
+          {%
+            include project-card.html
             project=project
             index=forloop.index
           %}
