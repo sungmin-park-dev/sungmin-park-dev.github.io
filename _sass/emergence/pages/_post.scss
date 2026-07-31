@@ -414,6 +414,7 @@
 
 .nav-previous,
 .nav-next {
+  min-width: 0;
   min-height: 80px;
 }
 
@@ -448,6 +449,11 @@
 }
 
 .nav-title {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: $fs-base;
   font-weight: $fw-light;
   color: $color-text-primary;
