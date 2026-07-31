@@ -3,7 +3,7 @@ title: "Linear Spin Wave Theory"
 description: "Numerical implementation of linear spin wave theory for studying magnon excitations in quantum magnetic systems."
 categories: [Projects]
 icon: fas fa-atom
-tags: ["NBCP", "Holstein-Primakoff", "Bogoliubov Transformation", "Magnon Spectra"]
+tags: ["Na₂BaCo(PO₄)₂", "Spin Wave Theory", "Holstein-Primakoff", "Magnon Spectra"]
 link: "#"
 permalink: /projects/spin-wave-theory/
 order: 2
