@@ -3,7 +3,7 @@ title: "Linear Spin Wave Theory"
 description: "Open-source Python library for linear spin-wave theory (LSWT) — spin-system definitions, solvers, and observables for magnon spectra on 2D lattices."
 categories: [Projects]
 icon: fas fa-wave-square
-tags: ["Python", "NumPy", "Open Source"]
+tags: ["Linear Spin Wave Theory", "Magnon Spectra", "Holstein-Primakoff"]
 link: "https://github.com/sungmin-park-dev/Linear-Spin-Wave-Theory"
 github_repo: "sungmin-park-dev/Linear-Spin-Wave-Theory"
 permalink: /projects/linear-spin-wave-theory/

@@ -1,12 +1,10 @@
 ---
-title: "Emergence Design System"
+title: "Portfolio Design System"
 description: "Open-source Jekyll design system with Glacier light and Galaxy dark environments, reusable presets, and tokenized components."
-categories: [Projects]
-icon: fas fa-palette
 tags: ["Jekyll", "SCSS", "Open Source", "Design System"]
-link: "https://github.com/emergence-project/emergence-theme"
-github_repo: "emergence-project/emergence-theme"
-permalink: /projects/emergence-theme/
+link: "https://github.com/sungmin-park-dev/glacier-stellar"
+github_repo: "sungmin-park-dev/glacier-stellar"
+permalink: /projects/glacier-stellar/
 order: 5
 status: completed
 project_type: software
@@ -14,12 +12,11 @@ project_type: software
 
 ## Overview
 
-**Emergence** is the organization-owned, open-source Jekyll design system
-extracted and anonymized from this portfolio, published as
-[`emergence-project/emergence-theme`](https://github.com/emergence-project/emergence-theme).
-Its default demo can be cloned and previewed immediately: a restrained
-editorial foundation with the image-led Glacier / Galaxy preset already
-applied.
+This is an open-source Jekyll design system, extracted and anonymized from
+this portfolio and published as
+[`sungmin-park-dev/glacier-stellar`](https://github.com/sungmin-park-dev/glacier-stellar).
+It ships an image-led **Glacier** (light) and **Galaxy** (dark) preset, ready
+to clone and preview immediately.
 
 ## Features
 
@@ -40,7 +37,7 @@ applied.
 
 ## Links
 
-- [GitHub Repository](https://github.com/emergence-project/emergence-theme)
-- [Live Demo](https://emergence-project.github.io/emergence-theme/)
-- [Design System](https://github.com/emergence-project/emergence-theme/blob/main/DESIGN.md)
-- [Glacier / Galaxy Preset](https://github.com/emergence-project/emergence-theme/tree/main/presets/glacier-stellar)
+- [GitHub Repository](https://github.com/sungmin-park-dev/glacier-stellar)
+- [Live Demo](https://sungmin-park-dev.github.io/glacier-stellar/)
+- [Design System](https://github.com/sungmin-park-dev/glacier-stellar/blob/main/DESIGN.md)
+- [Glacier / Galaxy Preset](https://github.com/sungmin-park-dev/glacier-stellar/tree/main/presets/glacier-stellar)
