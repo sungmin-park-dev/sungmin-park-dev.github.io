@@ -1,6 +1,6 @@
 ---
 title: "Spin Supersolid in Triangular Lattice"
-description: "Studying the spin supersolid candidate Na₂BaCo(PO₄)₂ with spin-wave theory, tensor networks, and renormalization group analysis."
+description: "Studying spin supersolid stability against spin-orbit-induced exchange anisotropy, with possible application to candidate materials such as Na₂BaCo(PO₄)₂."
 categories: [Projects]
 icon: fas fa-atom
 tags: ["Na₂BaCo(PO₄)₂", "Spin Wave Theory", "Holstein-Primakoff", "Magnon Spectra"]
@@ -26,6 +26,15 @@ The code behind this splits into two parts: analysis scripts specific to
 this paper's tensor-network and renormalization-group calculations, and the
 spin-wave-theory core, which was generalized beyond this one result and
 published separately as a reusable package (see Links).
+
+## Motivation
+
+Spin-orbit coupling (SOC) is usually assumed negligible in
+Na₂BaCo(PO₄)₂, but symmetry says otherwise: any nonzero SOC breaks the
+continuous spin symmetry that supersolid order depends on, opening a gap
+in its low-energy excitations. This raises the central question — to
+what extent can supersolidity survive symmetry-allowed SOC, and what new
+phases emerge as it grows?
 
 ## Method: Spin-Wave Component
 

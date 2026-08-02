@@ -32,17 +32,20 @@ natural question — does the quantity compose additively across
 geometrically separated regions, and what does that additivity reveal about
 the underlying topological data of the phase?
 
-## Implementation
+## Method
 
 - Computed modular commutator values for free-fermion lattice models via
   correlation-matrix methods, where subsystem entanglement entropies reduce
   to closed-form expressions.
-- Verified geometric additivity of the modular commutator across multipartite
-  region configurations and checked the result against the expected
-  chiral-central-charge scaling.
 - Built a reusable pipeline for extracting subsystem entanglement entropies
   from a ground state and combining them into modular commutator values
   across arbitrary tripartitions.
+
+## Results
+
+- Verified geometric additivity of the modular commutator across multipartite
+  region configurations and checked the result against the expected
+  chiral-central-charge scaling.
 
 ## Links
 
