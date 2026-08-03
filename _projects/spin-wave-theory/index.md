@@ -47,12 +47,46 @@ phases emerge as it grows?
 - Layer solvers for exchange-parameter optimization and ground-state energy
   on top of the diagonalization core.
 
+## Method: Tensor-Network Component
+
+- Infinite density-matrix renormalization group (iDMRG) on an infinite
+  Y-type cylinder maps the zero-temperature ground-state phase diagram
+  across the exchange-anisotropy parameter planes.
+- Identifies five phases without spin-orbit terms — three spin-supersolid
+  phases (Y, V, Ψ) alongside an up-up-down plateau and a polarized phase —
+  and tracks how growing spin-orbit coupling collapses the three-sublattice
+  orders into modified magnetic unit cells, including stripe phases and,
+  at larger coupling, a quantum skyrmion lattice identified by its scalar
+  spin chirality.
+
+## Method: Renormalization-Group Component
+
+- Maps the spin-orbit-induced pseudo-Goldstone gap onto a discrete
+  ground-state anisotropy — sixfold for the Y and Ψ phases, threefold for
+  the V phase — and builds an effective classical Hamiltonian for each.
+- A standard two-dimensional Kosterlitz-Thouless RG analysis on the
+  anisotropy coupling shows the sixfold term becomes irrelevant above a
+  threshold temperature, while the threefold term stays relevant at every
+  temperature.
+
 ## Results
 
-From the diagonalized magnon spectrum, the package computes thermodynamic
-quantities (internal energy, entropy, specific heat), dynamical and
-equal-time spin correlation functions, and topological invariants of the
-magnon bands (Berry curvature, Chern number, thermal Hall conductance).
+- Confirms the spin-orbit-induced pseudo-Goldstone gap directly via
+  spin-wave theory, and reproduces the Y and V ground states found by
+  iDMRG (linear spin-wave theory alone does not capture the Ψ phase,
+  attributed to quantum fluctuations beyond linear order).
+- Shows that the Y and Ψ phases regain a finite-temperature
+  spin-supersolid window, bounded above by a
+  Berezinskii-Kosterlitz-Thouless transition, once the sixfold anisotropy
+  becomes RG-irrelevant — a stability window invisible to a
+  zero-temperature analysis.
+- Shows the V phase cannot support any finite-temperature supersolid once
+  spin-orbit coupling is present, since its threefold anisotropy never
+  becomes RG-irrelevant.
+- Offers an explanation for the giant magnetocaloric effect observed in
+  Na₂BaCo(PO₄)₂: the finite-temperature restoration of coherence keeps the
+  entropy-enhancing soft modes active even though spin-orbit coupling is
+  not negligible.
 
 ## Links
 

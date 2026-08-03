@@ -34,18 +34,34 @@ the underlying topological data of the phase?
 
 ## Method
 
-- Computed modular commutator values for free-fermion lattice models via
-  correlation-matrix methods, where subsystem entanglement entropies reduce
-  to closed-form expressions.
-- Built a reusable pipeline for extracting subsystem entanglement entropies
-  from a ground state and combining them into modular commutator values
-  across arbitrary tripartitions.
+- Defines the modular commutator from the modular Hamiltonians of a ground
+  state's reduced density matrices, and proves it decomposes additively
+  over a partition with multiple tri-junctions — the commutator of a
+  coarser region reduces to a sum of commutators over simplified regions,
+  plus a residual term that vanishes for invertible (non-anyonic) states.
+- Applies the additivity formula to "pizza" partitions of both the bulk and
+  the physical edge, deriving closed-form multiples of the chiral central
+  charge for different tri-junction arrangements, plus a complementary
+  identity for incomplete junctions that extracts a half-quantized value at
+  smaller subsystem sizes.
+- Verifies the additivity numerically on the Haldane model on a honeycomb
+  lattice, computing the modular commutator directly from ground-state
+  correlation functions across its topological phase transitions.
 
 ## Results
 
-- Verified geometric additivity of the modular commutator across multipartite
-  region configurations and checked the result against the expected
-  chiral-central-charge scaling.
+- Confirms geometric additivity for invertible states: each complete
+  tri-junction contributes (π/3)c₋, so a bulk pizza partition gives twice
+  the single-tri-junction value while the corresponding physical-edge
+  partition gives twice the value with the opposite sign — even though the
+  edge modular Hamiltonians involved act on disconnected intervals.
+- Generalizes this to a single relation, where a "geometric integer"
+  characterizing the tri-junction arrangement sets the multiple of the
+  chiral central charge on both the bulk and the edge.
+- Numerically reproduces these predictions on the Haldane model to high
+  precision away from its critical points, unchanged under added on-site
+  disorder, and finds qualitatively consistent higher geometric integers on
+  a π-flux square-lattice model.
 
 ## Links
 
